@@ -63,7 +63,7 @@ The backend relies heavily on three CSV files located in the `backend/` director
         *   `project_name`: Unique identifier for the project (used internally and potentially in URLs).
         *   `description`: A short description displayed on the card.
         *   `icon_filename`: The filename of the project's icon (e.g., `logo.svg`, `myproject.png`). This file should be placed in `frontend/public/projects/<project_name>/`.
-        *   `startup_script`: The relative path *from the project's root directory* (e.g., `/home/divansh/projects/<project_name>`) to the script that starts the project (e.g., `start.sh`, `bin/startup.sh`). The backend executes this script.
+        *   `startup_script`: The relative path *from the project's root directory* (e.g., `/home/username/projects/<project_name>`) to the script that starts the project (e.g., `start.sh`, `bin/startup.sh`). The backend executes this script.
         *   `port`: The port number the project runs on after being started. Used for the "Start" button link.
     *   **Example Row:**
         ```csv
@@ -103,14 +103,14 @@ The backend relies heavily on three CSV files located in the `backend/` director
 
 ## ⚙️ Other Configuration
 
-1.  **Backend Script Paths:** Verify the hardcoded path to the base directory containing your actual project folders (`/home/divansh/projects`) in `backend/index.js` used for executing `startup_script`.
+1.  **Backend Script Paths:** Verify the hardcoded path to the base directory containing your actual project folders (`/home/username/projects`) in `backend/index.js` used for executing `startup_script`.
 
 2.  **Icons:**
     *   **Label Icons:** Place `.png` icons named *exactly* like your `label_name` values (case-sensitive) inside `frontend/public/label_icons/`.
     *   **Project Icons:** Place each project's icon file (named according to `icon_filename` in `projects.csv`) inside `frontend/public/projects/<project_name>/`. You need to create the `<project_name>` subdirectories manually.
 
 3.  **Environment Variables (`.env`):**
-    *   Create a `.env` file in the **root** project directory (`divansh369-homepage/.env`).
+    *   Create a `.env` file in the **root** project directory (`homepage/.env`).
     *   Define `BACKEND_PORT` (e.g., `3001`) for the Node.js server and `NEXT_PUBLIC_BACKEND_URL` (e.g., `http://localhost:3001` or `http://<your-backend-ip>:3001`) for the frontend to connect to the backend API.
 
         ```env
