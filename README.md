@@ -1,4 +1,4 @@
-# 🚀 Divansh's Homepage Dashboard
+# 🚀 Homepage Dashboard
 
 A personal project dashboard built with Next.js (React/TypeScript) and a Node.js/Express backend. It displays projects defined in local CSV files and allows launching them directly from the interface.
 
