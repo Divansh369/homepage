@@ -155,19 +155,34 @@ export default function Home() {
                     const description = project.cards.length > 0 ? project.cards[0].card_description : '';
                     return (
                         <div key={project.project_name} className="project-card">
-                            <h2>{project.project_name}</h2>
-                            <Image
-                                className="project-icon"
-                                src={`/projects/${project.project_name}/${project.icon_filename}`}
-                                alt={`${project.project_name} Icon`}
-                                width={50}
-                                height={50}
-                            />
-                            <p className="project-description">{description}</p>
-                            <button className="start-button" onClick={() => handleStartProject(project.project_name, project.port)}>
-                                Start {project.project_name}
-                            </button>
-                        </div>
+    <h2>{project.project_name}</h2>    
+    <Image
+        className="project-icon"
+        src={`/projects/${project.project_name}/${project.icon_filename}`}
+        alt={`${project.project_name} Icon`}
+        width={50}
+        height={50}
+    />
+        <p className="project-description">{description}</p> {/* Move description up */}
+
+    <div className="label-icons">
+        {project.cards.map((card) => (
+            <Image
+                key={card.label_id}
+                className="label-icon"
+                src={`/label_icons/${card.label_name}.png`}
+                alt={`${card.label_name} Icon`}
+                width={30}
+                height={30}
+            />
+        ))}
+    </div>
+
+    <button className="start-button" onClick={() => handleStartProject(project.project_name, project.port)}>
+        Start {project.project_name}
+    </button>
+</div>
+
                     );
                 })}
             </div>

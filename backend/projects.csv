@@ -1,0 +1,20 @@
+project_name,description,icon_filename,startup_script,port
+jupyter,"Jupyter Interactive Notebook",jupyter.svg,start_jupyter.sh,9742
+gitea,"Git with a cup of tea! Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD",logo.svg,gitea,8956
+planka,"The realtime kanban board for workgroups built with React and Redux.",planka.png,start_planka.sh,3663
+connections,"A social platform powered by FastAPI & Flutter",frontend/assets/images/logo.png,start.sh,7777
+nextcloud,"☁️ Nextcloud server, a safe home for all your data",core/img/logo/logo.svg,start.sh,8228
+minIO,"MinIO is a high-performance, S3 compatible object store, open sourced under GNU AGPLv3 license.",minio-1.svg,start_minio.sh,9099
+dbeaver,"Free universal database tool and SQL client",web/icons/logo_sm.svg,run.sh,8978
+superset,"Apache Superset is a Data Visualization and Data Exploration Platform",superset.ico,start_superset.sh,6996
+metabase,"The simplest, fastest way to get business intelligence and analytics to everyone in your company",metabase.svg,start_metabase.sh,9870
+uptime-kuma,"A fancy self-hosted monitoring tool",public/icon.svg,start.sh,5072
+cockpit,"Cockpit is a web-based graphical interface for servers.",logo.png,start.sh,9090
+tomcat,"Apache Tomcat is a web server that is an open source software implementation of the Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket technologies.",tomcat.png,bin/startup.sh,8080
+hadoop,"The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers.",hadoop.svg,sbin/start-all.sh,6006
+react-app,"Set up a modern web app by running one command.",public/favicon.ico,start.sh,5098
+next,"🦍 A configurable component library for web built on React.",app/favicon.ico,start.sh,5099
+aimeos,"Laravel ecommerce package for ultra fast online shops, scalable marketplaces, complex B2B applications and #gigacommerce",public/vendor/shop/themes/default/assets/icon.png,start_aimeos.sh,4199
+prestashop,"PrestaShop is the universal open-source software platform to build your e-commerce solution",img/favicon.ico,start.sh,4198
+drawdb,"Free, simple, and intuitive online database diagram editor and SQL generator.",public/favicon.ico,start.sh,7821
+zookeeper,"Apache ZooKeeper is an effort to develop and maintain an open-source server which enables highly reliable distributed coordination.",zookeeper.png,bin/zkServer.sh start,2081/commands
