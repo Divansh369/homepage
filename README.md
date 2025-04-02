@@ -41,8 +41,8 @@ A personal project dashboard built with Next.js (React/TypeScript) and a Node.js
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
-    cd divansh369-homepage
+    git clone https://github.com/Divansh369/homepage.git
+    cd homepage
     ```
 
 2.  **Install All Dependencies:** Run `npm install` (or equivalent) in the **root**, `backend`, and `frontend` directories.
@@ -135,4 +135,13 @@ The backend relies heavily on three CSV files located in the `backend/` director
 
 ---
 
-## 📁 Project Structure
+## 🤝 Contributing
+
+This is a personal project, but feel free to fork and adapt it for your own use!
+
+---
+
+## 📄 License
+
+*(Specify your license here, e.g., MIT License, or state that it's private)*
+
