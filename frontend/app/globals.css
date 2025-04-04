@@ -9,9 +9,15 @@
   --color-button-background: #0070f3;
   --color-button-text: #fff;
   --color-button-hover: #0056b3;
-    --color-card-background: #f9f9f9;
+  --color-card-background: #f9f9f9;
 
-  /* ... other light mode variables ... */
+  /* Add specific colors for start/stop if needed, otherwise they use base button colors */
+  /* --color-start-background: #28a745; */
+  /* --color-start-text: #fff; */
+  /* --color-start-hover: #218838; */
+  /* --color-stop-background: #dc3545; */
+  /* --color-stop-text: #fff; */
+  /* --color-stop-hover: #c82333; */
 }
 
 [data-theme="dark"] {
@@ -23,11 +29,14 @@
   --color-button-background: #0070f3; /* Keep button color consistent */
   --color-button-text: #fff;
   --color-button-hover: #0056b3;
-    --color-card-background: #282828;
-  /* ... other dark mode variables ... */
-}
-/* Base Styles (using CSS variables)*/
+  --color-card-background: #282828;
 
+  /* Dark mode specific start/stop colors if desired */
+  /* --color-start-background: #28a745; */
+  /* --color-stop-background: #dc3545; */
+}
+
+/* Base Styles (using CSS variables)*/
 body {
     background-color: var(--color-background);
     color: var(--color-text);
@@ -36,6 +45,11 @@ body {
     padding: 20px; /* Add some padding */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
+
+.container { /* Added a general container class for potential top-level styling */
+    padding: 20px; /* Example padding */
+}
+
 
 .project-cards-container {
   display: flex;
@@ -52,7 +66,8 @@ body {
   box-shadow: 0 2px 4px var(--color-shadow);
   display: flex;
   flex-direction: column;
-    background-color: var(--color-card-background);
+  background-color: var(--color-card-background);
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Added for hover effect */
 }
 
 .project-card h2 {
@@ -68,39 +83,41 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
-}
-
-.project-icon img {
-  width: 32px;  /* Increase width */
-  height: 32px; /* Increase height */
-  transform: scale(1.5); /* Scale up */
+    /* Removed inner img selector - style the Image component directly if needed */
 }
 
 .project-description {
   overflow: hidden;
-  text-overflow: ellipsis;
+  /* Removed text-overflow: ellipsis; - often better handled with line-clamp */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
   margin-bottom: 10px;
-    flex-grow: 1;
+  flex-grow: 1;
   color: var(--color-text); /* Use the variable for text color */
+  min-height: 4.5em; /* Approximate height for 3 lines */
 }
 
 .label-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 5px; /* Reduced gap slightly */
+  margin-bottom: 15px; /* Increased margin */
+  justify-content: center; /* Center icons */
+  min-height: 30px; /* Ensure space even if no icons */
 }
 
-.label-icons img {
-  width: 32px;  /* Increase width */
-  height: 32px; /* Increase height */
-  transform: scale(1.2); /* Scale up */
+.label-icon { /* Style the Image component via its class */
+  width: 30px;
+  height: 30px;
+  /* transform: scale(1.2);  Removed scale, adjust size directly if needed */
 }
 
-.start-button {
+
+/* Combined Start/Stop button styling if they share properties */
+.start-button, .stop-button {
   margin-top: auto;
   padding: 10px 15px;
-  background-color: var(--color-button-background);
   color: var(--color-button-text);
   border: none;
   border-radius: 4px;
@@ -109,21 +126,31 @@ body {
   transition: background-color 0.2s ease;
 }
 
+.start-button {
+  background-color: var(--color-start-background, #28a745);
+}
 .start-button:hover {
-  background-color: var(--color-button-hover);
+  background-color: var(--color-start-hover, #218838);
+}
+
+.stop-button {
+  background-color: var(--color-stop-background, #dc3545);
+}
+.stop-button:hover {
+  background-color: var(--color-stop-hover, #c82333);
 }
 
 /* Responsive adjustments (optional) */
 @media (max-width: 768px) {
   .project-card {
-    width: 100%;
+    width: calc(100% - 20px); /* Adjust width for smaller screens, considering gap */
   }
 }
 /* Add a subtle hover effect */
 .project-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px var(--color-shadow);
-  }
+}
 
 /* Dark/Light Mode Toggle Button (optional styling) */
 .theme-toggle-button {
@@ -149,25 +176,29 @@ body {
 .filter-container {
   display: flex;
   justify-content: center; /* Center the filter */
-  margin-bottom: 20px; /* Space below the filter */
+  align-items: center; /* Vertically align label and select */
+  margin-bottom: 30px; /* Increased Space below the filter */
+  gap: 10px; /* Space between label and select */
 }
 
 .filter-label {
-  margin-right: 10px;
+  /* margin-right: 10px; Use gap in container instead */
   font-weight: bold;
-    color: var(--color-text);
+  color: var(--color-text);
 }
 
 .filter-select {
-  padding: 8px;
+  padding: 8px 12px; /* Adjusted padding */
   border: 1px solid var(--color-border);
   border-radius: 4px;
   background-color: var(--color-background);
   color: var(--color-text);
   font-size: 1em;
 }
+
+/* Styles for Navigate Button and Port Input (Keep if still used elsewhere) */
 .navigate-button {
-  margin-top: auto;
+  /* margin-top: auto; Already handled by flex in project-actions? */
   padding: 10px 15px;
   background-color: var(--color-button-background);
   color: var(--color-button-text);
@@ -177,7 +208,6 @@ body {
   font-size: 1em;
   transition: background-color 0.2s ease;
 }
-
 .navigate-button:hover {
   background-color: var(--color-button-hover);
 }
@@ -188,7 +218,6 @@ body {
   gap: 10px;
   margin-bottom: 20px;
 }
-
 .port-input {
   padding: 8px;
   border: 1px solid var(--color-border);
@@ -201,26 +230,11 @@ body {
   outline: none;
   transition: border-color 0.2s ease;
 }
-
 .port-input:focus {
   border-color: var(--color-button-background);
 }
 
-.navigate-button {
-  padding: 8px 12px;
-  background-color: var(--color-button-background);
-  color: var(--color-button-text);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.2s ease;
-}
-
-.navigate-button:hover {
-  background-color: var(--color-button-hover);
-}
-
+/* Styles for Theme Toggle Switch (Keep if still used) */
 .theme-toggle-container {
   display: flex;
   justify-content: center;
@@ -228,11 +242,9 @@ body {
   height: 100vh;
   background-color: #f0f0f0;
 }
-
 .theme-toggle {
   display: none;
 }
-
 .theme-toggle-label {
   position: relative;
   width: 60px;
@@ -242,7 +254,6 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
 .theme-toggle-label:before {
   content: '';
   position: absolute;
@@ -254,11 +265,137 @@ body {
   border-radius: 50%;
   transition: transform 0.3s;
 }
-
 .theme-toggle:checked + .theme-toggle-label {
   background-color: #4caf50;
 }
-
 .theme-toggle:checked + .theme-toggle-label:before {
   transform: translateX(26px);
+}
+
+
+/* --- NEW STYLES MOVED FROM page.tsx --- */
+
+.spinner {
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Consider using CSS variables if theme dependent */
+    border-radius: 50%;
+    border-top: 2px solid #fff; /* Consider using CSS variables */
+    width: 12px;
+    height: 12px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.project-actions {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.action-button {
+     padding: 8px 15px;
+     border: none;
+     border-radius: 5px;
+     color: white; /* Default text color, override below */
+     cursor: pointer;
+     font-size: 0.9em;
+     transition: background-color 0.2s ease, opacity 0.2s ease;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     line-height: 1.2; /* Ensure text aligns well with icon/spinner */
+}
+.action-button:disabled {
+     opacity: 0.6;
+     cursor: not-allowed;
+}
+
+/* Specific button styles */
+.start-button { background-color: #28a745; color: white; } /* Green */
+.start-button:hover:not(:disabled) { background-color: #218838; }
+/* Style for the button when the project is starting (it's disabled but looks different) */
+.project-card.starting .start-button { background-color: #5a8d66; } /* Muted green when starting */
+
+
+.open-button { background-color: #007bff; color: white; } /* Blue */
+.open-button:hover:not(:disabled) { background-color: #0056b3; }
+
+.stop-button { background-color: #dc3545; color: white; } /* Red */
+.stop-button:hover:not(:disabled) { background-color: #c82333; }
+.stop-button:disabled { background-color: #8a4a51; opacity: 0.6;} /* Muted red when disabled */
+
+.status-indicator {
+    margin-top: 15px; /* Increased margin */
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 4px 10px; /* Adjusted padding */
+    border-radius: 15px; /* Pill shape */
+    display: inline-block;
+    text-align: center;
+    min-width: 80px; /* Ensure consistent width */
+}
+
+/* Status indicator colors */
+.status-indicator.running { background-color: #28a745; color: white; }
+.status-indicator.stopped { background-color: #6c757d; color: white; }
+/* Use .project-card.starting to target the indicator when card has starting class */
+.project-card.starting .status-indicator { background-color: #ffc107; color: black; } /* Yellow for pending */
+
+
+/* Tooltip Styles */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 0 3px; /* Spacing between icons */
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: #555; /* Use var(--color-tooltip-bg, #555) ? */
+  color: #fff; /* Use var(--color-tooltip-text, #fff) ? */
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the icon */
+  left: 50%;
+  margin-left: -50px; /* Center the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none; /* Prevent tooltip from blocking hover on icon */
+}
+ .tooltip .tooltiptext::after { /* Tooltip arrow */
+   content: "";
+   position: absolute;
+   top: 100%;
+   left: 50%;
+   margin-left: -5px;
+   border-width: 5px;
+   border-style: solid;
+   border-color: #555 transparent transparent transparent; /* Match tooltip background */
+ }
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Error Message Style */
+.error-message {
+    color: #721c24; /* Darker red text */
+    background-color: #f8d7da; /* Light red background */
+    border: 1px solid #f5c6cb; /* Red border */
+    padding: 10px 15px; /* Adjusted padding */
+    border-radius: 5px;
+    margin: 20px auto; /* Center and add vertical margin */
+    text-align: center;
+    max-width: 600px; /* Limit width */
 }
