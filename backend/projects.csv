@@ -5,9 +5,10 @@ planka,"The realtime kanban board for workgroups built with React and Redux.",pl
 connections,"A social platform powered by FastAPI & Flutter",frontend/assets/images/logo.png,start.sh,7777
 nextcloud,"☁️ Nextcloud server, a safe home for all your data",core/img/logo/logo.svg,start.sh,8228
 minIO,"MinIO is a high-performance, S3 compatible object store, open sourced under GNU AGPLv3 license.",minio-1.svg,start_minio.sh,9099
-dbeaver,"Free universal database tool and SQL client",web/icons/logo_sm.svg,run.sh,8978
 superset,"Apache Superset is a Data Visualization and Data Exploration Platform",superset.ico,start_superset.sh,6996
 metabase,"The simplest, fastest way to get business intelligence and analytics to everyone in your company",metabase.svg,start_metabase.sh,9870
+grafana,"The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources",public/img/grafana_icon.svg,start_grafana.sh,3603
+dbeaver,"Free universal database tool and SQL client",web/icons/logo_sm.svg,run.sh,8978
 uptime-kuma,"A fancy self-hosted monitoring tool",public/icon.svg,start.sh,5072
 cockpit,"Cockpit is a web-based graphical interface for servers.",logo.png,start.sh,9090
 tomcat,"Apache Tomcat is a web server that is an open source software implementation of the Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket technologies.",tomcat.png,bin/startup.sh,8080
