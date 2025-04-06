@@ -1,31 +1,40 @@
 // BACKEND (./backend/server.js or similar)
-require('dotenv').config({ path: '../.env' });
+
+// ... other require statements, constants ...
+require('dotenv').config({ path: '../.env' }); // Ensure .env is loaded
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process'); // execSync removed as not needed here
+const { exec } = require('child_process');
 
 const app = express();
 const port = process.env.BACKEND_PORT || 3001;
+const HOST = process.env.BACKEND_HOST || '0.0.0.0';
+// Read the default host for projects from .env, fallback to localhost
+const PROJECT_DEFAULT_HOST = process.env.PROJECT_DEFAULT_HOST || '100.114.43.102';
 
 // --- CORS Configuration ---
-// Ensure your frontend origin (including port if needed) is listed here
+// Ensure your frontend origin is listed here
 const allowedOrigins = [
-    'http://100.114.43.102:1025', // Assuming this is your Next.js dev server
-    'http://100.114.43.102',       // Assuming this might be a production build served on port 80
-    'http://100.114.43.102:80'    // Explicit port 80
-];
+    `http://${PROJECT_DEFAULT_HOST}:1025`, // Dynamic based on PROJECT_DEFAULT_HOST
+    `http://localhost:1025`,            // Common Next.js dev port
+    `http://100.114.43.102:1025`,       // Keep specific IP if needed
+    // Add production frontend origins if different
+    `http://${PROJECT_DEFAULT_HOST}`,
+    `http://localhost`,
+    `http://100.114.43.102`
+]; // Add more origins as needed
 
 const corsOptions = {
     origin: function (origin, callback) {
-        // Allow requests with no origin (like curl requests, mobile apps, etc.) - adjust if needed
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.indexOf(origin) === -1) {
-            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-            return callback(new Error(msg), false);
-        }
-        return callback(null, true);
+        if (!origin || allowedOrigins.some(allowed => origin.startsWith(allowed))) {
+             return callback(null, true);
+         }
+        // Debugging log:
+        console.warn(`CORS blocked for origin: ${origin}. Allowed: ${allowedOrigins.join(', ')}`);
+        const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+        return callback(new Error(msg), false);
     },
     credentials: true,
     methods: 'GET,POST,OPTIONS',
@@ -33,21 +42,21 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-// Optional: Handle preflight requests
-app.options('*', cors(corsOptions));
+app.options('*', cors(corsOptions)); // Handle preflight requests
 
 app.use(express.json());
 
 console.log("\ud83d\udd27 Backend starting...");
-console.log(`\ud83c\udf0d Allowed Origins: ${allowedOrigins.join(', ')}`);
-console.log(`\ud83d\udcbb Backend Port: ${port}`);
+console.log(`\ud83c\udf10 Default Project Host: ${PROJECT_DEFAULT_HOST}`); // Log the project host being used
+console.log(`\ud83c\udf0d Allowed CORS Origins: ${allowedOrigins.join(', ')}`);
+console.log(`\ud83d\udcbb Backend Listening on: http://${HOST}:${port}`);
 
 // --- Constants ---
-const BASE_DIR = '/home/divansh/homepage'; // Define base directory
+const BASE_DIR = '/home/divansh/homepage';
 const PROJECTS_CSV = path.join(BASE_DIR, 'backend', 'projects.csv');
 const LABELS_CSV = path.join(BASE_DIR, 'backend', 'labels.csv');
 const PROJECT_LABELS_CSV = path.join(BASE_DIR, 'backend', 'project_labels.csv');
-const PROJECTS_BASE_PATH = '/home/divansh/projects'; // Base path for project folders
+const PROJECTS_BASE_PATH = '/home/divansh/projects';
 
 // --- Utility Functions ---
 function parseCsv(filePath) {
@@ -59,10 +68,9 @@ function parseCsv(filePath) {
         }
         const data = fs.readFileSync(filePath, 'utf8');
         const lines = data.trim().split('\n');
-        if (lines.length <= 1) return []; // Handle empty or header-only files
-        const headers = lines[0].split(',').map(header => header.trim());
+        if (lines.length <= 1) return [];
+        const headers = lines[0].split(',').map(header => header.trim().toLowerCase()); // Use lowercase headers for consistency
         return lines.slice(1).map(line => {
-            // Improved CSV parsing to handle quotes properly
             const values = [];
             let currentVal = '';
             let inQuotes = false;
@@ -70,98 +78,151 @@ function parseCsv(filePath) {
                 const char = line[i];
                 if (char === '"') {
                     if (inQuotes && line[i + 1] === '"') {
-                        currentVal += '"'; // Handle escaped quote ""
-                        i++;
+                        currentVal += '"'; i++;
                     } else {
                         inQuotes = !inQuotes;
                     }
                 } else if (char === ',' && !inQuotes) {
-                    values.push(currentVal.trim());
-                    currentVal = '';
+                    values.push(currentVal.trim()); currentVal = '';
                 } else {
                     currentVal += char;
                 }
             }
-            values.push(currentVal.trim()); // Add the last value
+            values.push(currentVal.trim());
 
-            if (values.length !== headers.length) {
-                console.warn(`⚠️ Mismatched columns in line: ${line}. Expected ${headers.length}, got ${values.length}`);
-                 // Pad missing values or handle differently if needed
-                 while(values.length < headers.length) values.push('');
+             // Use headers.length for comparison
+             if (values.length !== headers.length) {
+                console.warn(`⚠️ Mismatched columns in line of ${path.basename(filePath)}: "${line}". Expected ${headers.length} based on headers (${headers.join(',')}), got ${values.length}. Padding with empty strings.`);
+                while (values.length < headers.length) values.push('');
             }
 
             return headers.reduce((obj, header, index) => {
-                obj[header] = values[index] || ''; // Ensure value exists
+                obj[header] = values[index] || ''; // Use lowercase header as key
                 return obj;
             }, {});
         });
     } catch (error) {
         console.error(`❌ Error parsing CSV ${filePath}:`, error);
-        throw error; // Re-throw to be caught by endpoint handler
+        throw error;
     }
 }
 
+
 // --- API Endpoints ---
 
+// **** THIS IS THE BLOCK TO REPLACE/UPDATE ****
 app.get('/api/projects', (req, res) => {
     console.log("📡 GET /api/projects");
     try {
+        // Ensure headers are read correctly (lowercase recommended)
         const projects = parseCsv(PROJECTS_CSV);
         const labels = parseCsv(LABELS_CSV);
         const projectLabels = parseCsv(PROJECT_LABELS_CSV);
 
+        // Normalize label keys for maps (using lowercase name)
         const labelsMap = labels.reduce((acc, label) => {
-            acc[label.label_name] = label; // Use label_name as key
+             if(label.label_name) { // Check if label_name exists
+                 acc[label.label_name.toLowerCase()] = label;
+             } else {
+                 console.warn("Skipping label due to missing 'label_name' field:", label);
+             }
             return acc;
         }, {});
 
         const projectLabelsMap = projectLabels.reduce((acc, pl) => {
-            if (!acc[pl.project_name]) {
-                acc[pl.project_name] = [];
-            }
-            acc[pl.project_name].push(pl.label_name);
+             if (pl.project_name && pl.label_name) { // Check required fields
+                 const projNameLower = pl.project_name.toLowerCase();
+                 if (!acc[projNameLower]) {
+                     acc[projNameLower] = [];
+                 }
+                 acc[projNameLower].push(pl.label_name.toLowerCase()); // Store lowercase label name
+             } else {
+                 console.warn("Skipping project_label entry due to missing fields:", pl);
+             }
             return acc;
         }, {});
 
         const combinedData = projects.map(project => {
-            const associatedLabelNames = projectLabelsMap[project.project_name] || [];
-            const projectCards = associatedLabelNames.map(labelName => {
-                const labelInfo = labelsMap[labelName] || { label_name: labelName }; // Fallback if label missing
-                return {
-                    card_id: labelName, // Using label name as ID here, adjust if needed
-                    card_name: labelName,
-                    card_description: project.description, // Using project description for card
-                    label_id: labelName, // Redundant? Could simplify structure
-                    label_name: labelName
-                };
-            });
+            // Check for essential project fields
+            if (!project.project_name) {
+                 console.warn("Skipping project due to missing 'project_name':", project);
+                 return null; // Skip this project if it's invalid
+             }
+             const projectNameLower = project.project_name.toLowerCase();
 
-            // Add icon path relative to the public folder expectation of Next.js
-            const iconPath = `/projects/${project.project_name}/${project.icon_filename}`;
+             const associatedLabelNames = projectLabelsMap[projectNameLower] || [];
+             const projectCards = associatedLabelNames.map(labelNameLower => {
+                 const labelInfo = labelsMap[labelNameLower];
+                 const originalLabelName = labelInfo?.label_name || labelNameLower; // Get original case if possible
+
+                 // Use project description for card or fallback
+                 const cardDescription = project.description || 'No project description available.';
+
+                 return {
+                     // Assuming card_id/name/label_id use the label name
+                     card_id: originalLabelName,
+                     card_name: originalLabelName,
+                     card_description: cardDescription,
+                     label_id: originalLabelName,
+                     label_name: originalLabelName
+                 };
+             });
+
+            // --- NEW: Handle scheme and host ---
+            const scheme = (project.scheme && ['http', 'https'].includes(project.scheme.toLowerCase()))
+                ? project.scheme.toLowerCase() // Use scheme from CSV if valid
+                : 'http'; // Default to 'http' if missing or invalid
+
+            // Use the PROJECT_DEFAULT_HOST determined earlier
+            const host = PROJECT_DEFAULT_HOST;
+            // --- End NEW ---
+
+            // Construct icon path relative to public folder expectation
+             // Ensure icon_filename exists before creating path
+             const iconPath = project.icon_filename
+                 ? `/projects/${project.project_name}/${project.icon_filename}`
+                 : '/label_icons/default.png'; // Fallback icon path
+
 
             return {
-                ...project,
-                 // Ensure port is treated as a string if needed by frontend, but number is better for checks
-                port: project.port,
-                icon_path: iconPath, // Send path usable by frontend
-                cards: projectCards
+                // Include all original fields from the project CSV row
+                project_name: project.project_name,
+                description: project.description || '', // Ensure description exists
+                icon_filename: project.icon_filename || '', // Ensure icon_filename exists
+                startup_script: project.startup_script || '', // Ensure startup_script exists
+
+                // Add the processed/derived fields
+                port: project.port || '', // Ensure port exists
+                scheme: scheme,         // Add the determined scheme
+                host: host,             // Add the determined host
+                icon_path: iconPath,    // Add path usable by frontend
+                cards: projectCards     // Add associated labels/cards
             };
-        });
+        }).filter(Boolean); // Filter out any null projects from the map
 
         res.json(combinedData);
     } catch (error) {
         console.error('❌ Error fetching projects:', error);
-        res.status(500).json({ error: 'Internal Server Error', details: error.message });
+        // Send more specific error if possible, fallback to generic
+        const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+        res.status(500).json({ error: 'Internal Server Error', details: errorMessage });
     }
 });
+// **** END OF BLOCK TO REPLACE/UPDATE ****
+
+
+// --- Other endpoints (/api/labels, /api/check-project, /api/start-project, /api/stop-project) remain the same ---
+// Make sure they correctly use lowercase headers if you changed parseCsv to use lowercase
+// Example: check if project lookups need .toLowerCase() if keys are now lowercase
 
 app.get('/api/labels', (req, res) => {
     console.log("📡 GET /api/labels");
     try {
+        // Use lowercase header 'label_name' consistent with parseCsv modification
         const labels = parseCsv(LABELS_CSV).map(label => ({
-            id: label.label_name, // Using name as ID
-            name: label.label_name
-        }));
+            id: label.label_name || `missing_label_${Math.random()}`, // Use name as ID, provide fallback
+            name: label.label_name || 'Unknown Label'
+        })).filter(label => label.id !== `missing_label_${Math.random()}`); // Filter out potentially invalid ones if needed
         res.json(labels);
     } catch (error) {
         console.error('❌ Error fetching labels:', error);
@@ -169,41 +230,35 @@ app.get('/api/labels', (req, res) => {
     }
 });
 
-// Endpoint to check if a process is running on a specific port
+// Check if project lookups need updating based on lowercase keys from parseCsv
+// (Assuming project_name in CSV matches exactly the casing used in requests/maps)
+// If parseCsv uses lowercase headers, but project_name values retain case, this is fine.
+// If project_name keys in maps were lowercased, adjust lookups here:
+
 app.post('/api/check-project', (req, res) => {
-    console.log("📡 POST /api/check-project", req.body);
+    // This endpoint uses 'port', which is likely unaffected by header casing
+     console.log("📡 POST /api/check-project", req.body);
     const { port } = req.body;
 
     if (!port) {
         console.warn("⚠️ Port missing in check-project request");
         return res.status(400).json({ error: 'Port is required' });
     }
-
-    // Use lsof to check if anything is listening on the TCP port
-    // -i TCP:${port} : Look for internet connections on this TCP port
-    // -sTCP:LISTEN : Only show processes in the LISTEN state
-    // -P : Inhibits conversion of port numbers to port names (faster, more reliable)
-    // -n : Inhibits conversion of network numbers to names (faster)
-    // -t : Outputs only process IDs
-    const command = `lsof -i TCP:${port} -sTCP:LISTEN -P -n -t`;
-    console.log(`\ud83d\udd0e Executing check: ${command}`);
-
-    exec(command, (error, stdout, stderr) => {
-        // If stdout has content, a process is listening
-        if (stdout && stdout.trim().length > 0) {
+     const command = `lsof -i TCP:${port} -sTCP:LISTEN -P -n -t`;
+     console.log(`\ud83d\udd0e Executing check: ${command}`);
+     exec(command, (error, stdout, stderr) => {
+         if (stdout && stdout.trim().length > 0) {
              console.log(`\ud83d\udfe2 Port ${port} is IN USE by PID(s): ${stdout.trim()}`);
-            res.json({ running: true });
-        } else {
-             // No output means nothing is listening (or lsof error)
+             res.json({ running: true });
+         } else {
              console.log(`\u26aa\ufe0f Port ${port} is free.`);
-             if (error && !stderr.includes("No such file or directory")) {
-                 // Log lsof errors, except the common 'not found' case which just means no process
+             if (error && !(stderr && stderr.includes("exit status 1"))) { // lsof exits 1 if nothing found
                  console.error(`\u26a0\ufe0f lsof error for port ${port}: ${error.message}`);
                  console.error(`\u26a0\ufe0f lsof stderr: ${stderr}`);
              }
-            res.json({ running: false });
-        }
-    });
+             res.json({ running: false });
+         }
+     });
 });
 
 
@@ -218,12 +273,14 @@ app.post('/api/start-project', (req, res) => {
 
     try {
         const projects = parseCsv(PROJECTS_CSV);
+        // Find project ensuring case-insensitivity if needed, but usually match exact name
         const project = projects.find(p => p.project_name === projectName);
 
         if (!project) {
             console.error(`❌ Project '${projectName}' not found in CSV.`);
             return res.status(404).json({ error: `Project '${projectName}' not found.` });
         }
+        // Use lowercase header name 'startup_script'
         if (!project.startup_script) {
              console.error(`❌ Project '${projectName}' has no startup_script defined in CSV.`);
             return res.status(400).json({ error: `Startup script not defined for project '${projectName}'.`});
@@ -238,27 +295,18 @@ app.post('/api/start-project', (req, res) => {
         }
 
         console.log(`🚀 Attempting to start project: ${projectName} with script: ${startupScriptPath}`);
-
-        // Execute the script asynchronously
-        // We respond immediately, the frontend will poll '/api/check-project'
         const child = exec(startupScriptPath, { cwd: projectDir }, (error, stdout, stderr) => {
-             // This callback runs when the process *exits*
-            if (error) {
-                console.error(`❌ Error executing script ${startupScriptPath}: ${error}`);
-                return;
-            }
+            if (error) { console.error(`❌ Error executing script ${startupScriptPath}: ${error}`); return; }
             console.log(`📜 [${projectName}] stdout on exit: ${stdout}`);
             console.error(`⚠️ [${projectName}] stderr on exit: ${stderr}`);
         });
-
-        // Log process events immediately
         child.stdout.on('data', data => console.log(`📜 [${projectName} stdout]: ${data.toString().trim()}`));
         child.stderr.on('data', data => console.error(`⚠️ [${projectName} stderr]: ${data.toString().trim()}`));
         child.on('error', (err) => console.error(`💥 [${projectName}] Failed to start process:`, err));
         child.on('exit', code => console.log(`✅ [${projectName}] Process exited with code ${code}`));
 
-        // Respond quickly to the frontend, indicating the start *attempt* has begun
-        res.status(202).json({ message: `Starting project ${projectName}...`, port: project.port }); // 202 Accepted
+        // Use lowercase 'port' if header changed
+        res.status(202).json({ message: `Starting project ${projectName}...`, port: project.port });
 
     } catch (error) {
         console.error(`❌ Error in /api/start-project for '${projectName}':`, error);
@@ -266,8 +314,9 @@ app.post('/api/start-project', (req, res) => {
     }
 });
 
+
 app.post('/api/stop-project', (req, res) => {
-    console.log("📡 POST /api/stop-project", req.body);
+     console.log("📡 POST /api/stop-project", req.body);
     const { projectName } = req.body;
 
     if (!projectName) {
@@ -277,20 +326,20 @@ app.post('/api/stop-project', (req, res) => {
 
     try {
         const projects = parseCsv(PROJECTS_CSV);
+        // Find project ensuring case-insensitivity if needed
         const project = projects.find(p => p.project_name === projectName);
 
         if (!project) {
             console.error(`❌ Project '${projectName}' not found in CSV for stopping.`);
             return res.status(404).json({ error: `Project '${projectName}' not found.` });
         }
-
+        // Use lowercase 'port' if header changed
         const port = project.port;
         if (!port) {
              console.error(`❌ Project '${projectName}' has no port defined in CSV for stopping.`);
             return res.status(400).json({ error: `Port not defined for project '${projectName}'.`});
         }
 
-        // Command to find the PID listening on the specific TCP port
         const findPidCommand = `lsof -i TCP:${port} -sTCP:LISTEN -P -n -t`;
         console.log(`\ud83d\udd0e Finding PID on port ${port} for project ${projectName}...`);
 
@@ -299,29 +348,26 @@ app.post('/api/stop-project', (req, res) => {
 
             if (err || !pid) {
                 console.warn(`\u26a0\ufe0f No process found listening on port ${port} for ${projectName}. Maybe already stopped?`);
-                 if (err) console.error(`\u26a0\ufe0f lsof error: ${err.message}`);
-                 if (stderr) console.error(`\u26a0\ufe0f lsof stderr: ${stderr}`);
-                // Still return success as the desired state (stopped) is achieved
+                if (err && !(stderr && stderr.includes("exit status 1"))) console.error(`\u26a0\ufe0f lsof error: ${err.message}`);
+                if (stderr && !(stderr.includes("exit status 1"))) console.error(`\u26a0\ufe0f lsof stderr: ${stderr}`);
                 return res.json({ message: `Project ${projectName} was not running or already stopped.` });
             }
 
             console.log(`🔪 Killing process PID ${pid} on port ${port} for project ${projectName}`);
-            // Use kill -9 for forceful termination. Consider -15 (SIGTERM) for graceful shutdown if scripts handle it.
             exec(`kill -9 ${pid}`, (killErr, killStdout, killStderr) => {
                 if (killErr) {
                     console.error(`❌ Failed to kill process ${pid} for ${projectName}:`, killErr);
                     console.error(`\u26a0\ufe0f kill stderr: ${killStderr}`);
-                    // Check if the process still exists after kill attempt
-                    exec(findPidCommand, (checkErr, checkStdout) => {
-                         if (checkStdout && checkStdout.trim().length > 0) {
-                              return res.status(500).json({ error: `Failed to stop project ${projectName} (Process ${pid} might still be running)` });
-                         } else {
-                              // Process is gone, even though kill command reported error (maybe permission issue initially?)
-                              console.log(`\u2705 Project ${projectName} (PID ${pid}) stopped successfully despite kill error.`);
-                              res.json({ message: `Project ${projectName} stopped successfully!` });
-                         }
-                    });
-
+                     // Re-check if process exists
+                     exec(findPidCommand, (checkErr, checkStdout, checkStderr) => {
+                          if (checkStdout && checkStdout.trim().length > 0) {
+                               console.error(`\u274c Process ${pid} for ${projectName} STILL RUNNING after kill attempt.`);
+                               return res.status(500).json({ error: `Failed to stop project ${projectName} (Process ${pid} might still be running)` });
+                          } else {
+                               console.log(`\u2705 Project ${projectName} (PID ${pid}) stopped successfully despite initial kill error.`);
+                               res.json({ message: `Project ${projectName} stopped successfully!` });
+                          }
+                     });
                 } else {
                     console.log(`✅ Project ${projectName} (PID ${pid}) stopped successfully`);
                     res.json({ message: `Project ${projectName} stopped successfully!` });
@@ -334,36 +380,27 @@ app.post('/api/stop-project', (req, res) => {
     }
 });
 
+
 // --- Server Listen ---
-// Listen on the specific IP from .env or default to 0.0.0.0 (all interfaces) if not specified
-const HOST = process.env.BACKEND_HOST || '0.0.0.0'; // Listen on all available network interfaces by default
 app.listen(port, HOST, () => {
     console.log(`\n🚀 Backend server listening on http://${HOST}:${port}`);
-    // Find the specific IP 100.114.43.102 if available for display purposes
+    // Display accessible IPs
     const networkInterfaces = require('os').networkInterfaces();
-    let specificIpFound = false;
+    console.log("   Network interfaces found:");
     for (const name of Object.keys(networkInterfaces)) {
         for (const net of networkInterfaces[name]) {
-             // Skip over non-IPv4 and internal (i.e. 127.0.0.1) addresses
              if (net.family === 'IPv4' && !net.internal) {
-                 if(net.address === '100.114.43.102') {
-                     console.log(`   Accessible specifically at: http://100.114.43.102:${port}`);
-                     specificIpFound = true;
-                 }
-                 // Log other available IPs too
-                 if (HOST === '0.0.0.0' && net.address !== '100.114.43.102') {
-                      console.log(`   Also accessible at: http://${net.address}:${port}`);
-                 }
+                  console.log(`   - ${name}: http://${net.address}:${port}`);
              }
         }
     }
-    if(HOST !== '0.0.0.0' && HOST !== '100.114.43.102') {
-         console.log(`   NOTE: Listening only on ${HOST}.`);
-    }
+     if (HOST !== '0.0.0.0') {
+         console.log(`   NOTE: Listening specifically on host ${HOST}. May not be accessible externally.`);
+     }
 });
 
-// Basic Error Handling Middleware (Optional but Recommended)
+// --- Basic Error Handling Middleware ---
 app.use((err, req, res, next) => {
-  console.error("💥 Unhandled Error:", err.stack);
-  res.status(500).send('Something broke!');
+  console.error("💥 Unhandled Error:", err.stack || err);
+  res.status(500).json({ error: 'Something broke!', details: err.message });
 });

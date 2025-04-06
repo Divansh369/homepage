@@ -115,7 +115,7 @@ body {
 
 
 /* Combined Start/Stop button styling if they share properties */
-.start-button, .stop-button {
+/* .start-button, .stop-button {
   margin-top: auto;
   padding: 10px 15px;
   color: var(--color-button-text);
@@ -127,18 +127,18 @@ body {
 }
 
 .start-button {
-  background-color: var(--color-start-background, #28a745);
+  background-color: var(--color-start-background, #28a745); Fallback color
 }
 .start-button:hover {
   background-color: var(--color-start-hover, #218838);
 }
 
 .stop-button {
-  background-color: var(--color-stop-background, #dc3545);
+  background-color: var(--color-stop-background, #dc3545); Fallback color
 }
 .stop-button:hover {
   background-color: var(--color-stop-hover, #c82333);
-}
+} */
 
 /* Responsive adjustments (optional) */
 @media (max-width: 768px) {

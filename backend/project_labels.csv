@@ -12,8 +12,6 @@ minIO,Go
 dbeaver,Java
 dbeaver,Javascript
 uptime-kuma,Javascript
-cockpit,Javascript
-cockpit,Python
 tomcat,Apache
 tomcat,Java
 hadoop,Apache
@@ -26,3 +24,7 @@ drawdb,Javascript
 zookeeper,Apache
 zookeeper,Java
 grafana,Go
+jitsi,Javascript
+jitsi,Java
+jitsi,Python
+jitsi, Lua
