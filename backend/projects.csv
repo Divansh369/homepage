@@ -1,21 +1,24 @@
 project_name,description,icon_filename,startup_script,scheme,port,host
-jupyter,"Jupyter Interactive Notebook",jupyter.svg,start_jupyter.sh,http,9742,100.114.43.102
-gitea,"Git with a cup of tea! Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD",logo.svg,gitea,http,8956,100.114.43.102
+coder,"VS Code in the browser",logo.png,start_coder.sh,http,1133,100.114.43.102
 planka,"The realtime kanban board for workgroups built with React and Redux.",planka.png,start_planka.sh,http,3663,100.114.43.102
-connections,"A social platform powered by FastAPI & Flutter",frontend/assets/images/logo.png,start.sh,http,7777,100.114.43.102
+cockpit,"Cockpit is a web-based graphical interface for servers.",logo.png,start.sh,http,9090,100.114.43.102
+portainer,"Making Docker and Kubernetes management easy.",logo.png,start.sh,http,2772,100.114.43.102
 jitsi,"Jitsi Meet - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application.",static/pwa/icons/icon512.png,start.sh,https,6724,100.114.43.102
+jupyter,"Jupyter Interactive Notebook",jupyter.svg,start_jupyter.sh,http,9742,100.114.43.102
 nextcloud,"☁️ Nextcloud server, a safe home for all your data",core/img/logo/logo.svg,start.sh,http,8228,100.114.43.102
+gitea,"Git with a cup of tea! Painless self-hosted all-in-one software development service.",logo.svg,gitea,http,8956,100.114.43.102
+connections,"A social platform powered by FastAPI & Flutter",frontend/assets/images/logo.png,start.sh,http,7777,100.114.43.102
 minIO,"MinIO is a high-performance, S3 compatible object store, open sourced under GNU AGPLv3 license.",minio-1.svg,start_minio.sh,http,9099,100.114.43.102
 superset,"Apache Superset is a Data Visualization and Data Exploration Platform",superset.ico,start_superset.sh,http,6996,100.114.43.102
 metabase,"The simplest, fastest way to get business intelligence and analytics to everyone in your company",metabase.svg,start_metabase.sh,http,9870,100.114.43.102
 grafana,"The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources",public/img/grafana_icon.svg,start_grafana.sh,http,3603,100.114.43.102
 dbeaver,"Free universal database tool and SQL client",web/icons/logo_sm.svg,run.sh,http,8978,100.114.43.102
 uptime-kuma,"A fancy self-hosted monitoring tool",public/icon.svg,start.sh,http,5072,100.114.43.102
-tomcat,"Apache Tomcat is a web server that is an open source software implementation of the Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket technologies.",tomcat.png,bin/startup.sh,http,8080,100.114.43.102
+tomcat,"Apache Tomcat is a web server that is an open source software implementation of the Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket technologies.",tomcat.png,bin/startup.sh,http,8020,100.114.43.102
 hadoop,"The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers.",hadoop.svg,sbin/start-all.sh,http,6006,100.114.43.102
 react-app,"Set up a modern web app by running one command.",public/favicon.ico,start.sh,http,5098,100.114.43.102
 next,"🦍 A configurable component library for web built on React.",app/favicon.ico,start.sh,http,5099,100.114.43.102
 aimeos,"Laravel ecommerce package for ultra fast online shops, scalable marketplaces, complex B2B applications and #gigacommerce",public/vendor/shop/themes/default/assets/icon.png,start_aimeos.sh,http,4199,100.114.43.102
 prestashop,"PrestaShop is the universal open-source software platform to build your e-commerce solution",img/favicon.ico,start.sh,http,4198,100.114.43.102
 drawdb,"Free, simple, and intuitive online database diagram editor and SQL generator.",public/favicon.ico,start.sh,http,7821,100.114.43.102
-zookeeper,"Apache ZooKeeper is an effort to develop and maintain an open-source server which enables highly reliable distributed coordination.",zookeeper.png,bin/zkServer.sh start,http,2081/commands,100.114.43.102
+zookeeper,"Apache ZooKeeper is an effort to develop and maintain an open-source server which enables highly reliable distributed coordination.",zookeeper.png,bin/zkServer.sh start,http,2081,100.114.43.102
