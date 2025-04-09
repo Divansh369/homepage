@@ -5,55 +5,57 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { useTheme } from './ThemeContext'; // Assuming ThemeContext exists
 
-// Interface for data associated with labels on a project card
+// (Keep existing interfaces: CardData, ProjectData, Label)
 interface CardData {
     card_id: string;
     card_name: string;
-    card_description: string; // Often the project's description
+    card_description: string;
     label_id: string;
     label_name: string;
 }
 
-// Interface for the main project data received from the backend
 interface ProjectData {
     project_name: string;
-    description: string;        // Project's own description
-    icon_filename: string;      // Original filename from CSV/backend source
-    icon_path: string;          // Frontend-usable path (e.g., /projects/...)
+    description: string;
+    icon_filename: string;
+    icon_path: string;
     startup_script: string;
-    port: string;               // Port the project runs on
-    scheme: 'http' | 'https';   // Protocol scheme (http or https)
-    host: string;               // Hostname or IP address for the project URL
-    cards: CardData[];          // Associated labels/cards for the project
+    port: string;
+    scheme: 'http' | 'https';
+    host: string;
+    cards: CardData[];
 }
 
-// Interface for available labels used in the filter dropdown
 interface Label {
-    id: string;                 // Usually the label name
-    name: string;               // Display name of the label
+    id: string;
+    name: string;
 }
 
-const POLLING_INTERVAL = 3000; // Check project status every 3 seconds (in milliseconds)
+// Helper Interface for initial status check results
+interface InitialStatusResult {
+    name: string;
+    running: boolean;
+}
+
+
+const POLLING_INTERVAL = 3000;
 
 export default function Home() {
-    // --- State Variables ---
-    const [projects, setProjects] = useState<ProjectData[]>([]); // All projects from backend
-    const [filteredProjects, setFilteredProjects] = useState<ProjectData[]>([]); // Projects after filtering
-    const [selectedLabel, setSelectedLabel] = useState<string | null>(null); // Currently selected filter label ID
-    const [availableLabels, setAvailableLabels] = useState<Label[]>([]); // Labels for the filter dropdown
-    const [error, setError] = useState<string | null>(null); // Stores any operational errors
-    const [activeProjects, setActiveProjects] = useState<Record<string, boolean>>({}); // Tracks confirmed running status (projectName: boolean)
-    const [startingProjects, setStartingProjects] = useState<Set<string>>(new Set()); // Tracks projects currently in the process of starting
-    const [projectJustStarted, setProjectJustStarted] = useState<ProjectData | null>(null); // Triggers auto-open side effect
+    // (Keep existing state variables and refs)
+    const [projects, setProjects] = useState<ProjectData[]>([]);
+    const [filteredProjects, setFilteredProjects] = useState<ProjectData[]>([]);
+    const [selectedLabel, setSelectedLabel] = useState<string | null>(null);
+    const [availableLabels, setAvailableLabels] = useState<Label[]>([]);
+    const [error, setError] = useState<string | null>(null);
+    const [activeProjects, setActiveProjects] = useState<Record<string, boolean>>({});
+    const [startingProjects, setStartingProjects] = useState<Set<string>>(new Set());
+    const [projectJustStarted, setProjectJustStarted] = useState<ProjectData | null>(null);
+    const { theme, toggleTheme } = useTheme();
+    const intervalRef = useRef<NodeJS.Timeout | null>(null);
+    const projectsRef = useRef<ProjectData[]>([]);
+    const startingProjectsRef = useRef<Set<string>>(new Set());
 
-    // --- Context and Refs ---
-    const { theme, toggleTheme } = useTheme(); // Theme context for dark/light mode
-    const intervalRef = useRef<NodeJS.Timeout | null>(null); // Holds the ID of the polling interval
-    const projectsRef = useRef<ProjectData[]>([]); // Ref to access current projects inside interval closures
-    const startingProjectsRef = useRef<Set<string>>(new Set()); // Ref to access current starting projects inside interval closures
-
-    // --- Refs Synchronization ---
-    // Keep refs updated whenever their corresponding state changes
+    // (Keep existing refs synchronization useEffects)
     useEffect(() => {
         projectsRef.current = projects;
     }, [projects]);
@@ -62,78 +64,126 @@ export default function Home() {
         startingProjectsRef.current = startingProjects;
     }, [startingProjects]);
 
-    // --- Initial Data Fetching ---
+    // --- MODIFIED Initial Data Fetching ---
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchDataAndInitialStatus = async () => {
             setError(null);
-            console.log("Fetching initial data...");
+            console.log("🚀 Starting initial data fetch and status check...");
+
             try {
-                // Fetch Projects
-                console.log("Fetching projects from backend...");
-                const projectsRes = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/projects`);
-                if (!projectsRes.ok) {
-                    const errorBody = await projectsRes.text();
-                    throw new Error(`Failed to fetch projects: ${projectsRes.status} ${errorBody}`);
+                // --- Step 1: Fetch Projects and Labels Concurrently ---
+                const projectsPromise = fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/projects`);
+                const labelsPromise = fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/labels`);
+
+                const [projectsResponse, labelsResponse] = await Promise.all([projectsPromise, labelsPromise]);
+
+                // --- Step 2: Process Projects Response ---
+                if (!projectsResponse.ok) {
+                    throw new Error(`Failed to fetch projects: ${projectsResponse.status} ${await projectsResponse.text()}`);
                 }
-                const projectsData: ProjectData[] = await projectsRes.json();
+                const projectsData: ProjectData[] = await projectsResponse.json();
                 console.log("Projects received:", projectsData);
-                // Validate data structure minimally
                 if (!Array.isArray(projectsData)) {
-                   throw new Error("Invalid project data format received from backend.");
+                    throw new Error("Invalid project data format received.");
                 }
-                setProjects(projectsData);
-                setFilteredProjects(projectsData); // Initialize filter with all projects
-                projectsRef.current = projectsData; // Update ref immediately
 
-                // Fetch Labels
-                console.log("Fetching labels from backend...");
-                const labelsRes = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/labels`);
-                if (!labelsRes.ok) {
-                    const errorBody = await labelsRes.text();
-                    throw new Error(`Failed to fetch labels: ${labelsRes.status} ${errorBody}`);
+                // --- Step 3: Process Labels Response ---
+                if (!labelsResponse.ok) {
+                    throw new Error(`Failed to fetch labels: ${labelsResponse.status} ${await labelsResponse.text()}`);
                 }
-                const labelsData: Label[] = await labelsRes.json();
-                 // Validate data structure minimally
+                const labelsData: Label[] = await labelsResponse.json();
                  if (!Array.isArray(labelsData)) {
-                    throw new Error("Invalid label data format received from backend.");
+                    throw new Error("Invalid label data format received.");
                  }
-                setAvailableLabels(labelsData);
 
-                // Initial Status Check (if projects were loaded)
+                // --- Step 4: Perform Initial Status Check Immediately (if projects exist) ---
+                let initialStatusResults: InitialStatusResult[] = [];
                 if (projectsData.length > 0) {
                     console.log("Performing initial project status check...");
-                    // Pass the freshly fetched data directly to avoid race conditions
-                    checkAllProjectsStatus(projectsData, true);
+                    const statusCheckPromises = projectsData.map(async (project): Promise<InitialStatusResult> => {
+                         if (!project || !project.project_name || !project.port) {
+                             console.warn("Skipping initial status check for invalid project data:", project);
+                             return { name: project?.project_name || 'unknown', running: false };
+                         }
+                        try {
+                            const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/check-project`, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ port: project.port }),
+                            });
+                            // Don't throw here, just report status or default to false
+                            if (!response.ok) {
+                                console.error(`Initial check failed for ${project.project_name} (Port: ${project.port}): ${response.status}`);
+                                return { name: project.project_name, running: false }; // Default to false on error during initial check
+                            }
+                            const data = await response.json();
+                            return { name: project.project_name, running: data.running };
+                        } catch (statusError) {
+                            console.error(`Initial check network error for ${project.project_name}:`, statusError);
+                            return { name: project.project_name, running: false }; // Default to false on error
+                        }
+                    });
+                    // Wait for all initial status checks to complete
+                    initialStatusResults = await Promise.all(statusCheckPromises);
+                    console.log("Initial statuses received:", initialStatusResults);
                 }
 
+                // --- Step 5: Process Initial Statuses into State Format ---
+                const initialActiveState: Record<string, boolean> = {};
+                initialStatusResults.forEach(status => {
+                    if (status.name !== 'unknown') {
+                        initialActiveState[status.name] = status.running;
+                    }
+                });
+
+                 // --- Step 6: Set All Initial State Together ---
+                 console.log("Setting initial state for projects, labels, and statuses.");
+                 setProjects(projectsData);
+                 setFilteredProjects(projectsData); // Initialize filter
+                 setAvailableLabels(labelsData);
+                 setActiveProjects(initialActiveState); // Set the statuses determined *before* the first poll
+
+                 // Update refs immediately after state is set
+                 projectsRef.current = projectsData;
+
+
             } catch (err: any) {
-                console.error("Error fetching initial data:", err);
+                console.error("Error during initial data fetch or status check:", err);
                 setError(`Failed to load initial data: ${err.message || 'Unknown error'}`);
+                // Reset states in case of partial success followed by error
+                setProjects([]);
+                setFilteredProjects([]);
+                setAvailableLabels([]);
+                setActiveProjects({});
             }
         };
-        fetchData();
+
+        fetchDataAndInitialStatus();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []); // Runs only once on component mount
 
-    // --- Project Status Polling Logic ---
+
+    // --- Project Status Polling Logic (Mostly Unchanged) ---
+    // This function is now primarily for *subsequent* polls after the initial load
     const checkAllProjectsStatus = useCallback(async (currentProjects: ProjectData[], isInitialCheck = false) => {
-        // Prevent polling if project list is empty or not yet loaded
+        // Added isInitialCheck parameter just to potentially skip logging if needed,
+        // but the main initial check is now handled in the fetchDataAndInitialStatus effect.
         if (!currentProjects || currentProjects.length === 0) {
-            // console.log("Polling skipped: No projects data available."); // Optional log
             return;
         }
-        if (!isInitialCheck) console.log("Polling project statuses..."); // Reduce logging noise
+        // Avoid redundant logging if called programmatically right after initial fetch (though it shouldn't be)
+        // if (!isInitialCheck) {
+           console.log("Polling project statuses...");
+        // }
 
-        // Use ref inside the callback to get the most up-to-date set of projects currently starting
         const currentStartingProjects = startingProjectsRef.current;
 
-        // Create promises to check the status of each project concurrently
         const statusPromises = currentProjects.map(async (project) => {
-            // Basic check for required project data
-            if (!project || !project.project_name || !project.port) {
-                console.warn("Skipping status check for invalid project data:", project);
-                return { name: project?.project_name || 'unknown', running: false, projectData: project };
-            }
+             if (!project || !project.project_name || !project.port) {
+                 console.warn("Polling: Skipping status check for invalid project data:", project);
+                 // Return previous state if possible, or default
+                 return { name: project?.project_name || 'unknown', running: activeProjects[project?.project_name] ?? false, projectData: project };
+             }
             try {
                 const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/check-project`, {
                     method: 'POST',
@@ -141,113 +191,94 @@ export default function Home() {
                     body: JSON.stringify({ port: project.port }),
                 });
                 if (!response.ok) {
-                    // Log error but don't crash polling; return previous known state
-                    console.error(`Error checking ${project.project_name} (Port: ${project.port}): ${response.status} ${await response.text()}`);
-                    // Use activeProjects state directly here might be stale, better get from args if possible or manage state differently.
-                    // Using a default 'false' or keeping previous state is safer. Let's keep previous:
+                    console.error(`Polling: Error checking ${project.project_name} (Port: ${project.port}): ${response.status} ${await response.text()}`);
+                    // Return previous known state on error during polling
                     return { name: project.project_name, running: activeProjects[project.project_name] ?? false, projectData: project };
                 }
                 const data = await response.json();
-                // Return full project data along with its running status
                 return { name: project.project_name, running: data.running, projectData: project };
             } catch (error) {
-                // Log network or other errors; return previous known state
-                console.error(`Network error checking project ${project.project_name}:`, error);
+                console.error(`Polling: Network error checking project ${project.project_name}:`, error);
+                 // Return previous known state on error during polling
                 return { name: project.project_name, running: activeProjects[project.project_name] ?? false, projectData: project };
             }
         });
 
-        // Wait for all status checks to complete
         const results = await Promise.all(statusPromises);
 
-        // Process results and update state immutably
+        // (Keep the existing logic within setActiveProjects updater for handling status changes and auto-open)
         setActiveProjects(prevActive => {
             const newActiveState = { ...prevActive };
             let activeChanged = false;
-            let projectToAutoOpen: ProjectData | null = null; // Store the project that just finished starting
+            let projectToAutoOpen: ProjectData | null = null;
 
             results.forEach(result => {
-                if (!result || !result.name) return; // Skip invalid results
+                // Ensure result and name are valid before processing
+                if (!result || !result.name || result.name === 'unknown') return;
 
-                const currentStatus = prevActive[result.name] ?? false; // Get previous status safely
+                const currentStatus = prevActive[result.name] ?? false;
                 const newStatus = result.running;
 
-                // Update state only if the status actually changed
                 if (currentStatus !== newStatus) {
-                    console.log(`Status change for ${result.name}: ${currentStatus} -> ${newStatus}`);
+                    console.log(`Polling: Status change for ${result.name}: ${currentStatus} -> ${newStatus}`);
                     newActiveState[result.name] = newStatus;
                     activeChanged = true;
 
-                    // Check if this project just finished the startup process
                     if (newStatus === true && currentStartingProjects.has(result.name)) {
-                        console.log(`✅ Project ${result.name} confirmed running. Marking for auto-open.`);
-                        projectToAutoOpen = result.projectData; // Mark this project for the auto-open side effect
+                        console.log(`Polling: ✅ Project ${result.name} confirmed running. Marking for auto-open.`);
+                        projectToAutoOpen = result.projectData;
                     }
                 }
             });
 
-            // Perform side-effects (updating 'starting' set and triggering auto-open) *after* calculating the new active state
             if (projectToAutoOpen) {
                 const projectNameToRemove = projectToAutoOpen.project_name;
-                // Update the 'starting' set state
                 setStartingProjects(prevStarting => {
                     const newStarting = new Set(prevStarting);
                     if (newStarting.has(projectNameToRemove)) {
                         newStarting.delete(projectNameToRemove);
-                        startingProjectsRef.current = newStarting; // Keep ref in sync
-                        console.log(`Removed ${projectNameToRemove} from starting set.`);
-                         // Trigger the separate effect to open the window by setting state
-                         setProjectJustStarted(projectToAutoOpen);
+                        startingProjectsRef.current = newStarting;
+                        console.log(`Polling: Removed ${projectNameToRemove} from starting set.`);
+                        setProjectJustStarted(projectToAutoOpen); // Trigger auto-open effect
                         return newStarting;
                     }
-                    return prevStarting; // Return unchanged set if not found (shouldn't happen)
+                    return prevStarting;
                 });
             }
 
-            // Return the new state only if changes occurred, otherwise return the previous state to prevent unnecessary re-renders
             return activeChanged ? newActiveState : prevActive;
         });
 
-    }, [activeProjects]); // Dependency: Re-create checker if activeProjects map changes structure (rare)
+    }, [activeProjects]); // Keep dependency
 
-
-    // --- Effect for Auto-Opening Window ---
-    // This effect runs *only* when 'projectJustStarted' state changes to a valid project object
+    // --- Effect for Auto-Opening Window (Unchanged) ---
     useEffect(() => {
         if (projectJustStarted) {
             console.log(`\ud83d\udd17 Effect triggered: Opening window for ${projectJustStarted.project_name}`);
-            // Use the dedicated handler function to construct the URL correctly
             handleOpenProject(
                 projectJustStarted.scheme,
                 projectJustStarted.host,
                 projectJustStarted.port
             );
-            // Reset the trigger state immediately to prevent re-opening on subsequent renders
             setProjectJustStarted(null);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [projectJustStarted]); // Dependency: Only run when projectJustStarted changes
+    }, [projectJustStarted]);
 
-
-    // --- Setup Polling Interval ---
+    // --- Setup Polling Interval (Unchanged, but depends on state set by new fetch logic) ---
     useEffect(() => {
-        // Only start polling *after* the initial project data has been loaded
+        // Start polling only AFTER the initial fetch and status check is complete and projects state is set
         if (projects.length > 0) {
             console.log(`Starting status polling interval (${POLLING_INTERVAL}ms)...`);
-
-            // Clear any existing interval before setting a new one
             if (intervalRef.current) {
                 clearInterval(intervalRef.current);
             }
-
-            // Set up the interval using the ref to access the latest project list
             intervalRef.current = setInterval(() => {
-                // Pass the current list of projects from the ref to the check function
+                // Polling uses the ref, which was updated after the initial fetch
                 checkAllProjectsStatus(projectsRef.current);
             }, POLLING_INTERVAL);
         }
-
-        // Cleanup function: Clear the interval when the component unmounts or dependencies change
+        // Cleanup
         return () => {
             if (intervalRef.current) {
                 console.log("Clearing status polling interval.");
@@ -255,27 +286,24 @@ export default function Home() {
                 intervalRef.current = null;
             }
         };
-    }, [projects, checkAllProjectsStatus]); // Dependencies: Re-run effect if projects list or checker function changes
+        // Dependency on 'projects' ensures polling starts/restarts if the project list itself changes.
+        // Dependency on checkAllProjectsStatus ensures the interval uses the latest version of the callback.
+    }, [projects, checkAllProjectsStatus]);
 
-
-    // --- Filtering Logic ---
-    // This effect updates the 'filteredProjects' list whenever the 'selectedLabel' or the main 'projects' list changes
+    // --- Filtering Logic (Unchanged) ---
     useEffect(() => {
         if (selectedLabel) {
-            // Filter projects where at least one card's label_id matches the selectedLabel
             const filtered = projects.filter((project) =>
                 project.cards.some((card) => card.label_id === selectedLabel)
             );
             setFilteredProjects(filtered);
         } else {
-            // If no label is selected, show all projects
             setFilteredProjects(projects);
         }
-    }, [selectedLabel, projects]); // Dependencies: Run when filter or project list changes
+    }, [selectedLabel, projects]);
 
-    // --- Event Handlers ---
-
-    // Handles starting a project
+    // --- Event Handlers (Unchanged: handleStartProject, handleStopProject, handleOpenProject) ---
+     // Handles starting a project
     const handleStartProject = async (projectName: string) => {
         setError(null); // Clear previous errors
 
@@ -334,16 +362,6 @@ export default function Home() {
         setError(null); // Clear previous errors
         console.log(`\u23F9\uFE0F Stopping ${projectName}...`);
 
-        // Optional: Optimistically update UI slightly faster (can be removed if polling is sufficient)
-        // setActiveProjects(prev => ({ ...prev, [projectName]: false }));
-        // If it was starting, cancel that visually too
-        // setStartingProjects(prev => {
-        //     const newSet = new Set(prev);
-        //     newSet.delete(projectName);
-        //     startingProjectsRef.current = newSet;
-        //     return newSet;
-        // });
-
         try {
             // Call the backend API to stop the project
             const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/stop-project`, {
@@ -361,7 +379,6 @@ export default function Home() {
             console.log(`Stop request successful for ${projectName}: ${respBody.message}`);
 
             // Explicitly set status to false on successful stop confirmation from backend
-            // Polling will eventually confirm this too, but this provides faster UI feedback
             setActiveProjects((prev) => ({ ...prev, [projectName]: false }));
 
             // Ensure it's also removed from 'starting' set if it was stuck there
@@ -377,12 +394,22 @@ export default function Home() {
         } catch (err: any) {
             console.error(`Error stopping project ${projectName}:`, err);
             setError(err.message || `An error occurred while stopping ${projectName}`);
-            // Optional: Re-trigger a status check immediately if stop failed, as it might already be stopped
-            const currentProjects = projectsRef.current.find(p => p.project_name === projectName);
-            if (currentProjects) {
-                 checkAllProjectsStatus([currentProjects]); // Check just this one
-            } else {
-                 checkAllProjectsStatus(projectsRef.current); // Check all as fallback
+            // Optional: Re-trigger a status check immediately if stop failed
+            const currentProject = projectsRef.current.find(p => p.project_name === projectName);
+            if (currentProject) {
+                 // Check just this one project's status again quickly
+                 const quickCheck = async () => {
+                    try {
+                        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/check-project`, {
+                            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ port: currentProject.port })
+                        });
+                        if(response.ok) {
+                            const data = await response.json();
+                            setActiveProjects(prev => ({...prev, [projectName]: data.running}));
+                        }
+                    } catch (quickErr) { console.error("Quick status re-check failed:", quickErr); }
+                 };
+                 quickCheck();
             }
         }
     };
@@ -390,49 +417,31 @@ export default function Home() {
     // Handles opening a project URL in a new tab
     const handleOpenProject = (scheme: 'http' | 'https', host: string, port: string) => {
         try {
-            // Basic validation
-            if (!scheme || !host || !port) {
-                throw new Error(`Invalid arguments for opening project: scheme=${scheme}, host=${host}, port=${port}`);
-            }
-
+            if (!scheme || !host || !port) { throw new Error(`Invalid arguments`); }
             const portNumber = parseInt(port, 10);
             let url: string;
-
-            // Format host (handle IPv6 needing brackets)
             const formattedHost = host.includes(':') && !host.startsWith('[') ? `[${host}]` : host;
-
-            // Construct base URL: scheme://host
             url = `${scheme}://${formattedHost}`;
-
-            // Append port only if it's non-standard for the scheme (not 80 for http, not 443 for https)
             if (!isNaN(portNumber) && !(scheme === 'http' && portNumber === 80) && !(scheme === 'https' && portNumber === 443)) {
                 url += `:${port}`;
             }
-
             console.log(`\ud83d\udd17 Opening project with constructed URL: ${url}`);
-            window.open(url, '_blank', 'noopener,noreferrer'); // Open in new tab with security attributes
-
+            window.open(url, '_blank', 'noopener,noreferrer');
         } catch (error: any) {
             console.error("Error constructing or opening project URL:", error);
             setError(`Could not open project: ${error.message || 'Invalid configuration'}`);
         }
     };
 
-
-    // --- Render ---
+    // --- Render (Unchanged) ---
     return (
-        // Apply theme class to the main container for CSS targeting
         <div className={`container ${theme}`}>
             {/* Theme Toggle Button */}
             <button onClick={toggleTheme} className="theme-toggle-button" aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>
                 {theme === 'dark' ? '🌙 Dark' : '☀️ Light'} Mode
             </button>
-
             <h1 className="projects-header">PROJECT DASHBOARD</h1>
-
-            {/* Display Global Errors */}
             {error && <p className="error-message">Error: {error}</p>}
-
             {/* Filter Section */}
             <div className="filter-container">
                 <label htmlFor="language-filter" className="filter-label">Filter by Technology:</label>
@@ -440,7 +449,7 @@ export default function Home() {
                     id="language-filter"
                     className="filter-select"
                     value={selectedLabel || ''}
-                    onChange={(e) => setSelectedLabel(e.target.value || null)} // Set to null if "All" is selected
+                    onChange={(e) => setSelectedLabel(e.target.value || null)}
                     aria-label="Filter projects by technology"
                 >
                     <option value="">All Technologies</option>
@@ -449,109 +458,69 @@ export default function Home() {
                     ))}
                 </select>
             </div>
-
             {/* Project Cards Container */}
             <div className="project-cards-container">
-                {/* Loading/Empty State Message */}
                 {filteredProjects.length === 0 && !error && <p>Loading projects or no projects match the filter...</p>}
-
-                {/* Map through filtered projects and render a card for each */}
                 {filteredProjects.map((project) => {
-                    // Basic check for valid project data before rendering card
                     if (!project || !project.project_name) return null;
-
-                    // Determine current state for styling and button logic
                     const isRunning = activeProjects[project.project_name] ?? false;
                     const isStarting = startingProjects.has(project.project_name);
-
-                    // Get scheme and host, providing safe defaults
                     const scheme = project.scheme || 'http';
-                    const host = project.host || 'localhost'; // Default if backend doesn't provide
+                    const host = project.host || 'localhost';
 
                     return (
                         <div key={project.project_name} className={`project-card ${isRunning ? 'active' : ''} ${isStarting ? 'starting' : ''}`}>
-                            {/* Project Name */}
                             <h2>{project.project_name}</h2>
-
-                            {/* Project Icon (optional) */}
                             {project.icon_path && project.icon_path !== '/label_icons/default.png' && (
                                 <Image
                                     className="project-icon"
-                                    src={project.icon_path} // Use the frontend-ready path from backend
+                                    src={project.icon_path}
                                     alt={`${project.project_name} Icon`}
-                                    width={50}
-                                    height={50}
-                                    priority={false} // Set true for above-the-fold critical images
-                                    // Hide image gracefully on error (e.g., 404)
+                                    width={50} height={50} priority={false}
                                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                                 />
                             )}
-
-                            {/* Project Description */}
                             <p className="project-description">{project.description || 'No description provided.'}</p>
-
-                            {/* Technology/Label Icons */}
                             <div className="label-icons">
                                 {project.cards.map((card) => (
                                     <div key={card.label_id || card.label_name} className="tooltip">
                                         <Image
                                             className="label-icon"
-                                            src={`/label_icons/${card.label_name}.png`} // Assumes icons are in public/label_icons/
+                                            src={`/label_icons/${card.label_name}.png`}
                                             alt={`${card.label_name} Icon`}
-                                            width={30}
-                                            height={30}
-                                            // Provide a fallback icon if specific label icon is missing
+                                            width={30} height={30}
                                             onError={(e) => { e.currentTarget.src = '/label_icons/default.png'; }}
                                         />
-                                        {/* Tooltip text on hover */}
                                         <span className="tooltiptext">{card.label_name}</span>
                                     </div>
                                 ))}
                             </div>
-
-                            {/* Action Buttons */}
                             <div className="project-actions">
                                 {isStarting ? (
-                                    // Show "Starting..." button (disabled)
                                     <button className="action-button start-button" disabled>
                                         <span className="spinner" aria-hidden="true"></span> Starting...
                                     </button>
                                 ) : isRunning ? (
-                                    // Show "Open" button
                                     <button
                                         className="action-button open-button"
-                                        // Call handler with scheme, host, and port
                                         onClick={() => handleOpenProject(scheme, host, project.port)}
-                                        title={`Open project at ${scheme}://${host}:${project.port}`} // Tooltip for clarity
-                                    >
-                                        🚀 Open
-                                    </button>
+                                        title={`Open project at ${scheme}://${host}:${project.port}`}
+                                    > 🚀 Open </button>
                                 ) : (
-                                    // Show "Start" button
                                     <button
                                         className="action-button start-button"
                                         onClick={() => handleStartProject(project.project_name)}
-                                        disabled={isStarting} // Safety check: disable if somehow already starting
-                                    >
-                                        ▶️ Start
-                                    </button>
+                                        disabled={isStarting}
+                                    > ▶️ Start </button>
                                 )}
-
-                                {/* Stop Button */}
                                 <button
                                     className="action-button stop-button"
                                     onClick={() => handleStopProject(project.project_name)}
-                                    // Disable if not running OR if it's currently in the starting phase
                                     disabled={!isRunning || isStarting}
                                     title={!isRunning ? "Project is not running" : (isStarting ? "Project is starting" : "Stop the project")}
-                                >
-                                    ⏹️ Stop
-                                </button>
+                                > ⏹️ Stop </button>
                             </div>
-
-                            {/* Status Indicator */}
                             <div className={`status-indicator ${isRunning ? 'running' : (isStarting ? 'pending' : 'stopped')}`}>
-                                {/* Display status text and location */}
                                 {isStarting ? 'Pending' : (isRunning ? 'Running' : 'Stopped')} on {host}:{project.port}
                             </div>
                         </div>
