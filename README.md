@@ -2,7 +2,7 @@
 
 A personal project dashboard built with Next.js (React/TypeScript) and a Node.js/Express backend. It displays projects defined in local CSV files and allows launching them directly from the interface.
 
-![image](https://github.com/user-attachments/assets/cf643669-5b15-4b98-9863-760c4f0950d1)
+![image](https://github.com/user-attachments/assets/46b909e0-993a-4a47-86fa-37afba761ba8)
 
 
 ---
