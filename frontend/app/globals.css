@@ -1,401 +1,529 @@
-/* frontend/app/globals.css */
+/* frontend/app/globals.css - COMPLETE FILE */
 
 :root {
+  /* --- Variables --- */
+  --navbar-height: 65px;
+  --navbar-padding-y: 10px;
+  --navbar-padding-x: 25px;
+  --navbar-item-height: 36px;
   /* Light Mode Colors */
-  --color-background: #fff;
+  --navbar-bg: var(--color-card-background);
+  --color-background: #f4f7f9;
   --color-text: #333;
   --color-border: #ddd;
-  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow: rgba(0, 0, 0, 0.08);
   --color-button-background: #0070f3;
   --color-button-text: #fff;
   --color-button-hover: #0056b3;
-  --color-card-background: #f9f9f9;
-
-  /* Add specific colors for start/stop if needed, otherwise they use base button colors */
-  /* --color-start-background: #28a745; */
-  /* --color-start-text: #fff; */
-  /* --color-start-hover: #218838; */
-  /* --color-stop-background: #dc3545; */
-  /* --color-stop-text: #fff; */
-  /* --color-stop-hover: #c82333; */
+  --color-card-background: #fff;
+  --color-input-background: #fff;
+  --color-input-border: #ccc;
+  --color-input-focus-border: #0070f3;
+  --color-error-bg: #f8d7da;
+  --color-error-text: #721c24;
+  --color-error-border: #f5c6cb;
+  --color-success-bg: #d4edda;
+  --color-success-text: #155724;
+  --color-success-border: #c3e6cb;
+  --color-tooltip-bg: #333;
+  --color-tooltip-text: #fff;
 }
 
 [data-theme="dark"] {
   /* Dark Mode Colors */
+  --navbar-bg: #1f1f1f;
   --color-background: #121212;
   --color-text: #eee;
   --color-border: #444;
-  --color-shadow: rgba(255, 255, 255, 0.1); /* Lighter shadow in dark mode */
-  --color-button-background: #0070f3; /* Keep button color consistent */
+  --color-shadow: rgba(255, 255, 255, 0.08);
+  --color-button-background: #0070f3;
   --color-button-text: #fff;
   --color-button-hover: #0056b3;
   --color-card-background: #282828;
-
-  /* Dark mode specific start/stop colors if desired */
-  /* --color-start-background: #28a745; */
-  /* --color-stop-background: #dc3545; */
+  --color-input-background: #333;
+  --color-input-border: #555;
+  --color-input-focus-border: #0070f3;
+  --color-error-bg: #4a1d20;
+  --color-error-text: #f8d7da;
+  --color-error-border: #721c24;
+  --color-success-bg: #1c3a24;
+  --color-success-text: #d4edda;
+  --color-success-border: #155724;
+  --color-tooltip-bg: #ccc;
+  --color-tooltip-text: #333;
 }
 
-/* Base Styles (using CSS variables)*/
+/* --- Base Styles --- */
 body {
     background-color: var(--color-background);
     color: var(--color-text);
-    font-family: sans-serif; /* Or your preferred font */
-    margin: 0; /* Remove default body margin */
-    padding: 20px; /* Add some padding */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.5;
 }
 
-.container { /* Added a general container class for potential top-level styling */
-    padding: 20px; /* Example padding */
+.container { /* Main page container */
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 var(--navbar-padding-x) 25px var(--navbar-padding-x); /* Match navbar horizontal padding */
 }
 
-
-.project-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.project-card {
-  width: 300px;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px var(--color-shadow);
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-card-background);
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Added for hover effect */
-}
-
-.project-card h2 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 1.2em;
-  color: var(--color-text); /* Use the variable for text color */
-  text-align: center;
-}
-
-.project-icon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    /* Removed inner img selector - style the Image component directly if needed */
-}
-
-.project-description {
-  overflow: hidden;
-  /* Removed text-overflow: ellipsis; - often better handled with line-clamp */
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit to 3 lines */
-  -webkit-box-orient: vertical;
-  margin-bottom: 10px;
-  flex-grow: 1;
-  color: var(--color-text); /* Use the variable for text color */
-  min-height: 4.5em; /* Approximate height for 3 lines */
-}
-
-.label-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px; /* Reduced gap slightly */
-  margin-bottom: 15px; /* Increased margin */
-  justify-content: center; /* Center icons */
-  min-height: 30px; /* Ensure space even if no icons */
-}
-
-.label-icon { /* Style the Image component via its class */
-  width: 30px;
-  height: 30px;
-  /* transform: scale(1.2);  Removed scale, adjust size directly if needed */
-}
-
-
-/* Combined Start/Stop button styling if they share properties */
-/* .start-button, .stop-button {
-  margin-top: auto;
-  padding: 10px 15px;
-  color: var(--color-button-text);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.2s ease;
-}
-
-.start-button {
-  background-color: var(--color-start-background, #28a745); Fallback color
-}
-.start-button:hover {
-  background-color: var(--color-start-hover, #218838);
-}
-
-.stop-button {
-  background-color: var(--color-stop-background, #dc3545); Fallback color
-}
-.stop-button:hover {
-  background-color: var(--color-stop-hover, #c82333);
-} */
-
-/* Responsive adjustments (optional) */
-@media (max-width: 768px) {
-  .project-card {
-    width: calc(100% - 20px); /* Adjust width for smaller screens, considering gap */
-  }
-}
-/* Add a subtle hover effect */
-.project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px var(--color-shadow);
-}
-
-/* Dark/Light Mode Toggle Button (optional styling) */
-.theme-toggle-button {
-    position: fixed; /* Fixed position */
-    top: 20px;       /* Position from top */
-    right: 20px;     /* Position from right */
-    padding: 10px 15px;
-    background-color: var(--color-button-background);
-    color: var(--color-button-text);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    z-index: 1000; /* Ensure it's above other content */
-}
-.projects-header {
-  text-align: center; /* Center the title */
-  margin-bottom: 20px; /* Space below the title */
-  font-size: 2em; /* Larger font size */
-  font-weight: bold;
-  color: var(--color-text);
-}
-
-.filter-container {
-  display: flex;
-  justify-content: center; /* Center the filter */
-  align-items: center; /* Vertically align label and select */
-  margin-bottom: 30px; /* Increased Space below the filter */
-  gap: 10px; /* Space between label and select */
-}
-
-.filter-label {
-  /* margin-right: 10px; Use gap in container instead */
-  font-weight: bold;
-  color: var(--color-text);
-}
-
-.filter-select {
-  padding: 8px 12px; /* Adjusted padding */
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  background-color: var(--color-background);
-  color: var(--color-text);
-  font-size: 1em;
-}
-
-/* Styles for Navigate Button and Port Input (Keep if still used elsewhere) */
-.navigate-button {
-  /* margin-top: auto; Already handled by flex in project-actions? */
-  padding: 10px 15px;
-  background-color: var(--color-button-background);
-  color: var(--color-button-text);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.2s ease;
-}
-.navigate-button:hover {
-  background-color: var(--color-button-hover);
-}
-.port-input-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-.port-input {
-  padding: 8px;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  background-color: var(--color-background);
-  color: var(--color-text);
-  font-size: 1em;
-  width: 150px;
-  text-align: center;
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-.port-input:focus {
-  border-color: var(--color-button-background);
-}
-
-/* Styles for Theme Toggle Switch (Keep if still used) */
-.theme-toggle-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-}
-.theme-toggle {
-  display: none;
-}
-.theme-toggle-label {
-  position: relative;
-  width: 60px;
-  height: 34px;
-  background-color: #ccc;
-  border-radius: 34px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.theme-toggle-label:before {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 30px;
-  height: 30px;
-  background-color: #fff;
-  border-radius: 50%;
-  transition: transform 0.3s;
-}
-.theme-toggle:checked + .theme-toggle-label {
-  background-color: #4caf50;
-}
-.theme-toggle:checked + .theme-toggle-label:before {
-  transform: translateX(26px);
-}
-
-
-/* --- NEW STYLES MOVED FROM page.tsx --- */
-
-.spinner {
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Consider using CSS variables if theme dependent */
-    border-radius: 50%;
-    border-top: 2px solid #fff; /* Consider using CSS variables */
-    width: 12px;
-    height: 12px;
-    animation: spin 1s linear infinite;
-    display: inline-block;
-    margin-right: 5px;
-    vertical-align: middle;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.project-actions {
+/* --- Sticky Navbar Styles --- */
+.top-navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--navbar-bg);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 1px 4px var(--color-shadow);
+    /* padding: var(--navbar-padding-y) var(--navbar-padding-x); */
+    min-height: var(--navbar-height);
     display: flex;
-    gap: 10px; /* Space between buttons */
-    margin-top: 15px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px 25px; /* Row gap, Column gap */
+    box-sizing: border-box;
+}
+
+.navbar-section {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+
+.filters-section {
+    flex-grow: 1;
+    flex-basis: 300px;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.custom-port-section {
+    flex-shrink: 0;
+}
+.add-buttons-section {
+    flex-shrink: 0;
+}
+
+/* Navbar Controls Styling */
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.filter-label {
+    font-weight: 500;
+    font-size: 0.85em;
+    color: var(--color-text);
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+
+.navbar-control {
+    height: var(--navbar-item-height);
+    padding: 0 10px;
+    border: 1px solid var(--color-input-border);
+    border-radius: 4px;
+    background-color: var(--color-input-background);
+    color: var(--color-text);
+    font-size: 0.9em;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.navbar-control:focus,
+.navbar-control:focus-within {
+    border-color: var(--color-input-focus-border);
+    box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
+}
+
+.custom-port-input {
+    width: 90px;
+    text-align: center;
+    height: var(--navbar-item-height); /* Make consistent */
+    padding: 0 8px; /* Adjust padding */
+    font-size: 0.9em; /* Match other inputs */
+}
+
+/* Navbar Buttons */
+.navbar-section .action-button {
+    height: var(--navbar-item-height);
+    padding: 0 15px;
+    font-size: 0.85em;
+    min-width: auto;
+    white-space: nowrap;
+    text-decoration: none; /* For Link components */
+    display: inline-flex; /* Ensure alignment */
+    align-items: center;
     justify-content: center;
 }
+.custom-port-opener .open-custom-button {
+    background-color: #6c757d;
+}
+.custom-port-opener .open-custom-button:hover {
+    background-color: #5a6268;
+}
+.nav-add-button {
+    background-color: var(--color-button-background);
+}
+.nav-add-button:hover {
+    background-color: var(--color-button-hover);
+}
 
+/* --- React Select Overrides for Navbar --- */
+.react-select-container {
+    min-width: 180px;
+    font-size: 0.9em; /* Match other inputs */
+}
+.react-select-instance .react-select__control {
+    min-height: var(--navbar-item-height);
+    height: var(--navbar-item-height);
+    background-color: var(--color-input-background);
+    border: 1px solid var(--color-input-border);
+    border-radius: 4px;
+    box-shadow: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    padding: 0;
+}
+.react-select-instance .react-select__control--is-focused {
+    border-color: var(--color-input-focus-border);
+    box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
+}
+.react-select-instance .react-select__value-container {
+    padding: 0 8px;
+    height: 100%;
+    /* Handle multi-value overflow */
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Allow horizontal scroll if many tags */
+    /* Hide scrollbar visually if desired */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.react-select-instance .react-select__value-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.react-select-instance .react-select__input-container {
+    color: var(--color-text);
+    margin: 0; padding: 0;
+}
+.react-select-instance .react-select__indicators {
+    height: 100%;
+}
+.react-select-instance .react-select__indicator {
+    padding: 0 8px;
+    color: #ccc;
+}
+.react-select-instance .react-select__indicator:hover {
+     color: var(--color-text);
+}
+.react-select-instance .react-select__placeholder {
+    color: #aaa; margin: 0; padding: 0 2px;
+    [data-theme="dark"] & { color: #777; }
+}
+.react-select-instance .react-select__multi-value {
+    background-color: rgba(0, 112, 243, 0.15); border-radius: 3px; margin: 2px 3px; /* Reduced vertical margin */
+}
+.react-select-instance .react-select__multi-value__label {
+    color: var(--color-button-background); font-size: 0.85em; padding: 1px 4px;
+     [data-theme="dark"] & { color: #9ecaed; }
+}
+.react-select-instance .react-select__multi-value__remove {
+    color: var(--color-button-background); cursor: pointer; padding: 0 2px;
+}
+.react-select-instance .react-select__multi-value__remove:hover { background-color: rgba(0, 112, 243, 0.3); color: #fff; }
+/* Menu styles */
+.react-select-instance .react-select__menu { background-color: var(--color-card-background); border: 1px solid var(--color-border); border-radius: 4px; box-shadow: 0 4px 10px var(--color-shadow); z-index: 110; margin-top: 4px; }
+.react-select-instance .react-select__menu-list { padding: 4px 0; }
+.react-select-instance .react-select__option { background-color: var(--color-card-background); color: var(--color-text); cursor: pointer; padding: 8px 12px; }
+.react-select-instance .react-select__option--is-focused { background-color: rgba(0, 112, 243, 0.1); }
+.react-select-instance .react-select__option--is-selected { background-color: var(--color-button-background); color: var(--color-button-text); }
+.react-select-instance .react-select__option--is-selected:hover { background-color: var(--color-button-hover); }
+
+/* --- Theme Toggle in Navbar --- */
+.theme-toggle-button-nav {
+    background: none; border: none; font-size: 1.5em;
+    cursor: pointer; padding: 0 5px; color: var(--color-text);
+    display: flex; align-items: center; justify-content: center;
+    height: var(--navbar-item-height); width: 40px;
+}
+.theme-toggle-button { display: none; } /* Hide old fixed button */
+
+/* --- Main Content Area --- */
+.main-content {
+    padding-top: calc(var(--navbar-height) + 25px);
+}
+
+/* --- Header --- */
+.projects-header {
+  text-align: center;
+  margin-top: 0; /* Removed extra top margin */
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* --- Messages --- */
+.error-message, .success-message {
+    padding: 12px 18px; border: 1px solid transparent; border-radius: 5px;
+    margin: 20px auto; text-align: center; max-width: 700px; font-size: 0.95em;
+}
+.error-message { color: var(--color-error-text); background-color: var(--color-error-bg); border-color: var(--color-error-border); }
+.success-message { color: var(--color-success-text); background-color: var(--color-success-bg); border-color: var(--color-success-border); }
+.loading-indicator { text-align: center; margin: 30px; font-style: italic; color: #888; }
+
+
+/* --- Project Cards Container & Card --- */
+.project-cards-container {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px; justify-content: center; padding-top: 10px;
+}
+.project-card {
+  border: 1px solid var(--color-border); border-radius: 8px; padding: 20px;
+  box-shadow: 0 2px 4px var(--color-shadow); background-color: var(--color-card-background);
+  display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 5px 10px var(--color-shadow); }
+.project-card h2 { margin-top: 0; margin-bottom: 12px; font-size: 1.3em; font-weight: 600; color: var(--color-text); text-align: center; }
+.project-icon { display: block; margin: 0 auto 15px auto; }
+.project-description { font-size: 0.95em; margin-bottom: 15px; flex-grow: 1; min-height: calc(1.5em * 3); color: var(--color-text); }
+.label-icons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; justify-content: center; min-height: 30px; }
+.label-icon { display: block; }
+
+/* --- Project Card Actions --- */
+.project-actions { display: flex; gap: 10px; margin-top: auto; padding-top: 15px; justify-content: space-around; }
 .action-button {
-     padding: 8px 15px;
-     border: none;
-     border-radius: 5px;
-     color: white; /* Default text color, override below */
-     cursor: pointer;
-     font-size: 0.9em;
-     transition: background-color 0.2s ease, opacity 0.2s ease;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     line-height: 1.2; /* Ensure text aligns well with icon/spinner */
+     padding: 8px 15px; border: none; border-radius: 5px; color: var(--color-button-text);
+     cursor: pointer; font-size: 0.9em; font-weight: 500; transition: background-color 0.2s ease, opacity 0.2s ease;
+     display: inline-flex; align-items: center; justify-content: center;
+     line-height: 1.2; min-width: 80px; text-align: center;
 }
-.action-button:disabled {
-     opacity: 0.6;
-     cursor: not-allowed;
+.search-container {
+    /* Takes priority in filter section if needed */
+flex-grow: 1;
 }
 
-/* Specific button styles */
-.start-button { background-color: #28a745; color: white; } /* Green */
+.search-input {
+    width: 200px; /* Adjust width as needed */
+    /* Uses .navbar-control base styles */
+}
+
+.action-button:disabled { opacity: 0.6; cursor: not-allowed; }
+.start-button { background-color: #28a745; }
 .start-button:hover:not(:disabled) { background-color: #218838; }
-/* Style for the button when the project is starting (it's disabled but looks different) */
-.project-card.starting .start-button { background-color: #5a8d66; } /* Muted green when starting */
-
-
-.open-button { background-color: #007bff; color: white; } /* Blue */
+.project-card.starting .start-button { background-color: #5a8d66; }
+.open-button { background-color: #007bff; }
 .open-button:hover:not(:disabled) { background-color: #0056b3; }
-
-.stop-button { background-color: #dc3545; color: white; } /* Red */
+.stop-button { background-color: #dc3545; }
 .stop-button:hover:not(:disabled) { background-color: #c82333; }
-.stop-button:disabled { background-color: #8a4a51; opacity: 0.6;} /* Muted red when disabled */
+.stop-button:disabled { background-color: #8a4a51; opacity: 0.6;}
 
-.status-indicator {
-    margin-top: 15px; /* Increased margin */
-    font-size: 0.8em;
-    font-weight: bold;
-    padding: 4px 10px; /* Adjusted padding */
-    border-radius: 15px; /* Pill shape */
-    display: inline-block;
-    text-align: center;
-    min-width: 80px; /* Ensure consistent width */
-}
+/* --- Spinner --- */
+.spinner { border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 50%; border-top: 2px solid var(--color-button-text); width: 12px; height: 12px; animation: spin 1s linear infinite; display: inline-block; margin-right: 6px; vertical-align: middle; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-/* Status indicator colors */
+/* --- Status Indicator --- */
+.status-indicator { margin-top: 15px; font-size: 0.8em; font-weight: bold; padding: 4px 12px; border-radius: 15px; display: block; text-align: center; width: fit-content; margin-left: auto; margin-right: auto; }
 .status-indicator.running { background-color: #28a745; color: white; }
 .status-indicator.stopped { background-color: #6c757d; color: white; }
-/* Use .project-card.starting to target the indicator when card has starting class */
-.project-card.starting .status-indicator { background-color: #ffc107; color: black; } /* Yellow for pending */
+.project-card.starting .status-indicator { background-color: #ffc107; color: black; }
+
+/* --- Tooltip --- */
+.tooltip { position: relative; display: inline-block; }
+.tooltip .tooltiptext { visibility: hidden; min-width: 80px; background-color: var(--color-tooltip-bg); color: var(--color-tooltip-text); text-align: center; border-radius: 6px; padding: 5px 8px; position: absolute; z-index: 1; bottom: 130%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.3s; pointer-events: none; font-size: 0.85em; }
+.tooltip .tooltiptext::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: var(--color-tooltip-bg) transparent transparent transparent; }
+.tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
 
 
-/* Tooltip Styles */
-.tooltip {
-  position: relative;
-  display: inline-block;
-  margin: 0 3px; /* Spacing between icons */
-}
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 100px;
-  background-color: #555; /* Use var(--color-tooltip-bg, #555) ? */
-  color: #fff; /* Use var(--color-tooltip-text, #fff) ? */
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%; /* Position above the icon */
-  left: 50%;
-  margin-left: -50px; /* Center the tooltip */
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none; /* Prevent tooltip from blocking hover on icon */
-}
- .tooltip .tooltiptext::after { /* Tooltip arrow */
-   content: "";
-   position: absolute;
-   top: 100%;
-   left: 50%;
-   margin-left: -5px;
-   border-width: 5px;
-   border-style: solid;
-   border-color: #555 transparent transparent transparent; /* Match tooltip background */
- }
+/* --- Styles for New Add Pages (Separate Pages) --- */
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid var(--color-border); }
+.page-header h1 { margin: 0; font-size: 1.8em; }
+.back-link { color: var(--color-button-background); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+.back-link:hover { color: var(--color-button-hover); text-decoration: underline; }
+.add-form-container { max-width: 600px; margin: 30px auto; padding: 25px 30px; background-color: var(--color-card-background); border: 1px solid var(--color-border); border-radius: 8px; box-shadow: 0 2px 5px var(--color-shadow); }
+.add-form h3 { margin-top: 0; margin-bottom: 20px; font-size: 1.4em; text-align: center; padding-bottom: 10px; border-bottom: 1px solid var(--color-border); }
+.add-form .form-group { margin-bottom: 18px; display: flex; flex-direction: column; gap: 6px; }
+.add-form .form-group label { font-weight: 500; font-size: 0.9em; }
+.add-form .form-group input[type="text"],
+.add-form .form-group input[type="number"],
+.add-form .form-group select { width: 100%; padding: 9px 12px; border: 1px solid var(--color-input-border); border-radius: 4px; background-color: var(--color-input-background); color: var(--color-text); font-size: 1em; box-sizing: border-box; outline: none; transition: border-color 0.2s ease; }
+.add-form .form-group input:focus, .add-form .form-group select:focus { border-color: var(--color-input-focus-border); }
+.add-form .label-selector { margin-top: 10px; }
+.add-form .label-multiselect { width: 100%; min-height: 100px; border: 1px solid var(--color-input-border); border-radius: 4px; background-color: var(--color-input-background); color: var(--color-text); padding: 5px; font-size: 0.95em; box-sizing: border-box; outline: none; }
+.add-form .label-multiselect option { padding: 4px 8px; }
+.add-form .label-multiselect:focus { border-color: var(--color-input-focus-border); }
+.add-form .label-selector small { display: block; margin-top: 5px; font-size: 0.8em; color: #6c757d; }
+.add-form .add-button { width: 100%; margin-top: 15px; background-color: var(--color-button-background); font-size: 1em; padding: 10px 15px; } /* Make submit button slightly larger */
+.add-form .add-button:hover:not(:disabled) { background-color: var(--color-button-hover); }
+.add-form .error-message { margin: 0 0 15px 0; max-width: none; }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-
-/* Error Message Style */
-.error-message {
-    color: #721c24; /* Darker red text */
-    background-color: #f8d7da; /* Light red background */
-    border: 1px solid #f5c6cb; /* Red border */
-    padding: 10px 15px; /* Adjusted padding */
-    border-radius: 5px;
-    margin: 20px auto; /* Center and add vertical margin */
-    text-align: center;
-    max-width: 600px; /* Limit width */
-}
+/* --- Responsive Adjustments --- */
+@media (max-width: 1100px) {
+    .top-navbar {
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .add-buttons-section {
+      margin-left: auto;
+    }
+    .theme-toggle-button-nav {
+      order: 99;
+      margin-left: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 15px 15px 15px;
+    }
+  
+    .top-navbar {
+      padding: 10px 15px;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  
+    .navbar-section {
+      gap: 10px;
+      flex: 1 1 100%;
+    }
+  
+    .search-container {
+      width: 100%;
+      order: -1;
+      margin-bottom: 10px;
+    }
+  
+    .search-input {
+      width: 100%;
+    }
+  
+    .filters-section {
+      flex-basis: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      order: 2;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  
+    .custom-port-section {
+      order: 1;
+      flex-grow: 1;
+      display: flex;
+      gap: 10px;
+    }
+  
+    .add-buttons-section {
+      order: 3;
+      margin-left: 0;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    .theme-toggle-button-nav {
+      order: 4;
+      margin-left: auto;
+      margin-top: 10px;
+    }
+  
+    .react-select-container {
+      min-width: 150px;
+    }
+  
+    .project-cards-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .projects-header {
+      font-size: 1.8em;
+    }
+  
+    .page-header h1 {
+      font-size: 1.6em;
+    }
+  
+    .add-form-container {
+      margin: 20px auto;
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .top-navbar {
+      min-height: 0;
+      flex-wrap: wrap;
+    }
+  
+    .navbar-section {
+      flex-basis: 100% !important;
+      justify-content: center !important;
+      margin-left: 0 !important;
+    }
+  
+    .filters-section {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+  
+    .filter-container {
+      justify-content: space-between;
+    }
+  
+    .custom-port-section {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .custom-port-input {
+      width: 100%;
+    }
+  
+    .add-buttons-section {
+      flex-direction: row;
+      gap: 10px;
+      align-items: stretch;
+    }
+  
+    .navbar-section .action-button {
+      width: auto;
+      flex-grow: 1;
+    }
+  
+    .theme-toggle-button-nav {
+      order: 99;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  
+    .main-content {
+      padding-top: 15px;
+    }
+  
+    .container {
+      padding: 0 10px 10px 10px;
+    }
+  
+    .projects-header {
+      font-size: 1.6em;
+      margin-bottom: 20px;
+    }
+  
+    .project-card {
+      padding: 15px;
+    }
+  }
+  
