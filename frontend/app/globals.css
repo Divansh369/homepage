@@ -145,6 +145,7 @@ body {
 .custom-port-input {
     width: 90px;
     text-align: center;
+    background-color: var(--color-input-background);
     height: var(--navbar-item-height); /* Make consistent */
     padding: 0 8px; /* Adjust padding */
     font-size: 0.9em; /* Match other inputs */
