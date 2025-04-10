@@ -38,11 +38,11 @@ console.log(`   >> Default Project Host: ${PROJECT_DEFAULT_HOST}`);
 console.log(`   >> Backend Listening on: http://${HOST}:${port}`);
 
 // --- Constants ---
-const BASE_DIR = '/home/divansh/homepage'; // Adjust if necessary
+const BASE_DIR = '/app'; // Adjust if necessary
 const PROJECTS_CSV = path.join(BASE_DIR, 'backend', 'projects.csv');
 const LABELS_CSV = path.join(BASE_DIR, 'backend', 'labels.csv');
 const PROJECT_LABELS_CSV = path.join(BASE_DIR, 'backend', 'project_labels.csv');
-const PROJECTS_BASE_PATH = '/home/divansh/projects'; // Adjust if necessary
+const PROJECTS_BASE_PATH = '/app/projects'; // Adjust if necessary
 
 // --- Utility Functions ---
 function parseCsv(filePath) {
