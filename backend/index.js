@@ -16,7 +16,7 @@ const PROJECT_DEFAULT_HOST = process.env.PROJECT_DEFAULT_HOST || '100.94.150.11'
 // --- CORS Configuration ---
 const allowedOrigins = [
     `http://${PROJECT_DEFAULT_HOST}:1025`, `http://localhost:1025`, `http://100.94.150.11:1025`,
-    `http://${PROJECT_DEFAULT_HOST}`, `http://localhost`, `http://100.94.150.11`
+    `http://${PROJECT_DEFAULT_HOST}`, `http://localhost`, `http://100.94.150.11`, 'http://vivo' ,'http://vivo:1025'
 ];
 const corsOptions = {
     origin: function (origin, callback) {
