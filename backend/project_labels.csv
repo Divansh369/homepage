@@ -1,34 +1,62 @@
 project_name,label_name
-jupyter,Python
-gitea,Go
-metabase,Java
-superset,Apache
-superset,Python
+coder,Javascript
+coder,IDE
+coder,Remote Access
+novnc,Javascript
+novnc,Remote Access
 planka,Javascript
+planka,Collaboration
+portainer,Go
+portainer,Docker
+portainer,DevOps
+cockpit,C
+cockpit,Javascript
+cockpit,DevOps
+jitsi,Javascript
+jitsi,Java
+jitsi,Python
+jitsi,Lua
+jitsi,Collaboration
+koel,PHP
+koel,Media
+jupyter,Python
+jupyter,Notebook
+nextcloud,PHP
+nextcloud,Cloud Storage
+gitea,Go
+gitea,DevOps
 connections,Python
 connections,Dart
-nextcloud,PHP
+pocketbase,Go
+pocketbase,Self-Hosting
 minIO,Go
+minIO,Cloud Storage
+superset,Apache
+superset,Python
+superset,Dashboard
+superset,Analytics
+metabase,Java
+metabase,Dashboard
+metabase,Analytics
+grafana,Go
+grafana,Dashboard
 dbeaver,Java
 dbeaver,Javascript
+dbeaver,Database
 uptime-kuma,Javascript
+uptime-kuma,Monitoring
 tomcat,Apache
 tomcat,Java
+tomcat,Web Server
 hadoop,Apache
 hadoop,Java
 react-app,Javascript
 next,Javascript
 aimeos,PHP
+aimeos,E-Commerce
 prestashop,PHP
+prestashop,E-Commerce
 drawdb,Javascript
+drawdb,Database
 zookeeper,Apache
 zookeeper,Java
-grafana,Go
-jitsi,Javascript
-jitsi,Java
-jitsi,Python
-jitsi, Lua
-coder,Javascript
-portainer,Go
-cockpit,Javascript
-cockpit,C

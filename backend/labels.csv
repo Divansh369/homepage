@@ -1,12 +1,9 @@
 label_name,label_type
-Error,utility
-Apache,utility
 Python,language
 Rust,language
 Ruby,language
 PHP,language
 Go,language
-Dotnet,utility
 Elixir,language
 Clojure,language
 Dart,language
@@ -17,5 +14,23 @@ Java,language
 Haskell,language
 C,language
 C++,language
-Docker,utility
+Dotnet,language
 Javascript,language
+Docker,utility
+Apache,utility
+Dashboard,utility
+Web Framework,utility
+Data Science,utility
+Collaboration,utility
+Monitoring,utility
+IDE,utility
+Remote Access,utility
+Self-Hosting,utility
+DevOps,utility
+Media,utility
+Notebook,utility
+Analytics,utility
+Database,utility
+Web Server,utility
+Cloud Storage,utility
+E-Commerce,utility

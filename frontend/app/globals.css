@@ -527,4 +527,73 @@ flex-grow: 1;
       padding: 15px;
     }
   }
-  
+  /* Add to globals.css */
+
+/* Edit Layout Button in Navbar */
+.nav-edit-button {
+  background-color: #ffc107; /* Yellow */
+  color: #333;
+  border: 1px solid #e6ac00;
+}
+.nav-edit-button.active,
+.nav-edit-button:hover {
+  background-color: #e6ac00;
+  color: #000;
+}
+
+/* Style links as disabled when edit mode is active */
+.disabled-link {
+  opacity: 0.5;
+  pointer-events: none; /* Prevent clicking */
+  cursor: not-allowed;
+}
+
+/* Make inputs/selects look disabled */
+.top-navbar select:disabled,
+.top-navbar input:disabled,
+.top-navbar button:disabled:not(.nav-edit-button) { /* Don't style the edit button itself when disabled */
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #eee; /* Lighter background */
+  [data-theme="dark"] & {
+      background-color: #404040; /* Darker background */
+  }
+}
+/* Specific override for react-select disabled state */
+.react-select-instance .react-select__control--is-disabled {
+   background-color: #eee;
+   border-color: #ddd;
+   opacity: 0.6;
+   cursor: not-allowed;
+   [data-theme="dark"] & {
+      background-color: #404040;
+      border-color: #555;
+  }
+}
+
+
+/* Card styles during drag */
+.project-card.dragging {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  z-index: 10; /* Bring dragged item above others */
+  /* Opacity is handled inline via style prop */
+}
+
+/* Optional Drag Handle Style (if you uncomment the button in SortableProjectCard) */
+/*
+.drag-handle {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: grab;
+  background: rgba(0,0,0,0.1);
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  line-height: 1;
+  color: var(--color-text);
+}
+.drag-handle:active {
+  cursor: grabbing;
+}
+*/

@@ -11,12 +11,12 @@ const { spawn, exec } = require('child_process'); // Need both
 const app = express();
 const port = process.env.BACKEND_PORT || 3001;
 const HOST = process.env.BACKEND_HOST || '0.0.0.0';
-const PROJECT_DEFAULT_HOST = process.env.PROJECT_DEFAULT_HOST || '100.114.43.102';
+const PROJECT_DEFAULT_HOST = process.env.PROJECT_DEFAULT_HOST || '100.94.150.11';
 
 // --- CORS Configuration ---
 const allowedOrigins = [
-    `http://${PROJECT_DEFAULT_HOST}:1025`, `http://localhost:1025`, `http://100.114.43.102:1025`,
-    `http://${PROJECT_DEFAULT_HOST}`, `http://localhost`, `http://100.114.43.102`
+    `http://${PROJECT_DEFAULT_HOST}:1025`, `http://localhost:1025`, `http://100.94.150.11:1025`,
+    `http://${PROJECT_DEFAULT_HOST}`, `http://localhost`, `http://100.94.150.11`
 ];
 const corsOptions = {
     origin: function (origin, callback) {
@@ -42,7 +42,7 @@ const BASE_DIR = '/home/divansh/homepage'; // Adjust if necessary
 const PROJECTS_CSV = path.join(BASE_DIR, 'backend', 'projects.csv');
 const LABELS_CSV = path.join(BASE_DIR, 'backend', 'labels.csv');
 const PROJECT_LABELS_CSV = path.join(BASE_DIR, 'backend', 'project_labels.csv');
-const PROJECTS_BASE_PATH = '/home/divansh/projects'; // Adjust if necessary
+const PROJECTS_BASE_PATH = '/home/divansh'; // Adjust if necessary
 
 // --- Utility Functions ---
 function parseCsv(filePath) {
@@ -85,11 +85,40 @@ function escapeCsvField(field) {
 }
 
 // --- API Endpoints ---
+app.use('/project_icons', (req, res, next) => {
+    // req.path will contain something like '/coder/logo.png' (after '/project_icons')
+    // We need to decode the components in case they were encoded
+    const requestedPath = decodeURIComponent(req.path);
 
+    // Construct the absolute filesystem path
+    // IMPORTANT: Ensure robust path joining and security checks here in a real app
+    // to prevent directory traversal attacks (e.g., req.path being '../..')
+    // This basic example assumes valid project/file names from your CSV.
+    const absoluteFilePath = path.join(PROJECTS_BASE_PATH, requestedPath);
+
+    // console.log(`Attempting to serve icon: ${absoluteFilePath}`); // Debugging log
+
+    // Check if file exists and serve it
+    // Use express.static's underlying 'send' for proper headers/streaming
+    res.sendFile(absoluteFilePath, (err) => {
+        if (err) {
+            // File not found or other error
+             if (err.code === "ENOENT") {
+                // console.warn(`Icon not found: ${absoluteFilePath}`);
+                res.status(404).send('Icon Not Found');
+             } else {
+                 console.error(`Error sending icon ${absoluteFilePath}:`, err);
+                 res.status(500).send('Server Error');
+             }
+        }
+        // else file is sent successfully
+    });
+});
 // GET Projects (Reads current state)
 app.get('/api/projects', (req, res) => {
     console.log("📡 GET /api/projects");
     try {
+        // parseCsv reads in file order, which is now the persisted order
         const projects = parseCsv(PROJECTS_CSV);
         const labels = parseCsv(LABELS_CSV);
         const projectLabels = parseCsv(PROJECT_LABELS_CSV);
@@ -105,25 +134,28 @@ app.get('/api/projects', (req, res) => {
                 const labelInfo = labelsMap[labelNameLower];
                 const originalLabelName = labelInfo?.label_name || labelNameLower;
                 const cardDesc = project.description || 'No description available.';
-                // Use label name as the ID for frontend matching
                 return { card_id: originalLabelName, card_name: originalLabelName, card_description: cardDesc, label_id: originalLabelName, label_name: originalLabelName };
             });
             const scheme = (project.scheme?.toLowerCase() === 'https') ? 'https' : 'http';
-            const host = project.host || PROJECT_DEFAULT_HOST; // Use project host if defined, else default
-            const iconPath = project.icon_filename ? `/projects/${project.project_name}/${project.icon_filename}` : '/label_icons/default.png';
+            const host = project.host || PROJECT_DEFAULT_HOST; // Use explicit host from CSV if present
+            const backendBaseUrl = `http://100.94.150.11:3001`; // e.g., http://100.94.150.11:3001
 
-            // Combine original project data with processed fields
+    const encodedProjectName = encodeURIComponent(project.project_name);
+    const encodedFilename = encodeURIComponent(project.icon_filename);
+
+    const iconPath = project.icon_filename
+         ? `${backendBaseUrl}/project_icons/${encodedProjectName}/${encodedFilename}` // Absolute URL
+         : '/label_icons/default.png'; // Keep fallback relative if it's in frontend public dir
+    // --- End Correction ---
+            // Return structured project data, spreading original first then overriding/adding calculated
             return {
-                // Spread original fields first
-                ...project,
-                // Ensure specific fields exist even if empty in CSV
+                project_name: project.project_name, // Ensure required field is present
                 description: project.description || '',
                 icon_filename: project.icon_filename || '',
                 startup_script: project.startup_script || '',
                 port: project.port || '',
-                // Overwrite/add processed fields
-                scheme: scheme,
-                host: host,
+                host: host, // Use calculated host
+                scheme: scheme, // Use calculated scheme
                 icon_path: iconPath,
                 cards: projectCards
             };
@@ -332,7 +364,72 @@ app.post('/api/add-project', async (req, res) => {
         res.status(500).json({ error: 'Failed to write project data.' });
     }
 });
+// --- NEW: Save Project Order Endpoint ---
+// --- Find and Replace this endpoint ---
+app.post('/api/projects/order', async (req, res) => {
+    console.log("📡 POST /api/projects/order");
+    const { newOrder } = req.body;
 
+    if (!Array.isArray(newOrder) || !newOrder.every(item => typeof item === 'string')) {
+        return res.status(400).json({ error: 'Invalid project order data. Expected an array of strings.' });
+    }
+
+    try {
+        // 1. Read current project data
+        const existingProjects = parseCsv(PROJECTS_CSV);
+        if (!Array.isArray(existingProjects)) {
+            console.error("Failed to parse existing projects CSV or file is empty.");
+            throw new Error("Could not read existing project data.");
+        }
+        const existingProjectsMap = existingProjects.reduce((map, proj) => {
+            if (proj.project_name) { map[proj.project_name] = proj; }
+            return map;
+        }, {}); // No type assertion needed
+
+        // 2. Create reordered list
+        const reorderedProjects = [];
+        const includedProjectNames = new Set(); // No <string> needed
+
+        newOrder.forEach(projectName => {
+            if (existingProjectsMap[projectName]) {
+                reorderedProjects.push(existingProjectsMap[projectName]);
+                includedProjectNames.add(projectName);
+            } else {
+                console.warn(`⚠️ Project name "${projectName}" from new order not found. Skipping.`);
+            }
+        });
+
+        // 3. Append missing projects
+        existingProjects.forEach(proj => {
+            if (proj.project_name && !includedProjectNames.has(proj.project_name)) {
+                console.warn(`⚠️ Project "${proj.project_name}" not in order. Appending.`);
+                reorderedProjects.push(proj);
+            }
+        });
+
+        // 4. Format to CSV
+        const headerRow = PROJECT_CSV_HEADERS.join(',');
+        const dataRows = reorderedProjects.map(proj => {
+            // --- CORRECTED accessing proj[header] ---
+            return PROJECT_CSV_HEADERS.map(header => escapeCsvField(proj[header])).join(','); // <<< REMOVED '(proj as any)[header]'
+            // --- End Correction ---
+        });
+        const newCsvContent = dataRows.length > 0
+            ? [headerRow, ...dataRows].join('\n') + '\n'
+            : headerRow + '\n';
+
+        // 5. Overwrite the file
+        await fs.writeFile(PROJECTS_CSV, newCsvContent, 'utf8');
+
+        console.log(`✅ Project order saved successfully to ${PROJECTS_CSV}.`);
+        res.status(200).json({ message: 'Project order saved successfully.' });
+
+    } catch (error) {
+        console.error(`❌ Error saving project order:`, error);
+        res.status(500).json({ error: 'Internal Server Error', details: 'Failed to save project order.' });
+    }
+});
+// --- End of endpoint block ---
 // --- Server Listen ---
 app.listen(port, HOST, () => {
     console.log(`\n🚀 Backend server ready on http://${HOST}:${port}`);
