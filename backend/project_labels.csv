@@ -60,3 +60,59 @@ drawdb,Javascript
 drawdb,Database
 zookeeper,Apache
 zookeeper,Java
+evershop,Javascript
+evershop,E-Commerce
+medusa,Javascript
+medusa,E-Commerce
+bagisto,PHP
+bagisto,E-Commerce
+lunar,PHP
+lunar,E-Commerce
+ofbiz,Java
+ofbiz,Apache
+ofbiz,E-Commerce
+ofbiz,Web Server
+microweber,PHP
+microweber,E-Commerce
+opencart,PHP
+opencart,E-Commerce
+pimcore,PHP
+pimcore,E-Commerce
+pimcore,Dashboard
+pimcore,Analytics
+shopware,PHP
+shopware,E-Commerce
+sylius,PHP
+sylius,E-Commerce
+solidus,Ruby
+solidus,E-Commerce
+hoppscotch,Javascript
+hoppscotch,API
+hoppscotch,Analytics
+nocobase,Javascript
+nocobase,Collaboration
+nocodb,Javascript
+nocodb,Data Science
+nocodb,Database
+restfox,Javascript
+restfox,API
+restfox,Analytics
+jellyfin,C
+jellyfin,Cloud Storage
+jellyfin,Web Server
+docmost,Javascript
+docmost,Collaboration
+n8n,Javascript
+n8n,Automation
+directus,Javascript
+directus,API
+syncthing,Go
+syncthing,Remote Access
+neo4j,Java
+neo4j,Database
+focalboard,Javascript
+focalboard,Go
+focalboard,Collaboration
+mattermost,Javascript
+mattermost,Go
+mattermost,Collaboration

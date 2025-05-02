@@ -72,7 +72,7 @@ const nextConfig = {
       // 1. Proxy API requests to the backend server
       {
         source: '/api/:path*',
-        destination: `http://localhost:${process.env.BACKEND_PORT || 3001}/api/:path*`, // Use env var or default
+        destination: `http://localhost:${process.env.BACKEND_PORT || 1024}/api/:path*`, // Use env var or default
       },
       {
         source: `/app/jupyter/:path*`,

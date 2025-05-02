@@ -1,0 +1,378 @@
+[2025-04-29T05:18:51.457Z] info  code-server 4.99.0-rc.1 53722c536197276005f68a7fb174d9ab15afc63b
+[2025-04-29T05:18:51.475Z] info  Using user-data-dir /home/divansh/.local/share/code-server
+[2025-04-29T05:18:51.491Z] info  Using config file /home/divansh/.config/code-server/config.yaml
+[2025-04-29T05:18:51.491Z] info  HTTP server listening on http://100.94.150.11:1133/
+[2025-04-29T05:18:51.491Z] info    - Authentication is enabled
+[2025-04-29T05:18:51.491Z] info      - Using password from /home/divansh/.config/code-server/config.yaml
+[2025-04-29T05:18:51.491Z] info    - Not serving HTTPS
+[2025-04-29T05:18:51.491Z] info  Session server listening on /home/divansh/.local/share/code-server/code-server-ipc.sock
+[10:49:00] 
+
+
+
+
+[10:49:00] Extension host agent started.
+[10:49:00] Deleted marked for removal extension from disk cweijan.vscode-mysql-client2 /home/divansh/.local/share/code-server/extensions/cweijan.vscode-mysql-client2-8.2.5-universal
+File not found: /home/divansh/coder/lib/vscode/node_modules/vsda/rust/web/vsda_bg.wasm
+File not found: /home/divansh/coder/lib/vscode/node_modules/vsda/rust/web/vsda.js
+[10:49:20] [100.86.36.97][5f1e0720][ManagementConnection] New connection established.
+[10:49:23] [100.86.36.97][e2cf9a38][ExtensionHostConnection] New connection established.
+[10:49:23] [100.86.36.97][e2cf9a38][ExtensionHostConnection] <1254944> Launched Extension Host Process.
+[10:49:36] Getting Manifest... ms-azuretools.vscode-docker
+[10:49:39] Installing extension: ms-azuretools.vscode-docker {
+  productVersion: { version: '1.99.0', date: '2025-04-04T18:26:25.534Z' },
+  pinned: false,
+  operation: 3,
+  isApplicationScoped: false,
+  profileLocation: pr {
+    scheme: 'file',
+    authority: '',
+    path: '/home/divansh/.local/share/code-server/extensions/extensions.json',
+    query: '',
+    fragment: '',
+    _formatted: 'file:///home/divansh/.local/share/code-server/extensions/extensions.json',
+    _fsPath: '/home/divansh/.local/share/code-server/extensions/extensions.json'
+  }
+}
+[10:49:45] Could not load vsce-sign module Cannot find package '@vscode/vsce-sign' imported from /home/divansh/coder/lib/vscode/out/server-main.js
+[10:49:45] Extension signature verification is not done: ms-azuretools.vscode-docker
+[10:49:46] Extracted extension to file:///home/divansh/.local/share/code-server/extensions/ms-azuretools.vscode-docker-1.29.6-universal: ms-azuretools.vscode-docker
+[10:49:46] Renamed to /home/divansh/.local/share/code-server/extensions/ms-azuretools.vscode-docker-1.29.6-universal
+[10:49:46] Marked extension as removed ms-azuretools.vscode-docker-1.29.5-universal
+[10:49:46] Extension installed successfully: ms-azuretools.vscode-docker file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[10:49:54] [100.86.36.97][5f1e0720][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[10:49:54] [100.86.36.97][e2cf9a38][ExtensionHostConnection] <1254944> Extension Host Process exited with code: 0, signal: null.
+[2025-05-01T15:55:14.080Z] info  code-server 4.99.0-rc.1 53722c536197276005f68a7fb174d9ab15afc63b
+[2025-05-01T15:55:14.087Z] info  Using user-data-dir /home/divansh/.local/share/code-server
+[2025-05-01T15:55:14.105Z] info  Using config file /home/divansh/.config/code-server/config.yaml
+[2025-05-01T15:55:14.105Z] info  HTTP server listening on http://100.94.150.11:1133/
+[2025-05-01T15:55:14.105Z] info    - Authentication is enabled
+[2025-05-01T15:55:14.105Z] info      - Using password from /home/divansh/.config/code-server/config.yaml
+[2025-05-01T15:55:14.105Z] info    - Not serving HTTPS
+[2025-05-01T15:55:14.105Z] info  Session server listening on /home/divansh/.local/share/code-server/code-server-ipc.sock
+[21:26:09] 
+
+
+
+
+[21:26:09] Extension host agent started.
+[21:26:09] Deleted marked for removal extension from disk ms-azuretools.vscode-docker /home/divansh/.local/share/code-server/extensions/ms-azuretools.vscode-docker-1.29.5-universal
+File not found: /home/divansh/coder/lib/vscode/node_modules/vsda/rust/web/vsda_bg.wasm
+File not found: /home/divansh/coder/lib/vscode/node_modules/vsda/rust/web/vsda.js
+[21:29:02] [100.68.61.22][72f933a2][ManagementConnection] New connection established.
+[21:29:04] [100.68.61.22][a804a8f8][ExtensionHostConnection] New connection established.
+[21:29:04] [100.68.61.22][a804a8f8][ExtensionHostConnection] <1750064> Launched Extension Host Process.
+File not found: /home/divansh/coder/lib/vscode/extensions/emmet/dist/browser/emmetBrowserMain.js
+File not found: /home/divansh/coder/lib/vscode/extensions/git-base/dist/browser/extension.js
+[21:29:09] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+[21:29:09] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+[21:29:12] Getting Manifest... devsense.composer-php-vscode
+[21:29:12] Getting Manifest... devsense.phptools-vscode
+[21:29:12] Getting Manifest... devsense.profiler-php-vscode
+File not found: /home/divansh/coder/lib/vscode/extensions/merge-conflict/dist/browser/mergeConflictMain.js
+File not found: /home/divansh/coder/lib/vscode/extensions/configuration-editing/dist/browser/configurationEditingMain.js
+File not found: /home/divansh/coder/lib/vscode/extensions/json-language-features/client/dist/browser/jsonClientMain.js
+File not found: /home/divansh/coder/lib/vscode/extensions/typescript-language-features/dist/browser/extension.js
+[2025-05-01T16:00:04.866Z] error Failed to get latest version [38;2;140;140;140m{"error":"getaddrinfo EAI_AGAIN api.github.com"}[0m
+[21:35:16] [100.68.61.22][72f933a2][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[21:35:16] [100.68.61.22][a804a8f8][ExtensionHostConnection] <1750064> Extension Host Process exited with code: 0, signal: null.
+File not found: /home/divansh/coder/lib/vscode/node_modules/vsda/rust/web/vsda_bg.wasm
+File not found: /home/divansh/coder/lib/vscode/node_modules/vsda/rust/web/vsda.js
+[21:35:32] [100.68.61.22][cf017d3c][ManagementConnection] New connection established.
+[21:35:37] [100.68.61.22][d42e4127][ExtensionHostConnection] New connection established.
+[21:35:37] [100.68.61.22][d42e4127][ExtensionHostConnection] <1755346> Launched Extension Host Process.
+[21:35:51] Getting Manifest... devsense.composer-php-vscode
+[21:35:51] Getting Manifest... devsense.phptools-vscode
+[21:35:51] Getting Manifest... devsense.profiler-php-vscode
+File not found: /home/divansh/coder/lib/vscode/node_modules/vsda/rust/web/vsda_bg.wasm
+File not found: /home/divansh/coder/lib/vscode/node_modules/vsda/rust/web/vsda.js
+[21:36:55] [100.125.80.1][1e4e769d][ManagementConnection] New connection established.
+[21:36:57] [100.125.80.1][0817bd93][ExtensionHostConnection] New connection established.
+[21:36:57] [100.125.80.1][0817bd93][ExtensionHostConnection] <1758211> Launched Extension Host Process.
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 161
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 162
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 163
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 164
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 165
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 166
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 167
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 168
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 169
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 170
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 171
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 172
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 173
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 174
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 175
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 176
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 177
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 178
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 179
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 180
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 181
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 182
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 183
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 184
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 185
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 186
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 187
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 188
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 189
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 190
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 191
+[21:36:58] RequestStore#acceptReply was called without receiving a matching request 192
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 193
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 194
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 195
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 196
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 197
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 198
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 199
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 200
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 201
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 202
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 203
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 204
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 205
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 206
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 207
+[21:37:01] RequestStore#acceptReply was called without receiving a matching request 208
+[21:37:06] Getting Manifest... devsense.composer-php-vscode
+[21:37:06] Getting Manifest... devsense.phptools-vscode
+[21:37:06] Getting Manifest... devsense.profiler-php-vscode
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 209
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 210
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 211
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 212
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 213
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 214
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 215
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 216
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 217
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 218
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 219
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 220
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 221
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 222
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 223
+[21:37:27] RequestStore#acceptReply was called without receiving a matching request 224
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 225
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 226
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 227
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 228
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 229
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 230
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 231
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 232
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 233
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 234
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 235
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 236
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 237
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 238
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 239
+[21:37:56] RequestStore#acceptReply was called without receiving a matching request 240
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 241
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 242
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 243
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 244
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 245
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 246
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 247
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 248
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 249
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 250
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 251
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 252
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 253
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 254
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 255
+[21:39:12] RequestStore#acceptReply was called without receiving a matching request 256
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 257
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 258
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 259
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 260
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 261
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 262
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 263
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 264
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 265
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 266
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 267
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 268
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 269
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 270
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 271
+[21:39:16] RequestStore#acceptReply was called without receiving a matching request 272
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 273
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 274
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 275
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 276
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 277
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 278
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 279
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 280
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 281
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 282
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 283
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 284
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 285
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 286
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 287
+[21:39:37] RequestStore#acceptReply was called without receiving a matching request 288
+[21:39:44] [100.68.61.22][cf017d3c][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+File not found: /home/divansh/coder/lib/vscode/node_modules/vsda/rust/web/vsda_bg.wasm
+File not found: /home/divansh/coder/lib/vscode/node_modules/vsda/rust/web/vsda.js
+[21:39:46] [100.68.61.22][6ba5c098][ManagementConnection] New connection established.
+[21:39:48] [100.68.61.22][f2379098][ExtensionHostConnection] New connection established.
+[21:39:48] [100.68.61.22][f2379098][ExtensionHostConnection] <1765459> Launched Extension Host Process.
+[21:39:50] [100.68.61.22][d42e4127][ExtensionHostConnection] <1755346> Extension Host Process exited with code: 0, signal: null.
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 289
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 290
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 291
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 292
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 293
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 294
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 295
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 296
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 297
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 298
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 299
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 300
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 301
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 302
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 303
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 304
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 305
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 306
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 307
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 308
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 309
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 310
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 311
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 312
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 313
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 314
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 315
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 316
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 317
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 318
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 319
+[21:39:51] RequestStore#acceptReply was called without receiving a matching request 320
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 321
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 322
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 323
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 324
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 325
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 326
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 327
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 328
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 329
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 330
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 331
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 332
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 333
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 334
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 335
+[21:39:52] RequestStore#acceptReply was called without receiving a matching request 336
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 337
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 338
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 339
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 340
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 341
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 342
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 343
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 344
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 345
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 346
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 347
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 348
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 349
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 350
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 351
+[21:39:55] RequestStore#acceptReply was called without receiving a matching request 352
+[21:40:00] Getting Manifest... devsense.composer-php-vscode
+[21:40:00] Getting Manifest... devsense.phptools-vscode
+[21:40:00] Getting Manifest... devsense.profiler-php-vscode
+[21:40:37] [100.125.80.1][1e4e769d][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[21:41:39] [100.68.61.22][6ba5c098][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[21:41:45] [100.68.61.22][f2379098][ExtensionHostConnection] <1765459> Extension Host Process exited with code: 0, signal: null.
+[21:43:42] Installing extension: devsense.composer-php-vscode {
+  productVersion: { version: '1.99.0', date: '2025-04-04T18:26:25.534Z' },
+  pinned: false,
+  operation: 3,
+  isApplicationScoped: false,
+  profileLocation: pr {
+    scheme: 'file',
+    authority: '',
+    path: '/home/divansh/.local/share/code-server/extensions/extensions.json',
+    query: '',
+    fragment: '',
+    _formatted: 'file:///home/divansh/.local/share/code-server/extensions/extensions.json',
+    _fsPath: '/home/divansh/.local/share/code-server/extensions/extensions.json'
+  }
+}
+[21:43:42] Extension is already requested to install devsense.composer-php-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:43:42] Installing extension: devsense.profiler-php-vscode {
+  productVersion: { version: '1.99.0', date: '2025-04-04T18:26:25.534Z' },
+  pinned: false,
+  operation: 3,
+  isApplicationScoped: false,
+  profileLocation: pr {
+    scheme: 'file',
+    authority: '',
+    path: '/home/divansh/.local/share/code-server/extensions/extensions.json',
+    query: '',
+    fragment: '',
+    _formatted: 'file:///home/divansh/.local/share/code-server/extensions/extensions.json',
+    _fsPath: '/home/divansh/.local/share/code-server/extensions/extensions.json'
+  }
+}
+[21:43:43] Extension is already requested to install devsense.profiler-php-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:43:43] Extension is already requested to install devsense.composer-php-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:43:43] Extension is already requested to install devsense.profiler-php-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:43:43] Installing extension: devsense.phptools-vscode {
+  productVersion: { version: '1.99.0', date: '2025-04-04T18:26:25.534Z' },
+  pinned: false,
+  operation: 3,
+  isApplicationScoped: false,
+  profileLocation: pr {
+    scheme: 'file',
+    authority: '',
+    path: '/home/divansh/.local/share/code-server/extensions/extensions.json',
+    query: '',
+    fragment: '',
+    _formatted: 'file:///home/divansh/.local/share/code-server/extensions/extensions.json',
+    _fsPath: '/home/divansh/.local/share/code-server/extensions/extensions.json'
+  }
+}
+[21:43:43] Extension is already requested to install devsense.phptools-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:43:43] Extension is already requested to install devsense.composer-php-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:43:43] Extension is already requested to install devsense.phptools-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:43:43] Extension is already requested to install devsense.profiler-php-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:43:44] Getting Manifest... devsense.composer-php-vscode
+[21:43:44] Getting Manifest... devsense.profiler-php-vscode
+[21:43:45] Extension is already requested to install devsense.phptools-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:43:45] Getting Manifest... devsense.intelli-php-vscode
+[21:43:45] Could not load vsce-sign module Cannot find package '@vscode/vsce-sign' imported from /home/divansh/coder/lib/vscode/out/server-main.js
+[21:43:45] Extension signature verification is not done: devsense.composer-php-vscode
+[21:43:45] Extracted extension to file:///home/divansh/.local/share/code-server/extensions/devsense.composer-php-vscode-1.58.17217-universal: devsense.composer-php-vscode
+[21:43:45] Renamed to /home/divansh/.local/share/code-server/extensions/devsense.composer-php-vscode-1.58.17217-universal
+[21:43:45] Marked extension as removed devsense.composer-php-vscode-1.57.17158-universal
+[21:43:45] Extension installed successfully: devsense.composer-php-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:43:46] Could not load vsce-sign module Cannot find package '@vscode/vsce-sign' imported from /home/divansh/coder/lib/vscode/out/server-main.js
+[21:43:46] Extension signature verification is not done: devsense.profiler-php-vscode
+[21:43:46] Extracted extension to file:///home/divansh/.local/share/code-server/extensions/devsense.profiler-php-vscode-1.58.17217-universal: devsense.profiler-php-vscode
+[21:43:46] Renamed to /home/divansh/.local/share/code-server/extensions/devsense.profiler-php-vscode-1.58.17217-universal
+[21:43:46] Marked extension as removed devsense.profiler-php-vscode-1.57.17158-universal
+[21:43:46] Extension installed successfully: devsense.profiler-php-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:44:18] Could not load vsce-sign module Cannot find package '@vscode/vsce-sign' imported from /home/divansh/coder/lib/vscode/out/server-main.js
+[21:44:18] Extension signature verification is not done: devsense.phptools-vscode
+[21:44:18] Extracted extension to file:///home/divansh/.local/share/code-server/extensions/devsense.phptools-vscode-1.58.17217-linux-x64: devsense.phptools-vscode
+[21:44:18] Renamed to /home/divansh/.local/share/code-server/extensions/devsense.phptools-vscode-1.58.17217-linux-x64
+[21:44:18] Marked extension as removed devsense.phptools-vscode-1.57.17158-linux-x64
+[21:44:18] Extension installed successfully: devsense.phptools-vscode file:///home/divansh/.local/share/code-server/extensions/extensions.json
+[21:44:29] [File Watcher] Unexpected error: inotify_add_watch on '/home/divansh/connections-develop/frontend/lib/screens/settings_feature/support' failed: No such file or directory (EUNKNOWN) (path: /home/divansh)
+[21:44:29] [File Watcher (universal)] inotify_add_watch on '/home/divansh/connections-develop/frontend/lib/screens/settings_feature/support' failed: No such file or directory
+[00:40:12] [100.125.80.1][0817bd93][ExtensionHostConnection] <1758211> Extension Host Process exited with code: 0, signal: null.
+[00:40:43] [100.125.80.1][1e4e769d][ManagementConnection] The reconnection grace time of 3h has expired, so the connection will be disposed.

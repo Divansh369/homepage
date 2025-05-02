@@ -9,14 +9,14 @@ const path = require('path');
 const { spawn, exec } = require('child_process'); // Need both
 
 const app = express();
-const port = process.env.BACKEND_PORT || 3001;
+const port = process.env.BACKEND_PORT || 1024;
 const HOST = process.env.BACKEND_HOST || '0.0.0.0';
-const PROJECT_DEFAULT_HOST = process.env.PROJECT_DEFAULT_HOST || '100.94.150.11';
+const PROJECT_DEFAULT_HOST = process.env.PROJECT_DEFAULT_HOST || '';
 
 // --- CORS Configuration ---
 const allowedOrigins = [
-    `http://${PROJECT_DEFAULT_HOST}:1025`, `http://localhost:1025`, `http://100.94.150.11:1025`,
-    `http://${PROJECT_DEFAULT_HOST}`, `http://localhost`, `http://100.94.150.11`
+    `http://${PROJECT_DEFAULT_HOST}:1025`, `http://localhost:1025`, `http://:1025`,
+    `http://${PROJECT_DEFAULT_HOST}`, `http://localhost`, `http://`, 'http://vivo' ,'http://vivo:1025'
 ];
 const corsOptions = {
     origin: function (origin, callback) {
@@ -138,7 +138,7 @@ app.get('/api/projects', (req, res) => {
             });
             const scheme = (project.scheme?.toLowerCase() === 'https') ? 'https' : 'http';
             const host = project.host || PROJECT_DEFAULT_HOST; // Use explicit host from CSV if present
-            const backendBaseUrl = `http://100.94.150.11:3001`; // e.g., http://100.94.150.11:3001
+            const backendBaseUrl = `http://100.94.150.11:1024`; // e.g., http://:3001
 
     const encodedProjectName = encodeURIComponent(project.project_name);
     const encodedFilename = encodeURIComponent(project.icon_filename);
@@ -228,9 +228,21 @@ app.post('/api/start-project', (req, res) => {
 
         if (!fsSync.existsSync(projectDir)) { console.error(`❌ Dir not found: ${projectDir}`); return res.status(404).json({ error: `Project directory not found for '${projectName}'` });}
         if (!fsSync.existsSync(startupScriptPath)) { console.error(`❌ Script not found: ${startupScriptPath}`); return res.status(404).json({ error: `Startup script not found: ${project.startup_script}` }); }
+        const logsDir = path.join(__dirname, 'logs');
+        if (!fsSync.existsSync(logsDir)) fsSync.mkdirSync(logsDir);
 
-        console.log(`🚀 Spawning detached process for '${projectName}'`);
-        const spawnOptions = { cwd: projectDir, detached: true, stdio: 'ignore', shell: true };
+        const logFilePath = path.join(logsDir, `${projectName}.log`);
+        const out = fsSync.openSync(logFilePath, 'a'); // 'a' = append mode
+        const err = fsSync.openSync(logFilePath, 'a'); // stderr also in same file
+        console.log(`🚀 Spawning detached process for '${projectName}' with log: logs/${projectName}.log`);
+        
+        const spawnOptions = {
+            cwd: projectDir,
+            detached: true,
+            stdio: ['ignore', out, err], // [stdin, stdout, stderr]
+            shell: true
+        };
+        
         const child = spawn('nohup', [startupScriptPath], spawnOptions);
         child.on('error', (spawnError) => console.error(`💥 Spawn error ${projectName}:`, spawnError));
         child.unref();

@@ -23,7 +23,7 @@ interface InitialStatusResult { name: string; running: boolean; }
 interface SelectOption { value: string; label: string; }
 
 // --- Constants ---
-const POLLING_INTERVAL = 3000;
+const POLLING_INTERVAL = 5000;
 const FIXED_HOST_FOR_CUSTOM_PORT = process.env.NEXT_PUBLIC_FIXED_HOST || '100.94.150.11';
 
 

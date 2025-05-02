@@ -1,0 +1,642 @@
+
+	Your Node.js version 23.10.0 is currently not supported by n8n.
+	Please use Node.js v18.17.0 (recommended), v20, or v22 instead!
+	
+
+	Your Node.js version 23.10.0 is currently not supported by n8n.
+	Please use Node.js v18.17.0 (recommended), v20, or v22 instead!
+	
+User settings loaded from: /home/divansh/.n8n/config
+Initializing n8n process
+n8n ready on 0.0.0.0, port 5678
+Version: 1.64.3
+
+Editor is now accessible via:
+http://localhost:5678/
+/home/divansh/n8n/start.sh: line 3: 3751964 Killed                  /home/divansh/.asdf/installs/nodejs/20.0.0/bin/node /home/divansh/n8n/node_modules/n8n/bin/n8n
+User settings loaded from: /home/divansh/.n8n/config
+Initializing n8n process
+n8n ready on 0.0.0.0, port 5678
+Version: 1.64.3
+
+Editor is now accessible via:
+http://localhost:5678/
+getaddrinfo ENOTFOUND connections.minio.diivvansh.com
+Error: getaddrinfo ENOTFOUND connections.minio.diivvansh.com
+    at Function.AxiosError.from (/home/divansh/n8n/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/home/divansh/n8n/node_modules/axios/lib/adapters/http.js:620:25)
+    at RedirectableRequest.emit (node:events:523:35)
+    at RedirectableRequest.emit (node:domain:489:12)
+    at ClientRequest.eventHandlers.<computed> (/home/divansh/n8n/node_modules/follow-redirects/index.js:49:24)
+    at ClientRequest.emit (node:events:511:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at TLSSocket.socketErrorListener (node:_http_client:495:9)
+    at TLSSocket.emit (node:events:511:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at Axios.request (/home/divansh/n8n/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at requestFn (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:825:27)
+    at proxyRequestToAxios (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:829:20)
+    at Object.request (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:3342:4)
+    at Object.s3ApiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:93:10)
+    at Object.s3ApiRequestSOAP (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:139:19)
+    at Object.execute (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/S3.node.ts:232:22)
+    at Workflow.runNode (/home/divansh/n8n/node_modules/n8n-workflow/src/Workflow.ts:1382:8)
+    at /home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:1167:27
+
+getaddrinfo ENOTFOUND connections.minio.diivvansh.com
+Error: getaddrinfo ENOTFOUND connections.minio.diivvansh.com
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+
+getaddrinfo ENOTFOUND connections.minio.diivvansh.com
+Error: getaddrinfo ENOTFOUND connections.minio.diivvansh.com
+    at Function.AxiosError.from (/home/divansh/n8n/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/home/divansh/n8n/node_modules/axios/lib/adapters/http.js:620:25)
+    at RedirectableRequest.emit (node:events:523:35)
+    at RedirectableRequest.emit (node:domain:489:12)
+    at ClientRequest.eventHandlers.<computed> (/home/divansh/n8n/node_modules/follow-redirects/index.js:49:24)
+    at ClientRequest.emit (node:events:511:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at TLSSocket.socketErrorListener (node:_http_client:495:9)
+    at TLSSocket.emit (node:events:511:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at Axios.request (/home/divansh/n8n/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at requestFn (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:825:27)
+    at proxyRequestToAxios (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:829:20)
+    at Object.request (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:3342:4)
+    at Object.s3ApiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:93:10)
+    at Object.s3ApiRequestSOAP (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:139:19)
+    at Object.execute (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/S3.node.ts:232:22)
+    at Workflow.runNode (/home/divansh/n8n/node_modules/n8n-workflow/src/Workflow.ts:1382:8)
+    at /home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:1167:27
+
+getaddrinfo ENOTFOUND connections.minio.diivvansh.com
+Error: getaddrinfo ENOTFOUND connections.minio.diivvansh.com
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 5)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 6)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 7)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 8)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 10)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 11)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 12)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 13)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 14)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 15)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.run (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:154:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:292:41)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 17)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.runPartialWorkflow (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:315:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:312:42)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.runPartialWorkflow (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:315:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:312:42)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+Error: getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+    at Function.AxiosError.from (/home/divansh/n8n/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/home/divansh/n8n/node_modules/axios/lib/adapters/http.js:620:25)
+    at RedirectableRequest.emit (node:events:523:35)
+    at RedirectableRequest.emit (node:domain:489:12)
+    at ClientRequest.eventHandlers.<computed> (/home/divansh/n8n/node_modules/follow-redirects/index.js:49:24)
+    at ClientRequest.emit (node:events:511:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at TLSSocket.socketErrorListener (node:_http_client:495:9)
+    at TLSSocket.emit (node:events:511:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at Axios.request (/home/divansh/n8n/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at requestFn (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:825:27)
+    at proxyRequestToAxios (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:829:20)
+    at Object.request (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:3342:4)
+    at Object.s3ApiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:93:10)
+    at Object.s3ApiRequestSOAP (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:139:19)
+    at Object.execute (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/S3.node.ts:600:20)
+    at Workflow.runNode (/home/divansh/n8n/node_modules/n8n-workflow/src/Workflow.ts:1382:8)
+    at /home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:1167:27
+
+getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+Error: getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+
+HTTP(S) Scheme is required in endpoint definition
+Error: HTTP(S) Scheme is required in endpoint definition
+    at new NodeOperationError (/home/divansh/n8n/node_modules/n8n-workflow/src/errors/node-operation.error.ts:22:12)
+    at Object.s3ApiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:41:9)
+    at Object.s3ApiRequestSOAP (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:139:19)
+    at Object.execute (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/S3.node.ts:600:20)
+    at Workflow.runNode (/home/divansh/n8n/node_modules/n8n-workflow/src/Workflow.ts:1382:8)
+    at /home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:1167:27
+    at /home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:1887:11
+
+getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+Error: getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+    at Function.AxiosError.from (/home/divansh/n8n/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/home/divansh/n8n/node_modules/axios/lib/adapters/http.js:620:25)
+    at RedirectableRequest.emit (node:events:523:35)
+    at RedirectableRequest.emit (node:domain:489:12)
+    at ClientRequest.eventHandlers.<computed> (/home/divansh/n8n/node_modules/follow-redirects/index.js:49:24)
+    at ClientRequest.emit (node:events:511:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at TLSSocket.socketErrorListener (node:_http_client:495:9)
+    at TLSSocket.emit (node:events:511:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at Axios.request (/home/divansh/n8n/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at requestFn (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:825:27)
+    at proxyRequestToAxios (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:829:20)
+    at Object.request (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:3342:4)
+    at Object.s3ApiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:93:10)
+    at Object.s3ApiRequestSOAP (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:139:19)
+    at Object.execute (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/S3.node.ts:600:20)
+    at Workflow.runNode (/home/divansh/n8n/node_modules/n8n-workflow/src/Workflow.ts:1382:8)
+    at /home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:1167:27
+
+getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+Error: getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 21)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.runPartialWorkflow (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:315:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:312:42)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.runPartialWorkflow (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:315:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:312:42)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+Error: getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+    at Function.AxiosError.from (/home/divansh/n8n/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/home/divansh/n8n/node_modules/axios/lib/adapters/http.js:620:25)
+    at RedirectableRequest.emit (node:events:523:35)
+    at RedirectableRequest.emit (node:domain:489:12)
+    at ClientRequest.eventHandlers.<computed> (/home/divansh/n8n/node_modules/follow-redirects/index.js:49:24)
+    at ClientRequest.emit (node:events:511:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at TLSSocket.socketErrorListener (node:_http_client:495:9)
+    at TLSSocket.emit (node:events:511:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at Axios.request (/home/divansh/n8n/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at requestFn (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:825:27)
+    at proxyRequestToAxios (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:829:20)
+    at Object.request (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:3342:4)
+    at Object.s3ApiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:93:10)
+    at Object.s3ApiRequestSOAP (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:139:19)
+    at Object.execute (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/S3.node.ts:561:22)
+    at Workflow.runNode (/home/divansh/n8n/node_modules/n8n-workflow/src/Workflow.ts:1382:8)
+    at /home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:1167:27
+
+getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+Error: getaddrinfo ENOTFOUND lol.minio.diivvansh.com
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+
+409 - "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>BucketAlreadyOwnedByYou</Code><Message>Your previous request to create the named bucket succeeded and you already own it.</Message><BucketName>lol</BucketName><Resource>/lol/</Resource><RequestId>183A229BCA5B6B2E</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>"
+AxiosError: Request failed with status code 409
+    at settle (/home/divansh/n8n/node_modules/axios/lib/core/settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (/home/divansh/n8n/node_modules/axios/lib/adapters/http.js:599:11)
+    at IncomingMessage.emit (node:events:523:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1367:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/divansh/n8n/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at requestFn (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:825:27)
+    at proxyRequestToAxios (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:829:20)
+    at Object.request (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:3342:4)
+    at Object.s3ApiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:93:10)
+    at Object.s3ApiRequestSOAP (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:139:19)
+    at Object.execute (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/S3.node.ts:567:22)
+    at Workflow.runNode (/home/divansh/n8n/node_modules/n8n-workflow/src/Workflow.ts:1382:8)
+    at /home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:1167:27
+
+404 - "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><BucketName>lol3</BucketName><Resource>/lol3</Resource><RequestId>183A229F3789F6DD</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>"
+AxiosError: Request failed with status code 404
+    at settle (/home/divansh/n8n/node_modules/axios/lib/core/settle.js:19:12)
+    at BrotliDecompress.handleStreamEnd (/home/divansh/n8n/node_modules/axios/lib/adapters/http.js:599:11)
+    at BrotliDecompress.emit (node:events:523:35)
+    at BrotliDecompress.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1367:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/divansh/n8n/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at requestFn (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:825:27)
+    at proxyRequestToAxios (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:829:20)
+    at Object.request (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:3342:4)
+    at Object.s3ApiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:93:10)
+    at Object.s3ApiRequestSOAP (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:139:19)
+    at Object.execute (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/S3.node.ts:561:22)
+    at Workflow.runNode (/home/divansh/n8n/node_modules/n8n-workflow/src/Workflow.ts:1382:8)
+    at /home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:1167:27
+
+409 - "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>BucketAlreadyOwnedByYou</Code><Message>Your previous request to create the named bucket succeeded and you already own it.</Message><BucketName>lol3</BucketName><Resource>/lol3/</Resource><RequestId>183A22A2F32FB1F4</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>"
+AxiosError: Request failed with status code 409
+    at settle (/home/divansh/n8n/node_modules/axios/lib/core/settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (/home/divansh/n8n/node_modules/axios/lib/adapters/http.js:599:11)
+    at IncomingMessage.emit (node:events:523:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1367:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/divansh/n8n/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at requestFn (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:825:27)
+    at proxyRequestToAxios (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:829:20)
+    at Object.request (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:3342:4)
+    at Object.s3ApiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:93:10)
+    at Object.s3ApiRequestSOAP (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/GenericFunctions.ts:139:19)
+    at Object.execute (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/S3/S3.node.ts:567:22)
+    at Workflow.runNode (/home/divansh/n8n/node_modules/n8n-workflow/src/Workflow.ts:1382:8)
+    at /home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:1167:27
+
+/home/divansh/n8n/start.sh: line 3: 735233 Killed                  /home/divansh/.asdf/installs/nodejs/20.0.0/bin/node /home/divansh/n8n/node_modules/n8n/bin/n8n
+User settings loaded from: /home/divansh/.n8n/config
+Initializing n8n process
+n8n ready on 0.0.0.0, port 5678
+Version: 1.64.3
+
+Editor is now accessible via:
+http://localhost:5678/
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 39)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.runPartialWorkflow (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:315:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:312:42)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.runPartialWorkflow (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:315:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:312:42)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+/home/divansh/n8n/start.sh: line 3: 746160 Killed                  /home/divansh/.asdf/installs/nodejs/20.0.0/bin/node /home/divansh/n8n/node_modules/n8n/bin/n8n
+User settings loaded from: /home/divansh/.n8n/config
+Initializing n8n process
+n8n ready on 0.0.0.0, port 5678
+Version: 1.64.3
+
+Editor is now accessible via:
+http://localhost:5678/
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 41)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.runPartialWorkflow (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:315:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:312:42)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.runPartialWorkflow (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:315:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:312:42)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+Node does not have any credentials set
+NodeOperationError: Node does not have any credentials set
+    at getCredentials (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:2136:11)
+    at Object.getCredentials (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:4238:11)
+    at Object.apiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/transport/index.ts:21:33)
+    at Object.apiRequestAllItems (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/transport/index.ts:52:35)
+    at Object.getChannels (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/methods/loadOptions.ts:9:48)
+    at DynamicNodeParametersService.getOptionsViaMethodName (/home/divansh/n8n/node_modules/n8n/src/services/dynamic-node-parameters.service.ts:44:17)
+    at DynamicNodeParametersController.getOptions (/home/divansh/n8n/node_modules/n8n/src/controllers/dynamic-node-parameters.controller.ts:27:30)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+Node does not have any credentials set
+Error: Node does not have any credentials set
+    at new NodeOperationError (/home/divansh/n8n/node_modules/n8n-workflow/src/errors/node-operation.error.ts:22:12)
+    at getCredentials (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:2136:11)
+    at Object.getCredentials (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:4238:11)
+    at Object.apiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/transport/index.ts:21:33)
+    at Object.apiRequestAllItems (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/transport/index.ts:52:35)
+    at Object.getChannels (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/methods/loadOptions.ts:9:48)
+    at DynamicNodeParametersService.getOptionsViaMethodName (/home/divansh/n8n/node_modules/n8n/src/services/dynamic-node-parameters.service.ts:44:17)
+    at DynamicNodeParametersController.getOptions (/home/divansh/n8n/node_modules/n8n/src/controllers/dynamic-node-parameters.controller.ts:27:30)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first. (execution 42)
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.runPartialWorkflow (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:315:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:312:42)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The workflow has issues and can for that reason not be executed. Please fix them first.
+WorkflowOperationError: The workflow has issues and can for that reason not be executed. Please fix them first.
+    at WorkflowExecute.processRunExecutionData (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:910:10)
+    at WorkflowExecute.runPartialWorkflow (/home/divansh/n8n/node_modules/n8n-core/src/WorkflowExecute.ts:315:15)
+    at WorkflowRunner.runMainProcess (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:312:42)
+    at WorkflowRunner.run (/home/divansh/n8n/node_modules/n8n/src/workflow-runner.ts:147:4)
+    at WorkflowExecutionService.executeManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflow-execution.service.ts:148:23)
+    at WorkflowsController.runManually (/home/divansh/n8n/node_modules/n8n/src/workflows/workflows.controller.ts:404:10)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+The connection to the server was closed unexpectedly, perhaps it is offline. You can retry the request immediately or wait and retry later.
+NodeApiError: The connection to the server was closed unexpectedly, perhaps it is offline. You can retry the request immediately or wait and retry later.
+    at Object.httpRequestWithAuthentication (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:1807:9)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Object.httpRequestWithAuthentication (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:3330:11)
+    at Object.apiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/transport/index.ts:35:9)
+    at Object.apiRequestAllItems (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/transport/index.ts:52:18)
+    at Object.getTeams (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/methods/loadOptions.ts:94:23)
+    at DynamicNodeParametersController.getOptions (/home/divansh/n8n/node_modules/n8n/src/controllers/dynamic-node-parameters.controller.ts:27:11)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+socket hang up
+Error: socket hang up
+    at Function.AxiosError.from (/home/divansh/n8n/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/home/divansh/n8n/node_modules/axios/lib/adapters/http.js:620:25)
+    at RedirectableRequest.emit (node:events:523:35)
+    at RedirectableRequest.emit (node:domain:489:12)
+    at ClientRequest.eventHandlers.<computed> (/home/divansh/n8n/node_modules/follow-redirects/index.js:49:24)
+    at ClientRequest.emit (node:events:511:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at TLSSocket.socketOnEnd (node:_http_client:519:9)
+    at TLSSocket.emit (node:events:523:35)
+    at TLSSocket.emit (node:domain:489:12)
+    at Axios.request (/home/divansh/n8n/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at httpRequest (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:1027:12)
+    at Object.httpRequestWithAuthentication (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:1767:10)
+    at Object.httpRequestWithAuthentication (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:3330:11)
+    at Object.apiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/transport/index.ts:35:9)
+    at Object.apiRequestAllItems (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/transport/index.ts:52:18)
+    at Object.getTeams (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/Mattermost/v1/methods/loadOptions.ts:94:23)
+    at DynamicNodeParametersController.getOptions (/home/divansh/n8n/node_modules/n8n/src/controllers/dynamic-node-parameters.controller.ts:27:11)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+
+socket hang up
+Error: socket hang up
+    at connResetException (node:internal/errors:717:14)
+    at TLSSocket.socketOnEnd (node:_http_client:519:23)
+    at TLSSocket.emit (node:events:523:35)
+    at TLSSocket.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1367:12)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+NodeApiError The connection to the server was closed unexpectedly, perhaps it is offline. You can retry the request immediately or wait and retry later.
+/home/divansh/n8n/start.sh: line 3: 1425691 Killed                  /home/divansh/.asdf/installs/nodejs/20.0.0/bin/node /home/divansh/n8n/node_modules/n8n/bin/n8n

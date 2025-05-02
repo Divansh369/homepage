@@ -1,0 +1,27 @@
+Warning: could not find self.pem
+Using installed websockify at /usr/bin/websockify
+Starting webserver and WebSockets proxy on port 6081
+WebSocket server settings:
+  - Listen on :6081
+  - Web server. Web root: /usr/share/novnc
+  - No SSL/TLS support (no cert file)
+  - proxying from :6081 to localhost:5901
+
+
+Navigate to this URL:
+
+    http://vivo:6081/vnc.html?host=vivo&port=6081
+
+Press Ctrl-C to exit
+
+
+100.86.36.97 - - [01/May/2025 13:10:11] code 404, message File not found
+100.86.36.97 - - [01/May/2025 13:11:10] code 404, message File not found
+100.86.36.97 - - [01/May/2025 14:46:09] 100.86.36.97: Plain non-SSL (ws://) WebSocket connection
+100.86.36.97 - - [01/May/2025 14:46:09] 100.86.36.97: Path: '/websockify'
+100.86.36.97 - - [01/May/2025 14:46:09] connecting to: localhost:5901
+100.86.36.97 - - [01/May/2025 14:46:09] Failed to connect to localhost:5901: [Errno 111] Connection refused
+/usr/share/novnc/utils/novnc_proxy: line 198: 1623324 Killed                  ${WEBSOCKIFY} ${SYSLOG_ARG} ${SSLONLY} --web ${WEB} ${CERT:+--cert ${CERT}} ${KEY:+--key ${KEY}} ${PORT} ${VNC_DEST} ${HEARTBEAT_ARG} ${IDLETIMEOUT_ARG} ${RECORD_ARG} ${TIMEOUT_ARG}
+
+Terminating WebSockets proxy (1623324)
+/usr/share/novnc/utils/novnc_proxy: line 67: kill: (1623324) - No such process

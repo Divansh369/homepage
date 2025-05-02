@@ -1,0 +1,210 @@
+
+> start
+> nodemon
+
+[33m[nodemon] 3.1.2[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node app.js`[39m
+ info: Initializing custom hook (`current-user`)
+ info: Initializing custom hook (`watcher`)
+ info: 
+ info:                .-..-.
+ info: 
+ info:    Sails              <|    .-..-.
+ info:    v1.5.11             |\
+ info:                       /|.\
+ info:                      / || \
+ info:                    ,'  |'  \
+ info:                 .-'.-==|/_--'
+ info:                 `--'-------' 
+ info:    __---___--___---___--___---___--___
+ info:  ____---___--___---___--___---___--___-__
+ info: 
+ info: Server lifted in `/home/divansh/planka`
+ info: To shut down Sails, press <CTRL> + C at any time.
+ info: Read more at https://sailsjs.com/support.
+
+debug: -------------------------------------------------------
+debug: :: Sat Apr 26 2025 08:18:41 GMT+0000 (Coordinated Universal Time)
+
+debug: Environment : development
+debug: Host        : 
+debug: Port        : 3663
+debug: Local       : http://localhost:3663
+debug: -------------------------------------------------------
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+
+> start
+> nodemon
+
+[33m[nodemon] 3.1.2[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node app.js`[39m
+ info: Initializing custom hook (`current-user`)
+ info: Initializing custom hook (`watcher`)
+ info: 
+ info:                .-..-.
+ info: 
+ info:    Sails              <|    .-..-.
+ info:    v1.5.11             |\
+ info:                       /|.\
+ info:                      / || \
+ info:                    ,'  |'  \
+ info:                 .-'.-==|/_--'
+ info:                 `--'-------' 
+ info:    __---___--___---___--___---___--___
+ info:  ____---___--___---___--___---___--___-__
+ info: 
+ info: Server lifted in `/home/divansh/planka`
+ info: To shut down Sails, press <CTRL> + C at any time.
+ info: Read more at https://sailsjs.com/support.
+
+debug: -------------------------------------------------------
+debug: :: Fri May 02 2025 08:33:01 GMT+0000 (Coordinated Universal Time)
+
+debug: Environment : development
+debug: Host        : 
+debug: Port        : 3663
+debug: Local       : http://localhost:3663
+debug: -------------------------------------------------------
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+
+> start
+> nodemon
+
+[33m[nodemon] 3.1.2[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node app.js`[39m
+ info: Initializing custom hook (`current-user`)
+ info: Initializing custom hook (`watcher`)
+ info: 
+ info:                .-..-.
+ info: 
+ info:    Sails              <|    .-..-.
+ info:    v1.5.11             |\
+ info:                       /|.\
+ info:                      / || \
+ info:                    ,'  |'  \
+ info:                 .-'.-==|/_--'
+ info:                 `--'-------' 
+ info:    __---___--___---___--___---___--___
+ info:  ____---___--___---___--___---___--___-__
+ info: 
+ info: Server lifted in `/home/divansh/planka`
+ info: To shut down Sails, press <CTRL> + C at any time.
+ info: Read more at https://sailsjs.com/support.
+
+debug: -------------------------------------------------------
+debug: :: Fri May 02 2025 08:37:45 GMT+0000 (Coordinated Universal Time)
+
+debug: Environment : development
+debug: Host        : 
+debug: Port        : 3663
+debug: Local       : http://localhost:3663
+debug: -------------------------------------------------------
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: •  Loading Sails with "verbose" logging enabled...        •
+verbo: •  (For even more details, try "silly".)                  •
+verbo: •                                                         •
+verbo: •  http://sailsjs.com/config/log                          •
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: moduleloader hook loaded successfully. (1ms)
+verbo: userconfig hook loaded successfully. (68ms)
+verbo: Exposing global variables... (you can customize/disable this by modifying the properties in `sails.config.globals`.  Set it to `false` to disable all globals.)
+verbo: userhooks hook loaded successfully. (312ms)
+/home/divansh/planka/start_planka.sh: line 2: 3187019 Killed                  NODE_ENV=production node app.js --port=3663 --verbose --prod
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: •  Loading Sails with "verbose" logging enabled...        •
+verbo: •  (For even more details, try "silly".)                  •
+verbo: •                                                         •
+verbo: •  http://sailsjs.com/config/log                          •
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: moduleloader hook loaded successfully. (0ms)
+verbo: userconfig hook loaded successfully. (68ms)
+verbo: Exposing global variables... (you can customize/disable this by modifying the properties in `sails.config.globals`.  Set it to `false` to disable all globals.)
+verbo: userhooks hook loaded successfully. (312ms)
+debug: It looks like your `sails.config.sockets.onlyAllowOrigins` array only includes
+debug: references to the `localhost` origin.  This is completely valid, but be sure
+debug: to add any other origins to this list that you'd like to accept socket
+debug: connections from!
+debug: 
+/home/divansh/planka/start_planka.sh: line 2: 3195134 Killed                  NODE_ENV=production node app.js --port=3663 --verbose --prod
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: •  Loading Sails with "verbose" logging enabled...        •
+verbo: •  (For even more details, try "silly".)                  •
+verbo: •                                                         •
+verbo: •  http://sailsjs.com/config/log                          •
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: moduleloader hook loaded successfully. (0ms)
+error: A hook (`userconfig`) failed to load!
+verbo: Lowering sails...
+error: Failed to lift app: Error: Attempted to `require('/home/divansh/planka/config/env/production.js')`, but an error occurred:
+--
+TypeError: Invalid URL
+    at new URL (node:internal/url:819:25)
+    at Object.<anonymous> (/home/divansh/planka/config/env/production.js:221:24)
+    at Module._compile (node:internal/modules/cjs/loader:1734:14)
+    at Object..js (node:internal/modules/cjs/loader:1899:10)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at /home/divansh/planka/node_modules/include-all/lib/help-include-all-sync.js:293:33
+    at Array.forEach (<anonymous>)
+    at _recursivelyIncludeAll (/home/divansh/planka/node_modules/include-all/lib/help-include-all-sync.js:178:11)
+    at includeAll (/home/divansh/planka/node_modules/include-all/lib/help-include-all-sync.js:317:5)
+    at helpBuildDictionary (/home/divansh/planka/node_modules/include-all/lib/help-build-dictionary.js:46:13)
+    at module.exports.aggregate (/home/divansh/planka/node_modules/include-all/index.js:101:10)
+--
+    at /home/divansh/planka/node_modules/include-all/lib/help-include-all-sync.js:298:25
+    at Array.forEach (<anonymous>)
+    at _recursivelyIncludeAll (/home/divansh/planka/node_modules/include-all/lib/help-include-all-sync.js:178:11)
+    at includeAll (/home/divansh/planka/node_modules/include-all/lib/help-include-all-sync.js:317:5)
+    at helpBuildDictionary (/home/divansh/planka/node_modules/include-all/lib/help-build-dictionary.js:46:13)
+    at module.exports.aggregate (/home/divansh/planka/node_modules/include-all/index.js:101:10)
+    at loadEnvConfigFile (/home/divansh/planka/node_modules/sails/lib/hooks/moduleloader/index.js:203:22)
+    at runTask (/home/divansh/planka/node_modules/async/dist/async.js:1635:13)
+    at /home/divansh/planka/node_modules/async/dist/async.js:1575:13
+    at processQueue (/home/divansh/planka/node_modules/async/dist/async.js:1585:13)
+    at taskComplete (/home/divansh/planka/node_modules/async/dist/async.js:1604:9)
+    at /home/divansh/planka/node_modules/async/dist/async.js:1628:17
+    at /home/divansh/planka/node_modules/async/dist/async.js:972:16
+    at helpBuildDictionary (/home/divansh/planka/node_modules/include-all/lib/help-build-dictionary.js:135:10)
+    at module.exports.aggregate (/home/divansh/planka/node_modules/include-all/index.js:101:10)
+    at loadEnvConfigFolder (/home/divansh/planka/node_modules/sails/lib/hooks/moduleloader/index.js:187:22)
+error: More details (raw): TypeError: Invalid URL
+    at new URL (node:internal/url:819:25)
+    at Object.<anonymous> (/home/divansh/planka/config/env/production.js:221:24)
+    at Module._compile (node:internal/modules/cjs/loader:1734:14)
+    at Object..js (node:internal/modules/cjs/loader:1899:10)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at /home/divansh/planka/node_modules/include-all/lib/help-include-all-sync.js:293:33
+    at Array.forEach (<anonymous>)
+    at _recursivelyIncludeAll (/home/divansh/planka/node_modules/include-all/lib/help-include-all-sync.js:178:11)
+    at includeAll (/home/divansh/planka/node_modules/include-all/lib/help-include-all-sync.js:317:5)
+    at helpBuildDictionary (/home/divansh/planka/node_modules/include-all/lib/help-build-dictionary.js:46:13)
+    at module.exports.aggregate (/home/divansh/planka/node_modules/include-all/index.js:101:10)
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: •  Loading Sails with "verbose" logging enabled...        •
+verbo: •  (For even more details, try "silly".)                  •
+verbo: •                                                         •
+verbo: •  http://sailsjs.com/config/log                          •
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: moduleloader hook loaded successfully. (1ms)
+verbo: userconfig hook loaded successfully. (67ms)
+verbo: Exposing global variables... (you can customize/disable this by modifying the properties in `sails.config.globals`.  Set it to `false` to disable all globals.)
+verbo: userhooks hook loaded successfully. (309ms)
