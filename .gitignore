@@ -3,6 +3,7 @@ package-lock.json
 projects
 frontend/node_modules
 backend/node_modules
+backend/logs
 .env
 backend/.env
 frontend/.env
