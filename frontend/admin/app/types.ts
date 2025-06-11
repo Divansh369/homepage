@@ -1,4 +1,4 @@
-// frontend/app/types.ts
+// frontend/admin/app/types.ts
 
 export interface CardData {
     card_id: any;
@@ -11,13 +11,19 @@ export interface ProjectData {
     project_name: string;
     description: string;
     icon_filename: string;
-    icon_path: string;
+    icon_path: string | null;
     start_command: string;
     stop_command: string;
     port: string;
     scheme: 'http' | 'https';
     host: string;
     cards: CardData[];
+    // --- THE FIX ---
+    order: number;
+    // --- END FIX ---
+    github_url: string | null;
+    deployed_url: string | null;
+    notes: string | null;
 }
 
 export interface Label {

@@ -1,16 +1,21 @@
 {
   "name": "homepage",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "concurrently --kill-others-on-fail \"cd backend && node index.js\" \"cd frontend && npm run start -- -p 1025\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install:all": "npm install && (cd backend && npm install) && (cd frontend/dashboard && npm install) && (cd frontend/admin && npm install)",
+    "build": "concurrently --kill-others-on-fail \"npm:build:admin\" \"npm:build:dashboard\"",
+    "build:dashboard": "cd frontend/dashboard && npm run build",
+    "build:admin": "cd frontend/admin && npm run build",
+    "start": "concurrently --kill-others-on-fail \"npm:start:backend\" \"npm:start:dashboard\" \"npm:start:admin\"",
+    "start:backend": "cd backend && npm start",
+    "start:dashboard": "cd frontend/dashboard && npm run dev",
+    "start:admin": "cd frontend/admin && npm run dev"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "workspaces": [
+    "backend"
+  ],
   "dependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^8.2.2"
   }
 }

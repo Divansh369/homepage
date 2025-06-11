@@ -1,0 +1,11 @@
+{
+  "/favicon.ico/route": "/favicon.ico",
+  "/_not-found/page": "/_not-found",
+  "/add-label/page": "/add-label",
+  "/add-project/page": "/add-project",
+  "/edit-project/[id]/page": "/edit-project/[id]",
+  "/page": "/",
+  "/admin/labels/page": "/admin/labels",
+  "/admin/page": "/admin",
+  "/admin/projects/page": "/admin/projects"
+}

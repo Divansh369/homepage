@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST='{"app/add-project/page.tsx -> react-select":{"id":9183,"files":["static/chunks/183.3bfd00e3a714f39a.js"]},"app/edit-project/[id]/page.tsx -> react-select":{"id":9183,"files":["static/chunks/183.3bfd00e3a714f39a.js"]},"app/page.tsx -> react-select":{"id":9183,"files":["static/chunks/183.3bfd00e3a714f39a.js"]}}';

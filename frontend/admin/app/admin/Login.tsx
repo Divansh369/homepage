@@ -1,4 +1,4 @@
-// frontend/app/admin/Login.tsx
+// frontend/admin/app/admin/Login.tsx
 "use client";
 
 import { useState, FormEvent } from 'react';
@@ -18,6 +18,7 @@ export default function LoginComponent({ onLoginSuccess }: LoginProps) {
     setIsLoading(true);
     setError(null);
     try {
+      // The relative path '/api/login' is still correct due to proxying
       const res = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -25,11 +26,7 @@ export default function LoginComponent({ onLoginSuccess }: LoginProps) {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Login failed");
-
-      // On successful login, call the function passed from the parent (AdminLayout)
-      // which will trigger the global `checkAuthStatus` action.
       onLoginSuccess();
-
     } catch (err: any) {
       setError(err.message);
     } finally {
