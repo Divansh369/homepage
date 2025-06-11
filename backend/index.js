@@ -19,49 +19,31 @@ const server = http.createServer(app);
 
 // --- SETUP ---
 const port = process.env.BACKEND_PORT || 1024;
-const HOST = process.env.BACKEND_HOST || '0.0.0.0';
+const HOST_TO_LISTEN = process.env.BACKEND_HOST || '0.0.0.0'; // What the server binds to
+const PUBLIC_URL = process.env.BACKEND_PUBLIC_URL || `http://localhost:${port}`; // What the server advertises
 const PROJECTS_BASE_PATH = process.env.PROJECTS_BASE_PATH || '/home/divansh';
-const BACKEND_URL = `http://${HOST}:${port}`;
 
 // --- WebSocket Setup ---
 const wss = new WebSocketServer({ server });
 wss.on('connection', ws => {
-    console.log('🔗 Client connected.');
-    ws.on('close', () => console.log('👋 Client disconnected.'));
-    ws.on('error', console.error);
+    console.log('🔗 Client connected.'); ws.on('close', () => console.log('👋 Client disconnected.')); ws.on('error', console.error);
 });
 statusService.initialize(wss);
 
 // --- Middleware Setup ---
-// --- DEFINITIVE CORS FIX ---
 const allowedOrigins = [ `http://localhost:1025`, `http://100.94.150.11:1025`, `http://localhost`, `http://100.94.150.11`, 'http://vivo', 'http://vivo:1025' ];
-const corsOptions = {
-    origin: (origin, callback) => {
-        // Allow requests with no origin (like mobile apps, curl, or server-to-server)
-        // OR a whitelisted origin
-        if (!origin || allowedOrigins.some(o => origin.startsWith(o))) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
+app.use(cors({
+    origin: (origin, cb) => {
+        if (!origin || allowedOrigins.some(o => origin.startsWith(o))) { return cb(null, true); }
+        cb(new Error('CORS not allowed for origin: ' + origin));
     },
-    credentials: true,
-};
-
-// Apply CORS options to ALL requests, including OPTIONS pre-flight checks.
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
-// --- END CORS FIX --
+    credentials: true
+}));
 app.use(express.json());
 app.use(session({
     secret: process.env.SESSION_SECRET || 'a-very-secret-and-secure-key-for-development',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { 
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        maxAge: 1000 * 60 * 60 * 24 // 1 day
-    }
+    resave: false, saveUninitialized: false,
+    cookie: { httpOnly: true, secure: process.env.NODE_ENV === 'production', maxAge: 1000 * 60 * 60 * 24 }
 }));
 
 // --- Static Asset Serving ---
@@ -71,25 +53,22 @@ app.use('/project_icons', express.static(PROJECTS_BASE_PATH));
 // --- Multer for File Uploads ---
 const UPLOADS_DIR = path.join(__dirname, 'uploads/icons');
 if (!fs.existsSync(UPLOADS_DIR)) fs.mkdirSync(UPLOADS_DIR, { recursive: true });
-const storage = multer.diskStorage({
-    destination: UPLOADS_DIR,
-    filename: (req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`)
-});
 const upload = multer({
-    storage,
+    storage: multer.diskStorage({
+        destination: UPLOADS_DIR,
+        filename: (req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`)
+    }),
     fileFilter: (req, file, cb) => cb(null, file.mimetype.startsWith('image/'))
 });
-
 
 // --- API ROUTER ---
 const api = express.Router();
 
-// --- PUBLIC ROUTES (defined before authentication) ---
-
+// PUBLIC ROUTES
 api.get('/auth/status', (req, res) => res.json({ isAuthenticated: !!req.session.userId }));
 api.post('/login', async (req, res) => {
     const { username, password } = req.body;
-    if (!process.env.ADMIN_PASSWORD_HASH) return res.status(500).json({ error: "Authentication not configured." });
+    if (!process.env.ADMIN_PASSWORD_HASH) return res.status(500).json({ error: "Auth not configured." });
     if (username === 'admin' && (await bcrypt.compare(password, process.env.ADMIN_PASSWORD_HASH))) {
         req.session.userId = 'admin';
         return res.status(200).json({ message: 'Login successful' });
@@ -100,19 +79,22 @@ api.post('/login', async (req, res) => {
 api.get('/projects', async (req, res) => {
     try {
         const projects = await Project.findAll({ include: [{ model: Label, through: { attributes: [] } }], order: [['order', 'ASC']] });
-        res.json(projects.map(p => ({
-            id: p.id,
-            project_name: p.project_name,
-            description: p.description,
-            icon_filename: p.icon_filename,
-            icon_path: p.icon_filename ? (p.icon_filename.startsWith('/uploads') ? `${BACKEND_URL}${p.icon_filename}` : `${BACKEND_URL}/project_icons/${encodeURIComponent(p.project_name)}/${encodeURIComponent(p.icon_filename)}`) : null,
-            start_command: p.start_command,
-            stop_command: p.stop_command,
-            port: p.port,
-            host: p.host,
-            scheme: p.scheme,
-            cards: p.Labels.map(l => ({ card_id: l.id, label_id: l.id, label_name: l.label_name }))
-        })));
+        res.json(projects.map(p => {
+            let iconPath = null;
+            if (p.icon_filename) {
+                if (p.icon_filename.startsWith('/uploads')) {
+                    iconPath = `${PUBLIC_URL}${p.icon_filename}`;
+                } else {
+                    iconPath = `${PUBLIC_URL}/project_icons/${encodeURIComponent(p.project_name)}/${encodeURIComponent(p.icon_filename)}`;
+                }
+            }
+            return {
+                id: p.id, project_name: p.project_name, description: p.description,
+                icon_filename: p.icon_filename, icon_path: iconPath, start_command: p.start_command,
+                stop_command: p.stop_command, port: p.port, host: p.host, scheme: p.scheme,
+                cards: p.Labels.map(l => ({ card_id: l.id, label_id: l.id, label_name: l.label_name }))
+            };
+        }));
     } catch (e) { res.status(500).json({error: e.message}); }
 });
 
@@ -137,12 +119,10 @@ api.post('/check-project', (req, res) => {
     exec(`ss -tln | grep -q ':${req.body.port} '`, (e) => res.json({ running: !e }));
 });
 
-
-// --- AUTH MIDDLEWARE (all routes after this are protected) ---
+// AUTH MIDDLEWARE
 api.use(isAuthenticated);
 
-
-// --- PROTECTED ROUTES ---
+// PROTECTED ROUTES
 api.post('/logout', (req, res) => {
     req.session.destroy(err => {
         if (err) return res.status(500).json({error: "Logout failed."});
@@ -158,12 +138,11 @@ api.post('/upload/icon', upload.single('icon'), (req, res) => {
 
 api.post('/add-project', async (req, res) => {
     const { projectName, description, iconFilename, startCommand, stopCommand, scheme, port, host, selectedLabels = [] } = req.body;
-    if (!projectName?.trim() || !startCommand?.trim() || !port || isNaN(parseInt(port))) return res.status(400).json({ error: 'Validation failed' });
     const transaction = await sequelize.transaction();
     try {
         const highestOrder = (await Project.max('order', { transaction })) || 0;
         const [project, created] = await Project.findOrCreate({ where: { project_name: projectName.trim() }, defaults: { description, icon_filename: iconFilename, start_command: startCommand.trim(), stop_command: stopCommand?.trim(), scheme, port: parseInt(port), host: (host?.trim() || null), order: highestOrder + 1 }, transaction });
-        if (!created) { await transaction.rollback(); return res.status(409).json({ error: `Project '${projectName}' already exists.` }); }
+        if (!created) { await transaction.rollback(); return res.status(409).json({ error: `Project name '${projectName}' already exists.` }); }
         if (selectedLabels.length > 0) {
             const labels = await Label.findAll({ where: { id: selectedLabels }, transaction });
             await project.setLabels(labels, { transaction });
@@ -176,7 +155,6 @@ api.post('/add-project', async (req, res) => {
 api.put('/projects/:id', async (req, res) => {
     const { id } = req.params;
     const { projectName, description, iconFilename, startCommand, stopCommand, scheme, port, host, selectedLabels } = req.body;
-    if (!projectName?.trim() || !startCommand?.trim() || !port || isNaN(parseInt(port))) return res.status(400).json({ error: 'Validation failed.' });
     const transaction = await sequelize.transaction();
     try {
         const project = await Project.findByPk(id, { transaction });
@@ -192,10 +170,9 @@ api.put('/projects/:id', async (req, res) => {
 });
 
 api.delete('/projects/:id', async (req, res) => {
-    const { id } = req.params;
     const transaction = await sequelize.transaction();
     try {
-        const project = await Project.findByPk(id, { transaction });
+        const project = await Project.findByPk(req.params.id, { transaction });
         if (!project) { await transaction.rollback(); return res.status(404).json({ error: 'Project not found' }); }
         await project.setLabels([], { transaction });
         await project.destroy({ transaction });
@@ -274,25 +251,35 @@ api.delete('/labels/:id', async (req, res) => {
     const { id } = req.params;
     try {
         const label = await Label.findByPk(id);
-        if (label) { await label.destroy(); }
+        if (label) {
+            await label.setProjects([]); // Clear associations
+            await label.destroy();
+        }
         res.status(200).json({ message: 'Label deleted.' });
     } catch (error) { res.status(500).json({ error: error.message }); }
 });
 
-// --- Final Mounting and Server Start ---
+// Final Mounting
 app.use('/api', api);
-app.use((err, req, res, next) => { console.error("FATAL ERROR", err); res.status(500).send('An unexpected error occurred!'); });
+app.use((err, req, res, next) => {
+    console.error("FATAL ERROR", err);
+    res.status(500).send('An unexpected error occurred!');
+});
 
+// Start Server
 async function start() {
     try {
         await sequelize.authenticate();
         console.log('Database connected.');
         await sequelize.sync();
         console.log('Models synchronized.');
-        server.listen(port, HOST, () => {
-            console.log(`🚀 Server ready at http://${HOST}:${port}`);
+        server.listen(port, HOST_TO_LISTEN, () => { // <-- Use HOST_TO_LISTEN
+            console.log(`🚀 Server ready at http://${HOST_TO_LISTEN}:${port}`);
         });
-    } catch (error) { console.error('💥 Server startup failed:', error); process.exit(1); }
+    } catch (error) {
+        console.error('💥 Server startup failed:', error);
+        process.exit(1);
+    }
 }
 
 start();
