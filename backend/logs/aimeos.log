@@ -1,0 +1,95 @@
+/home/divansh/aimeos/start_aimeos.sh: 6: [[: not found
+✅ Using IP: 100.94.150.11
+
+   INFO  Server running on [http://100.94.150.11:4199].  
+
+  Press Ctrl+C to stop the server
+
+  2025-05-07 09:45:40 / ................................................ ~ 1s
+  2025-05-07 09:45:40 /vendor/shop/themes/default/aimeos.css?v=1 ... ~ 0.15ms
+  2025-05-07 09:45:40 /vendor/shop/themes/default/locale-select.css?v=1  ~ 0.38ms
+  2025-05-07 09:45:40 /vendor/shop/themes/default/basket-mini.css?v=1  ~ 0.58ms
+  2025-05-07 09:45:40 /vendor/shop/themes/default/catalog-filter.css?v=1  ~ 0.25ms
+  2025-05-07 09:45:40 /vendor/shop/themes/default/app.css?v=1 ...... ~ 1.03ms
+  2025-05-07 09:45:40 /vendor/shop/themes/default/slider.css?v=1 ... ~ 0.08ms
+  2025-05-07 09:45:40 /vendor/shop/themes/default/catalog-home.css?v=1  ~ 0.08ms
+  2025-05-07 09:45:40 /vendor/shop/themes/default/catalog-lists.css?v=1  ~ 0.08ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/cms-page.css?v=1 . ~ 0.08ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/assets/roboto-condensed-v19-latin-regular.woff2  ~ 0.08ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/assets/roboto-condensed-v19-latin-700.woff2  ~ 0.10ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/assets/logo.png .. ~ 0.08ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/aimeos.js?v=1 .... ~ 0.17ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/assets/bootstrap-icons.woff2  ~ 501.37ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/app.js?v=1 ..... ~ 501.32ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/locale-select.js?v=1  ~ 0.10ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/basket-mini.js?v=1  ~ 0.23ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/catalog-filter.js?v=1  ~ 0.07ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/slider.js?v=1 .... ~ 0.07ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/catalog-home.js?v=1  ~ 0.07ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/catalog-lists.js?v=1  ~ 0.09ms
+  2025-05-07 09:45:41 /vendor/shop/themes/default/cms-page.js?v=1 .. ~ 0.25ms
+  2025-05-07 09:45:41 /shop/stock .................................. ~ 0.26ms
+  2025-05-07 09:45:41 /shop/stock .................................. ~ 0.06ms
+  2025-05-07 09:45:41 /shop/count .................................. ~ 0.06ms
+  2025-05-07 09:45:41 /shop/stock .................................. ~ 0.06ms
+  2025-05-07 09:45:42 /vendor/shop/themes/default/assets/icon.png .. ~ 0.15ms
+  2025-05-07 09:45:42 / .......................................... ~ 500.39ms
+  2025-05-07 09:45:43 /vendor/shop/themes/default/aimeos.css?v=1 ... ~ 0.16ms
+  2025-05-07 09:45:43 /vendor/shop/themes/default/locale-select.css?v=1  ~ 0.39ms
+  2025-05-07 09:45:43 /vendor/shop/themes/default/basket-mini.css?v=1  ~ 0.55ms
+  2025-05-07 09:45:43 /vendor/shop/themes/default/catalog-filter.css?v=1  ~ 0.70ms
+  2025-05-07 09:45:43 /vendor/shop/themes/default/app.css?v=1 .... ~ 501.82ms
+  2025-05-07 09:45:44 /vendor/shop/themes/default/slider.css?v=1 ... ~ 0.15ms
+  2025-05-07 09:45:44 /vendor/shop/themes/default/catalog-home.css?v=1  ~ 0.07ms
+  2025-05-07 09:45:44 /vendor/shop/themes/default/catalog-lists.css?v=1  ~ 0.09ms
+  2025-05-07 09:45:44 /vendor/shop/themes/default/cms-page.css?v=1 . ~ 0.23ms
+  2025-05-07 09:45:44 /vendor/shop/themes/default/assets/roboto-condensed-v19-latin-regular.woff2  ~ 0.17ms
+  2025-05-07 09:45:44 /vendor/shop/themes/default/assets/roboto-condensed-v19-latin-700.woff2  ~ 0.09ms
+  2025-05-07 09:45:45 /vendor/shop/themes/default/assets/logo.png .. ~ 0.17ms
+  2025-05-07 09:45:45 /vendor/shop/themes/default/assets/bootstrap-icons.woff2  ~ 1s
+  2025-05-07 09:45:45 /vendor/shop/themes/default/app.js?v=1 ........... ~ 1s
+  2025-05-07 09:45:45 /vendor/shop/themes/default/aimeos.js?v=1 .. ~ 501.66ms
+  2025-05-07 09:45:45 /vendor/shop/themes/default/locale-select.js?v=1  ~ 0.34ms
+  2025-05-07 09:45:45 /vendor/shop/themes/default/basket-mini.js?v=1  ~ 0.25ms
+  2025-05-07 09:45:45 /vendor/shop/themes/default/catalog-filter.js?v=1  ~ 0.39ms
+  2025-05-07 09:45:46 /vendor/shop/themes/default/slider.js?v=1 .... ~ 0.22ms
+  2025-05-07 09:45:46 /vendor/shop/themes/default/catalog-home.js?v=1  ~ 0.53ms
+  2025-05-07 09:45:46 /vendor/shop/themes/default/catalog-lists.js?v=1  ~ 0.69ms
+  2025-05-07 09:45:46 /shop/count .................................. ~ 0.14ms
+  2025-05-07 09:45:46 /shop/stock .................................. ~ 0.04ms
+  2025-05-07 09:45:46 /vendor/shop/themes/default/cms-page.js?v=1 .. ~ 0.42ms
+  2025-05-07 09:45:46 /shop/stock .................................. ~ 0.04ms
+  2025-05-07 09:45:47 /shop/stock .................................. ~ 0.38ms
+  2025-05-07 09:45:47 /vendor/shop/themes/default/assets/icon.png  ~ 500.51ms
+  2025-05-07 09:45:53 .............................................. ~ 1m 19s
+  2025-05-07 09:47:13 /login ....................................... ~ 0.04ms
+  2025-05-07 09:47:13 /build/assets/app-8712deff.css ............. ~ 500.57ms
+  2025-05-07 09:47:13 /build/assets/app-211a03ca.js ................ ~ 0.51ms
+  2025-05-07 09:47:13 /favicon.ico ................................. ~ 0.05ms
+  2025-05-07 16:11:36 / ................................................ ~ 1s
+  2025-05-07 16:11:37 /vendor/shop/themes/default/aimeos.css?v=1 ... ~ 0.22ms
+  2025-05-07 16:11:37 /vendor/shop/themes/default/locale-select.css?v=1  ~ 0.47ms
+  2025-05-07 16:11:37 /vendor/shop/themes/default/basket-mini.css?v=1  ~ 0.54ms
+  2025-05-07 16:11:37 /vendor/shop/themes/default/catalog-filter.css?v=1  ~ 0.60ms
+  2025-05-07 16:11:37 /vendor/shop/themes/default/app.css?v=1 .... ~ 501.28ms
+  2025-05-07 16:11:38 /vendor/shop/themes/default/slider.css?v=1 ... ~ 0.07ms
+  2025-05-07 16:11:38 /vendor/shop/themes/default/catalog-home.css?v=1  ~ 0.17ms
+  2025-05-07 16:11:38 /vendor/shop/themes/default/catalog-lists.css?v=1  ~ 0.24ms
+  2025-05-07 16:11:38 /vendor/shop/themes/default/cms-page.css?v=1 . ~ 0.25ms
+  2025-05-07 16:11:38 /vendor/shop/themes/default/assets/roboto-condensed-v19-latin-regular.woff2  ~ 0.46ms
+  2025-05-07 16:11:38 /vendor/shop/themes/default/assets/roboto-condensed-v19-latin-700.woff2  ~ 0.61ms
+  2025-05-07 16:11:39 /vendor/shop/themes/default/assets/logo.png .. ~ 0.16ms
+  2025-05-07 16:11:39 /vendor/shop/themes/default/locale-select.js?v=1  ~ 0.24ms
+  2025-05-07 16:11:39 /vendor/shop/themes/default/basket-mini.js?v=1  ~ 0.45ms
+  2025-05-07 16:11:39 /vendor/shop/themes/default/aimeos.js?v=1 .. ~ 500.98ms
+  2025-05-07 16:11:39 /vendor/shop/themes/default/assets/bootstrap-icons.woff2  ~ 501.61ms
+  2025-05-07 16:11:39 /vendor/shop/themes/default/app.js?v=1 ..... ~ 501.80ms
+  2025-05-07 16:11:39 /vendor/shop/themes/default/catalog-filter.js?v=1  ~ 0.08ms
+  2025-05-07 16:11:40 /vendor/shop/themes/default/slider.js?v=1 .... ~ 0.27ms
+  2025-05-07 16:11:40 /vendor/shop/themes/default/catalog-home.js?v=1  ~ 0.57ms
+  2025-05-07 16:11:40 /vendor/shop/themes/default/catalog-lists.js?v=1  ~ 0.74ms
+  2025-05-07 16:11:40 /vendor/shop/themes/default/cms-page.js?v=1 .. ~ 0.08ms
+  2025-05-07 16:11:40 /shop/count .................................. ~ 0.15ms
+  2025-05-07 16:11:40 /shop/stock .................................. ~ 0.07ms
+  2025-05-07 16:11:40 /shop/stock .................................. ~ 0.42ms
+  2025-05-07 16:11:40 /shop/stock .................................. ~ 0.83ms

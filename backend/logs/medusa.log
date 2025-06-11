@@ -1,0 +1,19 @@
+
+> medusa@0.0.1 dev
+> medusa develop
+
+[32minfo[39m:    Watching filesystem to reload dev server on file change
+[32minfo[39m:    Skipping instrumentation registration. No register function found.
+redisUrl not found. A fake redis instance will be used.
+[33mwarn[39m:    Local Event Bus installed. This is not recommended for production.
+[32minfo[39m:    Locking module: Using "in-memory" as default.
+[32minfo[39m:    No job to load from /home/divansh/medusa/node_modules/@medusajs/medusa/dist/jobs. skipped.
+- Creating server
+✔ Server is ready on port: 6893 – 54ms
+[32minfo[39m:    Admin URL → http://100.94.150.11:6893/app
+Killed
+npm notice
+npm notice New major version of npm available! 10.9.2 -> 11.3.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.3.0
+npm notice To update run: npm install -g npm@11.3.0
+npm notice

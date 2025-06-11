@@ -1,0 +1,22 @@
+Following [32mWeb Server[39m log file (/home/divansh/.symfony5/log/a409ab64bffc01b1e7501018a41219ba277463e8.log)
+Following [32mPHP-FPM[39m log file (/home/divansh/.symfony5/log/a409ab64bffc01b1e7501018a41219ba277463e8/53fb8ec204547646acb3461995e4da5a54cc7575.log)
+[30;43m                                                                                [39;49m
+[30;43m [WARNING] The local web server is optimized for local development and MUST ne  [39;49m
+[30;43m ver be used in a production setup.                                             [39;49m
+[30;43m                                                                                [39;49m
+
+[30;42m                                                                                [39;49m
+[30;42m [OK] Web server listening                                                      [39;49m
+[30;42m      The Web server is using PHP FPM 8.2.28                                    [39;49m
+[30;42m      ]8;;https://127.0.0.1:4195\https://127.0.0.1:4195]8;;\                                                    [39;49m
+[30;42m                                                                                [39;49m
+
+[[32mWeb Server [39m] May  7 09:52:31 |DEBUG  | [33mPHP   [39m Reloading PHP versions 
+[[32mWeb Server [39m] May  7 09:52:31 |DEBUG  | [33mPHP   [39m Using PHP version 8.2.28 (from default version in $PATH) 
+[[32mWeb Server [39m] May  7 09:52:31 |INFO   | [33mPHP   [39m listening [36mpath[39m="/usr/sbin/php-fpm8.2" [36mphp[39m="8.2.28" [36mport[39m=44127
+[[32mPHP-FPM    [39m] May  7 09:52:31 |[30;43mNOTICE [39;49m| [33mFPM   [39m fpm is running, pid 1167350 
+[[32mPHP-FPM    [39m] May  7 09:52:31 |[30;43mNOTICE [39;49m| [33mFPM   [39m ready to handle connections 
+[[32mPHP-FPM    [39m] May  7 09:52:31 |[30;43mNOTICE [39;49m| [33mFPM   [39m systemd monitor interval set to 10000ms 
+[[32mWeb Server [39m] May  7 09:52:31 |DEBUG  | [33mPHP   [39m Using PHP version 8.2.28 (from default version in $PATH) [36mpath[39m="/usr/sbin/php-fpm8.2" [36mphp[39m="8.2.28"
+[[32mPHP-FPM    [39m] ":"2025-05-07T09:52:33+05:30","message":"Received timer message (first boot)"}
+/home/divansh/shopware/start.sh: line 2: 1167297 Killed                  ~/symfony/symfony server:start --listen-ip 100.94.150.11 --port 4195

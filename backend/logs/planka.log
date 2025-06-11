@@ -208,3 +208,57 @@ verbo: moduleloader hook loaded successfully. (1ms)
 verbo: userconfig hook loaded successfully. (67ms)
 verbo: Exposing global variables... (you can customize/disable this by modifying the properties in `sails.config.globals`.  Set it to `false` to disable all globals.)
 verbo: userhooks hook loaded successfully. (309ms)
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: •  Loading Sails with "verbose" logging enabled...        •
+verbo: •  (For even more details, try "silly".)                  •
+verbo: •                                                         •
+verbo: •  http://sailsjs.com/config/log                          •
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: moduleloader hook loaded successfully. (0ms)
+verbo: userconfig hook loaded successfully. (99ms)
+verbo: Exposing global variables... (you can customize/disable this by modifying the properties in `sails.config.globals`.  Set it to `false` to disable all globals.)
+verbo: userhooks hook loaded successfully. (535ms)
+/home/divansh/planka/start_planka.sh: line 2: 3747109 Killed                  NODE_ENV=production node app.js --port=3663 --verbose --prod
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: •  Loading Sails with "verbose" logging enabled...        •
+verbo: •  (For even more details, try "silly".)                  •
+verbo: •                                                         •
+verbo: •  http://sailsjs.com/config/log                          •
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: moduleloader hook loaded successfully. (0ms)
+verbo: userconfig hook loaded successfully. (67ms)
+verbo: Exposing global variables... (you can customize/disable this by modifying the properties in `sails.config.globals`.  Set it to `false` to disable all globals.)
+verbo: userhooks hook loaded successfully. (337ms)
+/home/divansh/planka/start_planka.sh: line 2: 844678 Killed                  NODE_ENV=production node app.js --port=3663 --verbose --prod
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: •  Loading Sails with "verbose" logging enabled...        •
+verbo: •  (For even more details, try "silly".)                  •
+verbo: •                                                         •
+verbo: •  http://sailsjs.com/config/log                          •
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: moduleloader hook loaded successfully. (1ms)
+verbo: userconfig hook loaded successfully. (111ms)
+verbo: Exposing global variables... (you can customize/disable this by modifying the properties in `sails.config.globals`.  Set it to `false` to disable all globals.)
+verbo: userhooks hook loaded successfully. (712ms)
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: •  Loading Sails with "verbose" logging enabled...        •
+verbo: •  (For even more details, try "silly".)                  •
+verbo: •                                                         •
+verbo: •  http://sailsjs.com/config/log                          •
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: moduleloader hook loaded successfully. (0ms)
+verbo: userconfig hook loaded successfully. (66ms)
+verbo: Exposing global variables... (you can customize/disable this by modifying the properties in `sails.config.globals`.  Set it to `false` to disable all globals.)
+verbo: userhooks hook loaded successfully. (312ms)
+/home/divansh/planka/start_planka.sh: line 2: 4039745 Killed                  NODE_ENV=production node app.js --port=3363 --verbose --prod
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: •  Loading Sails with "verbose" logging enabled...        •
+verbo: •  (For even more details, try "silly".)                  •
+verbo: •                                                         •
+verbo: •  http://sailsjs.com/config/log                          •
+verbo: • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+verbo: moduleloader hook loaded successfully. (0ms)
+verbo: userconfig hook loaded successfully. (99ms)
+verbo: Exposing global variables... (you can customize/disable this by modifying the properties in `sails.config.globals`.  Set it to `false` to disable all globals.)
+verbo: userhooks hook loaded successfully. (567ms)
+/home/divansh/planka/start_planka.sh: line 2: 212519 Killed                  NODE_ENV=production node app.js --port=3363 --verbose --prod

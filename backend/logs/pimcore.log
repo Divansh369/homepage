@@ -1,0 +1,14 @@
+[Wed May  7 09:49:47 2025] PHP 8.2.28 Development Server (http://100.94.150.11:4194) started
+[Wed May  7 09:49:55 2025] 100.125.80.1:45406 Accepted
+[Wed May  7 09:49:57 2025] 100.125.80.1:45406 [200]: GET /
+[Wed May  7 09:49:57 2025] 100.125.80.1:45406 Closing
+[Wed May  7 09:49:57 2025] 100.125.80.1:45408 Accepted
+[Wed May  7 09:49:57 2025] 100.125.80.1:45408 [200]: GET /bundles/pimcoreadmin/img/logo-claim-gray.svg
+[Wed May  7 09:49:57 2025] 100.125.80.1:45408 Closing
+[Wed May  7 09:49:57 2025] 100.125.80.1:45410 Accepted
+[Wed May  7 09:49:57 2025] 100.125.80.1:45410 [200]: GET /_wdt/71e9d2
+[Wed May  7 09:49:57 2025] 100.125.80.1:45410 Closing
+[Wed May  7 09:49:57 2025] 100.125.80.1:45412 Accepted
+[Wed May  7 09:49:57 2025] 100.125.80.1:45412 [404]: GET /favicon.ico - No such file or directory
+[Wed May  7 09:49:57 2025] 100.125.80.1:45412 Closing
+/home/divansh/pimcore/start.sh: line 2: 1158532 Killed                  php -S 100.94.150.11:4194 -t public

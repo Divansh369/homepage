@@ -1,0 +1,143 @@
+Server is running: http://localhost:9047
+Cannot parse java version: 11
+starting dremio
+08:37:05,615 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+08:37:05,617 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/home/divansh/dremio/conf/logback.xml]
+08:37:05,991 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+08:37:06,005 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Will scan for changes in [file:/home/divansh/dremio/conf/logback.xml] 
+08:37:06,005 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Setting ReconfigureOnChangeTask scanning period to 30 seconds
+08:37:06,024 |-INFO in ch.qos.logback.classic.joran.action.LoggerContextListenerAction - Adding LoggerContextListener of type [ch.qos.logback.classic.jul.LevelChangePropagator] to the object stack
+08:37:06,025 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@444548a0 - Propagating DEBUG level on Logger[ROOT] onto the JUL framework
+08:37:06,043 |-INFO in ch.qos.logback.classic.joran.action.LoggerContextListenerAction - Starting LoggerContextListener
+08:37:06,043 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+08:37:06,046 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [console]
+08:37:06,047 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+08:37:06,475 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+08:37:06,478 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [text]
+08:37:06,499 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@929482343 - Will use gz compression
+08:37:06,500 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@929482343 - Will use the pattern /home/divansh/dremio/log/archive/server.%d{yyyy-MM-dd}.%i.log for the active file
+08:37:06,503 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@773c0293 - The date pattern is 'yyyy-MM-dd' from file name pattern '/home/divansh/dremio/log/archive/server.%d{yyyy-MM-dd}.%i.log.gz'.
+08:37:06,503 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@773c0293 - Roll-over at midnight.
+08:37:06,516 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@773c0293 - Setting initial period to Tue Jun 10 08:36:57 UTC 2025
+08:37:06,517 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@773c0293 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+08:37:06,517 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@773c0293 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+08:37:06,520 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+08:37:06,523 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[text] - Active log file name: /home/divansh/dremio/log/server.log
+08:37:06,523 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[text] - File property is set to [/home/divansh/dremio/log/server.log]
+08:37:06,524 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+08:37:06,524 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [metadata_refresh]
+08:37:06,525 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1438178266 - Will use gz compression
+08:37:06,525 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1438178266 - Will use the pattern /home/divansh/dremio/log/archive/metadata_refresh.%d{yyyy-MM-dd}.log for the active file
+08:37:06,526 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - The date pattern is 'yyyy-MM-dd' from file name pattern '/home/divansh/dremio/log/archive/metadata_refresh.%d{yyyy-MM-dd}.log.gz'.
+08:37:06,526 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Roll-over at midnight.
+08:37:06,527 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Setting initial period to Wed Oct 16 13:52:07 UTC 2024
+08:37:06,527 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+08:37:06,528 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[metadata_refresh] - Active log file name: /home/divansh/dremio/log/metadata_refresh.log
+08:37:06,528 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[metadata_refresh] - File property is set to [/home/divansh/dremio/log/metadata_refresh.log]
+08:37:06,528 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+08:37:06,528 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [json]
+08:37:06,530 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@995531141 - Will use gz compression
+08:37:06,530 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@995531141 - Will use the pattern /home/divansh/dremio/log/json/archive/server.%d{yyyy-MM-dd}.%i.json for the active file
+08:37:06,531 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3a022576 - The date pattern is 'yyyy-MM-dd' from file name pattern '/home/divansh/dremio/log/json/archive/server.%d{yyyy-MM-dd}.%i.json.gz'.
+08:37:06,531 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3a022576 - Roll-over at midnight.
+08:37:06,531 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3a022576 - Setting initial period to Tue Jun 10 08:36:57 UTC 2025
+08:37:06,531 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3a022576 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+08:37:06,531 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3a022576 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+08:37:06,550 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventJsonProviders] for [providers] property
+08:37:06,561 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventPatternJsonProvider] for [pattern] property
+08:37:06,570 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventThreadNameJsonProvider] for [threadName] property
+08:37:06,571 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [net.logstash.logback.composite.loggingevent.LogLevelJsonProvider] for [logLevel] property
+08:37:06,572 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [net.logstash.logback.composite.loggingevent.LogLevelValueJsonProvider] for [logLevelValue] property
+08:37:06,573 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [net.logstash.logback.composite.loggingevent.LoggerNameJsonProvider] for [loggerName] property
+08:37:06,573 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [net.logstash.logback.composite.loggingevent.MessageJsonProvider] for [message] property
+08:37:06,574 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [net.logstash.logback.composite.loggingevent.ArgumentsJsonProvider] for [arguments] property
+08:37:06,574 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [net.logstash.logback.composite.loggingevent.StackTraceJsonProvider] for [stackTrace] property
+08:37:07,099 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[json] - Active log file name: /home/divansh/dremio/log/json/server.json
+08:37:07,099 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[json] - File property is set to [/home/divansh/dremio/log/json/server.json]
+08:37:07,100 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+08:37:07,100 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [query]
+08:37:07,101 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@767393855 - Will use gz compression
+08:37:07,101 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@767393855 - Will use the pattern /home/divansh/dremio/log/archive/queries.%d{yyyy-MM-dd}.%i.json for the active file
+08:37:07,102 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3e48e859 - The date pattern is 'yyyy-MM-dd' from file name pattern '/home/divansh/dremio/log/archive/queries.%d{yyyy-MM-dd}.%i.json.gz'.
+08:37:07,102 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3e48e859 - Roll-over at midnight.
+08:37:07,102 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3e48e859 - Setting initial period to Wed Oct 16 12:54:06 UTC 2024
+08:37:07,102 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3e48e859 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+08:37:07,102 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@3e48e859 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+08:37:07,103 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventJsonProviders] for [providers] property
+08:37:07,103 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [net.logstash.logback.composite.loggingevent.ArgumentsJsonProvider] for [arguments] property
+08:37:07,107 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[query] - Active log file name: /home/divansh/dremio/log/queries.json
+08:37:07,107 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[query] - File property is set to [/home/divansh/dremio/log/queries.json]
+08:37:07,107 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+08:37:07,107 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [tracker]
+08:37:07,108 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@836621476 - Will use gz compression
+08:37:07,108 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@836621476 - Will use the pattern /home/divansh/dremio/log/archive/tracker.%d{yyyy-MM-dd}.%i.json for the active file
+08:37:07,109 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@1a5f7e7c - The date pattern is 'yyyy-MM-dd' from file name pattern '/home/divansh/dremio/log/archive/tracker.%d{yyyy-MM-dd}.%i.json.gz'.
+08:37:07,109 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@1a5f7e7c - Roll-over at midnight.
+08:37:07,109 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@1a5f7e7c - Setting initial period to Tue Oct 15 19:47:36 UTC 2024
+08:37:07,110 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@1a5f7e7c - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+08:37:07,110 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@1a5f7e7c - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+08:37:07,110 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+08:37:07,111 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[tracker] - Active log file name: /home/divansh/dremio/log/tracker.json
+08:37:07,111 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[tracker] - File property is set to [/home/divansh/dremio/log/tracker.json]
+08:37:07,113 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@444548a0 - Propagating INFO level on Logger[com.dremio] onto the JUL framework
+08:37:07,113 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - com.dremio level set to INFO
+08:37:07,113 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@444548a0 - Propagating INFO level on Logger[query.logger] onto the JUL framework
+08:37:07,113 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - query.logger level set to INFO
+08:37:07,118 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [query] to Logger[query.logger]
+08:37:07,119 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@444548a0 - Propagating DEBUG level on Logger[tracker.logger] onto the JUL framework
+08:37:07,119 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - tracker.logger level set to DEBUG
+08:37:07,125 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@137:43 - no applicable action for [additivity], current ElementPath  is [[configuration][logger][additivity]]
+08:37:07,125 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [tracker] to Logger[tracker.logger]
+08:37:07,125 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting additivity of logger [com.dremio.exec.catalog.SourceMetadataManager] to false
+08:37:07,125 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@444548a0 - Propagating INFO level on Logger[com.dremio.exec.catalog.SourceMetadataManager] onto the JUL framework
+08:37:07,126 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - com.dremio.exec.catalog.SourceMetadataManager level set to INFO
+08:37:07,130 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [metadata_refresh] to Logger[com.dremio.exec.catalog.SourceMetadataManager]
+08:37:07,130 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting additivity of logger [com.dremio.exec.store.hive.HiveClient] to false
+08:37:07,130 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@444548a0 - Propagating INFO level on Logger[com.dremio.exec.store.hive.HiveClient] onto the JUL framework
+08:37:07,130 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - com.dremio.exec.store.hive.HiveClient level set to INFO
+08:37:07,134 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [metadata_refresh] to Logger[com.dremio.exec.store.hive.HiveClient]
+08:37:07,135 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [hive.deprecated.function.warning.logger] to WARN
+08:37:07,135 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@444548a0 - Propagating WARN level on Logger[hive.deprecated.function.warning.logger] onto the JUL framework
+08:37:07,139 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@164:37 - no applicable action for [additivity], current ElementPath  is [[configuration][logger][additivity]]
+08:37:07,140 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1529002352 - Will use gz compression
+08:37:07,141 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1529002352 - Will use the pattern /home/divansh/dremio/log/archive/hive.deprecated.function.warning.%d{yyyy-MM-dd}.%i.log for the active file
+08:37:07,141 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@22d1886d - The date pattern is 'yyyy-MM-dd' from file name pattern '/home/divansh/dremio/log/archive/hive.deprecated.function.warning.%d{yyyy-MM-dd}.%i.log.gz'.
+08:37:07,141 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@22d1886d - Roll-over at midnight.
+08:37:07,142 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@22d1886d - Setting initial period to Tue Oct 15 19:47:36 UTC 2024
+08:37:07,142 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@22d1886d - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+08:37:07,142 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@22d1886d - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+08:37:07,143 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+08:37:07,143 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[null] - Active log file name: /home/divansh/dremio/log/hive.deprecated.function.warning.log
+08:37:07,143 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[null] - File property is set to [/home/divansh/dremio/log/hive.deprecated.function.warning.log]
+08:37:07,144 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@444548a0 - Propagating WARN level on Logger[org.apache.hadoop.hdfs.DFSClient] onto the JUL framework
+08:37:07,144 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - org.apache.hadoop.hdfs.DFSClient level set to WARN
+08:37:07,144 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@444548a0 - Propagating ERROR level on Logger[ROOT] onto the JUL framework
+08:37:07,144 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - ROOT level set to ERROR
+08:37:07,147 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [text] to Logger[ROOT]
+08:37:07,147 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [json] to Logger[ROOT]
+08:37:07,147 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+08:37:07,149 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@7df60067 - Registering current configuration as safe fallback point
+
+08:37:30,816 |-INFO in LogbackRequestLog - Will use configuration resource [/logback-access.xml]
+08:37:30,827 |-INFO in ch.qos.logback.access.joran.action.ConfigurationAction - debug attribute not set
+08:37:30,834 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@21:87 - no applicable action for [turboFilter], current ElementPath  is [[configuration][turboFilter]]
+08:37:30,834 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@22:31 - no applicable action for [defaultLogLevelThreshold], current ElementPath  is [[configuration][turboFilter][defaultLogLevelThreshold]]
+08:37:30,834 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@23:22 - no applicable action for [packageLogLevel], current ElementPath  is [[configuration][turboFilter][packageLogLevel]]
+08:37:30,838 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+08:37:30,838 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [access-text]
+08:37:30,839 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1110582226 - Will use gz compression
+08:37:30,839 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1110582226 - Will use the pattern /home/divansh/dremio/log/archive/access.%d{yyyy-MM-dd}.%i.log for the active file
+08:37:30,840 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6094f1df - The date pattern is 'yyyy-MM-dd' from file name pattern '/home/divansh/dremio/log/archive/access.%d{yyyy-MM-dd}.%i.log.gz'.
+08:37:30,840 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6094f1df - Roll-over at midnight.
+08:37:30,840 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6094f1df - Setting initial period to Wed Oct 16 13:44:44 UTC 2024
+08:37:30,840 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6094f1df - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+08:37:30,840 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6094f1df - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+08:37:30,841 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.access.PatternLayoutEncoder] for [encoder] property
+08:37:30,851 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[access-text] - Active log file name: /home/divansh/dremio/log/access.log
+08:37:30,851 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[access-text] - File property is set to [/home/divansh/dremio/log/access.log]
+08:37:30,851 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [access-text] to null
+08:37:30,851 |-INFO in ch.qos.logback.access.joran.action.ConfigurationAction - End of configuration.
+08:37:30,851 |-INFO in ch.qos.logback.access.joran.JoranConfigurator@5e0fd605 - Registering current configuration as safe fallback point
+
+Dremio Daemon Started as master
+/home/divansh/dremio/start.sh: line 2: 1724460 Killed                  bin/dremio start-fg

@@ -1,0 +1,551 @@
+
+> ag-viewer@0.0.1 start
+> npm-run-all --parallel backend front
+
+
+> ag-viewer@0.0.1 backend
+> cd backend && npm run start
+
+
+> ag-viewer@0.0.1 front
+> cd frontend && npm run start
+
+
+> ag-viewer-backend@0.4.0 start
+> babel-node src/bin/www
+
+
+> ag-viewer-frontend@0.1.0 start
+> react-scripts start
+
+Something is already running on port 3012.
+[Error: ENOENT: no such file or directory, stat '/home/divansh/age-viewer/frontend/build/index.html'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/home/divansh/age-viewer/frontend/build/index.html',
+  expose: false,
+  statusCode: 404,
+  status: 404
+}
+[32minfo[39m: ::ffff:100.86.36.97 - - [02/May/2025:12:46:17 +0000] "GET /favicon.ico HTTP/1.1" 404 150
+ {"timestamp":"2025-05-02 18:16:17"}
+
+> ag-viewer@0.0.1 start
+> npm-run-all --parallel backend front
+
+
+> ag-viewer@0.0.1 front
+> cd frontend && npm run start
+
+
+> ag-viewer@0.0.1 backend
+> cd backend && npm run start
+
+
+> ag-viewer-backend@0.4.0 start
+> babel-node src/bin/www
+
+
+> ag-viewer-frontend@0.1.0 start
+> react-scripts start
+
+Something is already running on port 3312.
+[Error: ENOENT: no such file or directory, stat '/home/divansh/age-viewer/frontend/build/index.html'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/home/divansh/age-viewer/frontend/build/index.html',
+  expose: false,
+  statusCode: 404,
+  status: 404
+}
+[32minfo[39m: ::ffff:100.86.36.97 - - [02/May/2025:12:48:16 +0000] "GET /favicon.ico HTTP/1.1" 404 150
+ {"timestamp":"2025-05-02 18:18:16"}
+
+> ag-viewer@0.0.1 start
+> npm-run-all --parallel backend front
+
+
+> ag-viewer@0.0.1 backend
+> cd backend && PORT=3212 npm run start
+
+
+> ag-viewer@0.0.1 front
+> cd frontend && PORT=3312 npm run start
+
+
+> ag-viewer-frontend@0.1.0 start
+> react-scripts start
+
+
+> ag-viewer-backend@0.4.0 start
+> babel-node src/bin/www
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://192.168.1.16/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/divansh/age-viewer/frontend/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:79:19)
+    at Object.createHash (node:crypto:139:10)
+    at module.exports (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:417:16)
+    at handleParseError (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:471:10)
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:503:5
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:358:12
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:373:3
+    at iterateNormalLoaders (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:214:10)
+    at iterateNormalLoaders (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:221:10)
+/home/divansh/age-viewer/frontend/node_modules/react-scripts/scripts/start.js:19
+  throw err;
+  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:79:19)
+    at Object.createHash (node:crypto:139:10)
+    at module.exports (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:417:16)
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:452:10
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:323:13
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:367:11
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:233:18
+    at context.callback (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:111:13)
+    at /home/divansh/age-viewer/frontend/node_modules/babel-loader/lib/index.js:59:103 {
+  opensslErrorStack: [
+    'error:03000086:digital envelope routines::initialization error',
+    'error:0308010C:digital envelope routines::unsupported'
+  ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+
+Node.js v23.10.0
+ERROR: "front" exited with 1.
+
+> ag-viewer@0.0.1 start
+> npm-run-all --parallel backend front
+
+
+> ag-viewer@0.0.1 front
+> cd frontend && PORT=3312 npm run start
+
+
+> ag-viewer@0.0.1 backend
+> cd backend && PORT=3212 npm run start
+
+
+> ag-viewer-frontend@0.1.0 start
+> react-scripts start
+
+
+> ag-viewer-backend@0.4.0 start
+> babel-node src/bin/www
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://192.168.1.16/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/divansh/age-viewer/frontend/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:79:19)
+    at Object.createHash (node:crypto:139:10)
+    at module.exports (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:417:16)
+    at handleParseError (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:471:10)
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:503:5
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:358:12
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:373:3
+    at iterateNormalLoaders (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:214:10)
+    at iterateNormalLoaders (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:221:10)
+/home/divansh/age-viewer/frontend/node_modules/react-scripts/scripts/start.js:19
+  throw err;
+  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:79:19)
+    at Object.createHash (node:crypto:139:10)
+    at module.exports (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:417:16)
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:452:10
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:323:13
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:367:11
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:233:18
+    at context.callback (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:111:13)
+    at /home/divansh/age-viewer/frontend/node_modules/babel-loader/lib/index.js:59:103 {
+  opensslErrorStack: [
+    'error:03000086:digital envelope routines::initialization error',
+    'error:0308010C:digital envelope routines::unsupported'
+  ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+
+Node.js v23.10.0
+ERROR: "front" exited with 1.
+
+> ag-viewer@0.0.1 start
+> npm-run-all --parallel backend front
+
+
+> ag-viewer@0.0.1 front
+> cd frontend && PORT=3312 npm run start
+
+
+> ag-viewer@0.0.1 backend
+> cd backend && PORT=3212 npm run start
+
+
+> ag-viewer-frontend@0.1.0 start
+> react-scripts start
+
+
+> ag-viewer-backend@0.4.0 start
+> babel-node src/bin/www
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://192.168.1.16/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/divansh/age-viewer/frontend/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:79:19)
+    at Object.createHash (node:crypto:139:10)
+    at module.exports (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:417:16)
+    at handleParseError (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:471:10)
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:503:5
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:358:12
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:373:3
+    at iterateNormalLoaders (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:214:10)
+    at iterateNormalLoaders (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:221:10)
+/home/divansh/age-viewer/frontend/node_modules/react-scripts/scripts/start.js:19
+  throw err;
+  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:79:19)
+    at Object.createHash (node:crypto:139:10)
+    at module.exports (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:417:16)
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:452:10
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:323:13
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:367:11
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:233:18
+    at context.callback (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:111:13)
+    at /home/divansh/age-viewer/frontend/node_modules/babel-loader/lib/index.js:59:103 {
+  opensslErrorStack: [
+    'error:03000086:digital envelope routines::initialization error',
+    'error:0308010C:digital envelope routines::unsupported'
+  ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+
+Node.js v23.10.0
+ERROR: "front" exited with 1.
+
+> ag-viewer@0.0.1 start /home/divansh/age-viewer
+> npm-run-all --parallel backend front
+
+
+> ag-viewer@0.0.1 backend /home/divansh/age-viewer
+> cd backend && PORT=3212 npm run start
+
+
+> ag-viewer@0.0.1 front /home/divansh/age-viewer
+> cd frontend && PORT=3312 npm run start
+
+npm warn config cache-min This option has been deprecated in favor of `--prefer-offline`.
+npm warn config cache-min This option has been deprecated in favor of `--prefer-offline`.
+npm warn config cache-max This option has been deprecated in favor of `--prefer-online`
+npm warn config shrinkwrap Use the --package-lock setting instead.
+npm warn config optional Use `--omit=optional` to exclude optional dependencies, or
+npm warn config `--include=optional` to include them.
+npm warn config
+npm warn config       Default value does install optional deps unless otherwise omitted.
+npm warn config cache-max This option has been deprecated in favor of `--prefer-online`
+npm warn config shrinkwrap Use the --package-lock setting instead.
+npm warn config optional Use `--omit=optional` to exclude optional dependencies, or
+npm warn config `--include=optional` to include them.
+npm warn config
+npm warn config       Default value does install optional deps unless otherwise omitted.
+
+> ag-viewer-frontend@0.1.0 start
+> react-scripts start
+
+
+> ag-viewer-backend@0.4.0 start
+> babel-node src/bin/www
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://192.168.1.16/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/divansh/age-viewer/frontend/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:79:19)
+    at Object.createHash (node:crypto:139:10)
+    at module.exports (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:417:16)
+    at handleParseError (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:471:10)
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:503:5
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:358:12
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:373:3
+    at iterateNormalLoaders (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:214:10)
+    at iterateNormalLoaders (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:221:10)
+/home/divansh/age-viewer/frontend/node_modules/react-scripts/scripts/start.js:19
+  throw err;
+  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:79:19)
+    at Object.createHash (node:crypto:139:10)
+    at module.exports (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:417:16)
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:452:10
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:323:13
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:367:11
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:233:18
+    at context.callback (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:111:13)
+    at /home/divansh/age-viewer/frontend/node_modules/babel-loader/lib/index.js:59:103 {
+  opensslErrorStack: [
+    'error:03000086:digital envelope routines::initialization error',
+    'error:0308010C:digital envelope routines::unsupported'
+  ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+
+Node.js v23.10.0
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! ag-viewer@0.0.1 front: `cd frontend && PORT=3312 npm run start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the ag-viewer@0.0.1 front script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/divansh/.npm/_logs/2025-05-02T12_53_23_563Z-debug.log
+ERROR: "front" exited with 1.
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! ag-viewer@0.0.1 start: `npm-run-all --parallel backend front`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the ag-viewer@0.0.1 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/divansh/.npm/_logs/2025-05-02T12_53_23_637Z-debug.log
+
+> ag-viewer@0.0.1 start /home/divansh/age-viewer
+> npm-run-all --parallel backend front
+
+
+> ag-viewer@0.0.1 front /home/divansh/age-viewer
+> cd frontend && PORT=3312 npm run start
+
+
+> ag-viewer@0.0.1 backend /home/divansh/age-viewer
+> cd backend && PORT=3212 npm run start
+
+npm warn config cache-min This option has been deprecated in favor of `--prefer-offline`.
+npm warn config cache-max This option has been deprecated in favor of `--prefer-online`
+npm warn config shrinkwrap Use the --package-lock setting instead.
+npm warn config optional Use `--omit=optional` to exclude optional dependencies, or
+npm warn config `--include=optional` to include them.
+npm warn config
+npm warn config       Default value does install optional deps unless otherwise omitted.
+npm warn config cache-min This option has been deprecated in favor of `--prefer-offline`.
+npm warn config cache-max This option has been deprecated in favor of `--prefer-online`
+npm warn config shrinkwrap Use the --package-lock setting instead.
+npm warn config optional Use `--omit=optional` to exclude optional dependencies, or
+npm warn config `--include=optional` to include them.
+npm warn config
+npm warn config       Default value does install optional deps unless otherwise omitted.
+
+> ag-viewer-backend@0.4.0 start
+> babel-node src/bin/www
+
+
+> ag-viewer-frontend@0.1.0 start
+> react-scripts start
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://192.168.1.16/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/divansh/age-viewer/frontend/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:79:19)
+    at Object.createHash (node:crypto:139:10)
+    at module.exports (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:417:16)
+    at handleParseError (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:471:10)
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:503:5
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:358:12
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:373:3
+    at iterateNormalLoaders (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:214:10)
+    at iterateNormalLoaders (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:221:10)
+/home/divansh/age-viewer/frontend/node_modules/react-scripts/scripts/start.js:19
+  throw err;
+  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:79:19)
+    at Object.createHash (node:crypto:139:10)
+    at module.exports (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:417:16)
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:452:10
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:323:13
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:367:11
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:233:18
+    at context.callback (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:111:13)
+    at /home/divansh/age-viewer/frontend/node_modules/babel-loader/lib/index.js:59:103 {
+  opensslErrorStack: [
+    'error:03000086:digital envelope routines::initialization error',
+    'error:0308010C:digital envelope routines::unsupported'
+  ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+
+Node.js v23.10.0
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! ag-viewer@0.0.1 front: `cd frontend && PORT=3312 npm run start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the ag-viewer@0.0.1 front script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/divansh/.npm/_logs/2025-05-02T12_56_09_638Z-debug.log
+ERROR: "front" exited with 1.
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! ag-viewer@0.0.1 start: `npm-run-all --parallel backend front`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the ag-viewer@0.0.1 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/divansh/.npm/_logs/2025-05-02T12_56_09_710Z-debug.log
+
+> ag-viewer@0.0.1 start /home/divansh/age-viewer
+> npm-run-all --parallel backend front
+
+
+> ag-viewer@0.0.1 front /home/divansh/age-viewer
+> cd frontend && PORT=3312 npm run start
+
+
+> ag-viewer@0.0.1 backend /home/divansh/age-viewer
+> cd backend && PORT=3212 npm run start
+
+npm warn config cache-min This option has been deprecated in favor of `--prefer-offline`.
+npm warn config cache-min This option has been deprecated in favor of `--prefer-offline`.
+npm warn config cache-max This option has been deprecated in favor of `--prefer-online`
+npm warn config cache-max This option has been deprecated in favor of `--prefer-online`
+npm warn config shrinkwrap Use the --package-lock setting instead.
+npm warn config shrinkwrap Use the --package-lock setting instead.
+npm warn config optional Use `--omit=optional` to exclude optional dependencies, or
+npm warn config `--include=optional` to include them.
+npm warn config
+npm warn config       Default value does install optional deps unless otherwise omitted.
+npm warn config optional Use `--omit=optional` to exclude optional dependencies, or
+npm warn config `--include=optional` to include them.
+npm warn config
+npm warn config       Default value does install optional deps unless otherwise omitted.
+
+> ag-viewer-frontend@0.1.0 start
+> react-scripts start
+
+
+> ag-viewer-backend@0.4.0 start
+> babel-node src/bin/www
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://192.168.1.16/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/divansh/age-viewer/frontend/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+/home/divansh/age-viewer/frontend/node_modules/react-scripts/scripts/start.js:19
+  throw err;
+  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:79:19)
+    at Object.createHash (node:crypto:139:10)
+    at module.exports (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:417:16)
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:452:10
+    at /home/divansh/age-viewer/frontend/node_modules/webpack/lib/NormalModule.js:323:13
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:367:11
+    at /home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:233:18
+    at context.callback (/home/divansh/age-viewer/frontend/node_modules/loader-runner/lib/LoaderRunner.js:111:13)
+    at /home/divansh/age-viewer/frontend/node_modules/babel-loader/lib/index.js:59:103 {
+  opensslErrorStack: [
+    'error:03000086:digital envelope routines::initialization error',
+    'error:0308010C:digital envelope routines::unsupported'
+  ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+
+Node.js v23.10.0
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! ag-viewer@0.0.1 front: `cd frontend && PORT=3312 npm run start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the ag-viewer@0.0.1 front script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/divansh/.npm/_logs/2025-05-02T12_58_27_085Z-debug.log
+ERROR: "front" exited with 1.
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! ag-viewer@0.0.1 start: `npm-run-all --parallel backend front`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the ag-viewer@0.0.1 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/divansh/.npm/_logs/2025-05-02T12_58_27_170Z-debug.log
+[PM2] Spawning PM2 daemon with pm2_home=/home/divansh/.pm2
+[PM2] PM2 Successfully daemonized
+[PM2][WARN] Applications ag-viewer not running, starting...
+[PM2] App [ag-viewer-develop] launched (1 instances)
+┌────┬──────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name                 │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼──────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ ag-viewer-develop    │ ag-viewer   │ N/A     │ fork    │ 3739985  │ 0s     │ 0    │ online    │ 0%       │ 25.0mb   │ divansh  │ disabled │
+└────┴──────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+[PM2] Spawning PM2 daemon with pm2_home=/home/divansh/.pm2
+[PM2] PM2 Successfully daemonized
+[PM2][WARN] Applications ag-viewer not running, starting...
+[PM2] App [ag-viewer-develop] launched (1 instances)
+┌────┬──────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name                 │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼──────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ ag-viewer-develop    │ ag-viewer   │ N/A     │ fork    │ 610553   │ 0s     │ 0    │ online    │ 0%       │ 30.4mb   │ divansh  │ disabled │
+└────┴──────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘

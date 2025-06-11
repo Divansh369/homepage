@@ -25,3 +25,64 @@ Press Ctrl-C to exit
 
 Terminating WebSockets proxy (1623324)
 /usr/share/novnc/utils/novnc_proxy: line 67: kill: (1623324) - No such process
+Warning: could not find self.pem
+Using installed websockify at /usr/bin/websockify
+Starting webserver and WebSockets proxy on port 6081
+WebSocket server settings:
+  - Listen on :6081
+  - Web server. Web root: /usr/share/novnc
+  - No SSL/TLS support (no cert file)
+  - proxying from :6081 to localhost:5901
+
+
+Navigate to this URL:
+
+    http://vivo:6081/vnc.html?host=vivo&port=6081
+
+Press Ctrl-C to exit
+
+
+100.86.36.97 - - [27/May/2025 17:29:00] code 404, message File not found
+100.86.36.97 - - [27/May/2025 17:29:10] code 404, message File not found
+100.86.36.97 - - [27/May/2025 17:29:11] 100.86.36.97: Plain non-SSL (ws://) WebSocket connection
+100.86.36.97 - - [27/May/2025 17:29:11] 100.86.36.97: Path: '/websockify'
+100.86.36.97 - - [27/May/2025 17:29:11] connecting to: localhost:5901
+100.86.36.97 - - [27/May/2025 17:29:11] Failed to connect to localhost:5901: [Errno 111] Connection refused
+100.86.36.97 - - [27/May/2025 17:29:13] 100.86.36.97: Plain non-SSL (ws://) WebSocket connection
+100.86.36.97 - - [27/May/2025 17:29:13] 100.86.36.97: Path: '/websockify'
+100.86.36.97 - - [27/May/2025 17:29:13] connecting to: localhost:5901
+100.86.36.97 - - [27/May/2025 17:29:13] Failed to connect to localhost:5901: [Errno 111] Connection refused
+100.86.36.97 - - [27/May/2025 17:29:58] 100.86.36.97: Plain non-SSL (ws://) WebSocket connection
+100.86.36.97 - - [27/May/2025 17:29:58] 100.86.36.97: Path: '/websockify'
+100.86.36.97 - - [27/May/2025 17:29:58] connecting to: localhost:5901
+100.86.36.97 - - [27/May/2025 17:30:02] 100.86.36.97: Plain non-SSL (ws://) WebSocket connection
+100.86.36.97 - - [27/May/2025 17:30:02] 100.86.36.97: Path: '/websockify'
+100.86.36.97 - - [27/May/2025 17:30:02] connecting to: localhost:5901
+100.86.36.97 - - [27/May/2025 17:30:08] 100.86.36.97: Plain non-SSL (ws://) WebSocket connection
+100.86.36.97 - - [27/May/2025 17:30:08] 100.86.36.97: Path: '/websockify'
+100.86.36.97 - - [27/May/2025 17:30:08] connecting to: localhost:5901
+100.86.36.97 - - [27/May/2025 17:30:18] 100.86.36.97: Plain non-SSL (ws://) WebSocket connection
+100.86.36.97 - - [27/May/2025 17:30:18] 100.86.36.97: Path: '/websockify'
+100.86.36.97 - - [27/May/2025 17:30:18] connecting to: localhost:5901
+100.86.36.97 - - [27/May/2025 17:32:48] code 404, message File not found
+100.86.36.97 - - [27/May/2025 17:32:50] 100.86.36.97: Plain non-SSL (ws://) WebSocket connection
+100.86.36.97 - - [27/May/2025 17:32:50] 100.86.36.97: Path: '/websockify'
+100.86.36.97 - - [27/May/2025 17:32:50] connecting to: localhost:5901
+100.125.80.1 - - [27/May/2025 20:08:29] code 404, message File not found
+100.125.80.1 - - [27/May/2025 20:08:32] code 404, message File not found
+100.125.80.1 - - [27/May/2025 20:08:33] 100.125.80.1: Plain non-SSL (ws://) WebSocket connection
+100.125.80.1 - - [27/May/2025 20:08:33] 100.125.80.1: Path: '/websockify'
+100.125.80.1 - - [27/May/2025 20:08:33] connecting to: localhost:5901
+100.86.36.97 - - [28/May/2025 10:12:33] code 404, message File not found
+100.86.36.97 - - [28/May/2025 10:12:34] code 404, message File not found
+100.86.36.97 - - [28/May/2025 10:12:35] 100.86.36.97: Plain non-SSL (ws://) WebSocket connection
+100.86.36.97 - - [28/May/2025 10:12:35] 100.86.36.97: Path: '/websockify'
+100.86.36.97 - - [28/May/2025 10:12:35] connecting to: localhost:5901
+100.86.36.97 - - [28/May/2025 13:34:30] Request timed out: TimeoutError(110, 'Connection timed out')
+100.86.36.97 - - [28/May/2025 13:44:20] 100.86.36.97: Plain non-SSL (ws://) WebSocket connection
+100.86.36.97 - - [28/May/2025 13:44:20] 100.86.36.97: Path: '/websockify'
+100.86.36.97 - - [28/May/2025 13:44:20] connecting to: localhost:5901
+/usr/share/novnc/utils/novnc_proxy: line 198: 526454 Killed                  ${WEBSOCKIFY} ${SYSLOG_ARG} ${SSLONLY} --web ${WEB} ${CERT:+--cert ${CERT}} ${KEY:+--key ${KEY}} ${PORT} ${VNC_DEST} ${HEARTBEAT_ARG} ${IDLETIMEOUT_ARG} ${RECORD_ARG} ${TIMEOUT_ARG}
+
+Terminating WebSockets proxy (526454)
+/usr/share/novnc/utils/novnc_proxy: line 67: kill: (526454) - No such process

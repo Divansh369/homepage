@@ -1,0 +1,86 @@
+[Wed May  7 09:49:58 2025] PHP 8.2.28 Development Server (http://100.94.150.11:4193) started
+[Wed May  7 09:50:03 2025] 100.125.80.1:49374 Accepted
+[Wed May  7 09:50:03 2025] 100.125.80.1:49374 [200]: GET /
+[Wed May  7 09:50:03 2025] 100.125.80.1:49374 Closing
+[Wed May  7 09:50:03 2025] 100.125.80.1:49380 Accepted
+[Wed May  7 09:50:03 2025] 100.125.80.1:49394 Accepted
+[Wed May  7 09:50:03 2025] 100.125.80.1:49380 [200]: GET /catalog/view/stylesheet/bootstrap.css
+[Wed May  7 09:50:03 2025] 100.125.80.1:49394 [200]: GET /catalog/view/stylesheet/fonts/fontawesome/css/all.min.css
+[Wed May  7 09:50:03 2025] 100.125.80.1:49408 Accepted
+[Wed May  7 09:50:03 2025] 100.125.80.1:49412 Accepted
+[Wed May  7 09:50:03 2025] 100.125.80.1:49424 Accepted
+[Wed May  7 09:50:03 2025] 100.125.80.1:49408 [200]: GET /catalog/view/stylesheet/stylesheet.css
+[Wed May  7 09:50:03 2025] 100.125.80.1:49408 Closing
+[Wed May  7 09:50:03 2025] 100.125.80.1:49412 [200]: GET /catalog/view/javascript/jquery/jquery-3.7.1.min.js
+[Wed May  7 09:50:03 2025] 100.125.80.1:49424 [200]: GET /catalog/view/javascript/common.js
+[Wed May  7 09:50:03 2025] 100.125.80.1:49424 Closing
+[Wed May  7 09:50:04 2025] 100.125.80.1:49438 Accepted
+[Wed May  7 09:50:04 2025] 100.125.80.1:49438 [200]: GET /image/catalog/opencart-logo.png
+[Wed May  7 09:50:04 2025] 100.125.80.1:49438 Closing
+[Wed May  7 09:50:04 2025] 100.125.80.1:49452 Accepted
+[Wed May  7 09:50:04 2025] 100.125.80.1:49452 [200]: GET /image/cache/catalog/demo/banners/iPhone6-1140x380.jpg
+[Wed May  7 09:50:04 2025] 100.125.80.1:49394 Closing
+[Wed May  7 09:50:04 2025] 100.125.80.1:49462 Accepted
+[Wed May  7 09:50:04 2025] 100.125.80.1:49412 Closing
+[Wed May  7 09:50:04 2025] 100.125.80.1:49380 Closing
+[Wed May  7 09:50:04 2025] 100.125.80.1:49452 Closing
+[Wed May  7 09:50:04 2025] 100.125.80.1:43100 Accepted
+[Wed May  7 09:50:04 2025] 100.125.80.1:43100 [200]: GET /catalog/view/stylesheet/fonts/fontawesome/webfonts/fa-solid-900.woff2
+[Wed May  7 09:50:04 2025] 100.125.80.1:43110 Accepted
+[Wed May  7 09:50:04 2025] 100.125.80.1:43118 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43110 [200]: GET /image/cache/catalog/demo/manufacturer/harley-130x100.png
+[Wed May  7 09:50:05 2025] 100.125.80.1:43110 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43118 [200]: GET /image/cache/catalog/demo/manufacturer/dell-130x100.png
+[Wed May  7 09:50:05 2025] 100.125.80.1:43130 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43118 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43130 [200]: GET /image/cache/catalog/demo/manufacturer/disney-130x100.png
+[Wed May  7 09:50:05 2025] 100.125.80.1:43130 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43140 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43140 [200]: GET /image/cache/catalog/demo/manufacturer/cocacola-130x100.png
+[Wed May  7 09:50:05 2025] 100.125.80.1:43140 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43156 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43170 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43156 [200]: GET /image/cache/catalog/demo/manufacturer/burgerking-130x100.png
+[Wed May  7 09:50:05 2025] 100.125.80.1:43170 [200]: GET /image/cache/catalog/demo/macbook_1-200x200.jpg
+[Wed May  7 09:50:05 2025] 100.125.80.1:43156 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43170 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43186 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43186 [200]: GET /image/cache/catalog/demo/iphone_1-200x200.jpg
+[Wed May  7 09:50:05 2025] 100.125.80.1:43186 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:49462 [200]: GET /image/cache/catalog/demo/banners/MacBookAir-1140x380.jpg
+[Wed May  7 09:50:05 2025] 100.125.80.1:43100 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43188 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43188 [200]: GET /catalog/view/javascript/bootstrap/js/bootstrap.bundle.min.js
+[Wed May  7 09:50:05 2025] 100.125.80.1:43196 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43196 [200]: GET /image/cache/catalog/demo/apple_cinema_30-200x200.jpg
+[Wed May  7 09:50:05 2025] 100.125.80.1:43212 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43196 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43212 [200]: GET /image/cache/catalog/demo/canon_eos_5d_1-200x200.jpg
+[Wed May  7 09:50:05 2025] 100.125.80.1:43212 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43188 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43228 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43228 [200]: GET /image/cache/catalog/demo/manufacturer/canon-130x100.png
+[Wed May  7 09:50:05 2025] 100.125.80.1:43228 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43234 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43234 [200]: GET /image/cache/catalog/demo/manufacturer/nfl-130x100.png
+[Wed May  7 09:50:05 2025] 100.125.80.1:49462 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43234 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43250 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43258 Accepted
+[Wed May  7 09:50:05 2025] 100.125.80.1:43250 [200]: GET /image/cache/catalog/demo/manufacturer/redbull-130x100.png
+[Wed May  7 09:50:05 2025] 100.125.80.1:43258 [200]: GET /image/cache/catalog/demo/manufacturer/sony-130x100.png
+[Wed May  7 09:50:05 2025] 100.125.80.1:43250 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43258 Closing
+[Wed May  7 09:50:05 2025] 100.125.80.1:43270 Accepted
+[Wed May  7 09:50:06 2025] 100.125.80.1:43270 [200]: GET /image/cache/catalog/demo/manufacturer/starbucks-130x100.png
+[Wed May  7 09:50:06 2025] 100.125.80.1:43286 Accepted
+[Wed May  7 09:50:06 2025] 100.125.80.1:43286 [200]: GET /image/cache/catalog/demo/manufacturer/nintendo-130x100.png
+[Wed May  7 09:50:06 2025] 100.125.80.1:43270 Closing
+[Wed May  7 09:50:06 2025] 100.125.80.1:43286 Closing
+[Wed May  7 09:50:06 2025] 100.125.80.1:43290 Accepted
+[Wed May  7 09:50:06 2025] 100.125.80.1:43290 [200]: GET /image/catalog/opencart.ico
+[Wed May  7 09:50:06 2025] 100.125.80.1:43290 Closing
+[Wed May  7 20:46:40 2025] 100.125.80.1:44030 Accepted
+[Wed May  7 20:46:40 2025] 100.125.80.1:44030 [200]: GET /
+[Wed May  7 20:46:40 2025] 100.125.80.1:44030 Closing
+/home/divansh/opencart/start.sh: line 2: 1159125 Killed                  php -S 100.94.150.11:4193 -t upload

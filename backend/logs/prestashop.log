@@ -1,0 +1,105 @@
+Backstore link: http://:4198/admin/index.php?controller=AdminDashboard&token=d7ec555e15cfa93830ae3da4e58ee286
+[Wed May  7 09:49:12 2025] PHP 8.2.28 Development Server (http://100.94.150.11:4198) started
+[Wed May  7 09:49:15 2025] 100.125.80.1:49006 Accepted
+[Wed May  7 09:49:16 2025] 100.125.80.1:49006 [302]: GET /
+[Wed May  7 09:49:16 2025] 100.125.80.1:49006 Closing
+[Wed May  7 09:49:16 2025] 100.125.80.1:49020 Accepted
+[Wed May  7 09:49:16 2025] 100.125.80.1:49020 [200]: GET /index.php
+[Wed May  7 09:49:17 2025] 100.125.80.1:49020 Closing
+[Wed May  7 09:49:17 2025] 100.125.80.1:49036 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49038 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49036 [200]: GET /themes/classic/assets/css/theme.css
+[Wed May  7 09:49:17 2025] 100.125.80.1:49052 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49038 [200]: GET /modules/blockreassurance/views/dist/front.css
+[Wed May  7 09:49:17 2025] 100.125.80.1:49062 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49052 [200]: GET /modules/ps_socialfollow/views/css/ps_socialfollow.css
+[Wed May  7 09:49:17 2025] 100.125.80.1:49070 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49062 [200]: GET /modules/ps_searchbar/ps_searchbar.css
+[Wed May  7 09:49:17 2025] 100.125.80.1:49038 Closing
+[Wed May  7 09:49:17 2025] 100.125.80.1:49070 [200]: GET /modules/productcomments/views/css/productcomments.css
+[Wed May  7 09:49:17 2025] 100.125.80.1:49052 Closing
+[Wed May  7 09:49:17 2025] 100.125.80.1:49062 Closing
+[Wed May  7 09:49:17 2025] 100.125.80.1:49070 Closing
+[Wed May  7 09:49:17 2025] 100.125.80.1:49086 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49090 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49098 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49086 [200]: GET /js/jquery/ui/themes/base/minified/jquery-ui.min.css
+[Wed May  7 09:49:17 2025] 100.125.80.1:49090 [200]: GET /js/jquery/ui/themes/base/minified/jquery.ui.theme.min.css
+[Wed May  7 09:49:17 2025] 100.125.80.1:49098 [200]: GET /modules/blockwishlist/public/wishlist.css
+[Wed May  7 09:49:17 2025] 100.125.80.1:49090 Closing
+[Wed May  7 09:49:17 2025] 100.125.80.1:49098 Closing
+[Wed May  7 09:49:17 2025] 100.125.80.1:49112 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49112 [200]: GET /modules/ps_imageslider/css/homeslider.css
+[Wed May  7 09:49:17 2025] 100.125.80.1:49112 Closing
+[Wed May  7 09:49:17 2025] 100.125.80.1:49036 Closing
+[Wed May  7 09:49:17 2025] 100.125.80.1:49126 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49126 [200]: GET /themes/core.js
+[Wed May  7 09:49:17 2025] 100.125.80.1:49086 Closing
+[Wed May  7 09:49:17 2025] 100.125.80.1:49132 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49132 [200]: GET /js/jquery/ui/jquery-ui.min.js
+[Wed May  7 09:49:17 2025] 100.125.80.1:49144 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49146 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49144 [200]: GET /themes/classic/assets/css/52260854eea2d38939bf.woff2
+[Wed May  7 09:49:17 2025] 100.125.80.1:49146 [200]: GET /themes/classic/assets/css/12a47ed5fd5585f0f422.woff2
+[Wed May  7 09:49:17 2025] 100.125.80.1:49150 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49154 Accepted
+[Wed May  7 09:49:17 2025] 100.125.80.1:49150 [200]: GET /themes/classic/assets/css/250c120c3f8b2b0bb58e.woff2
+[Wed May  7 09:49:17 2025] 100.125.80.1:49154 [200]: GET /themes/classic/assets/css/a7360927bb3673ed7814.woff2
+[Wed May  7 09:49:17 2025] 100.125.80.1:49126 Closing
+[Wed May  7 09:49:17 2025] 100.125.80.1:49144 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49150 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49154 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49146 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49132 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49170 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49170 [200]: GET /themes/classic/assets/css/dce0916af972e3040aa1.woff2
+[Wed May  7 09:49:18 2025] 100.125.80.1:49174 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49174 [200]: GET /img/logo.png
+[Wed May  7 09:49:18 2025] 100.125.80.1:49174 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49178 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49178 [200]: GET /themes/classic/assets/js/theme.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49182 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49182 [200]: GET /modules/blockreassurance/views/dist/front.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49182 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49170 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49186 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49186 [200]: GET /modules/ps_emailsubscription/views/js/ps_emailsubscription.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49186 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49202 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49202 [200]: GET /modules/ps_emailalerts/js/mailalerts.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49202 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49212 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49212 [200]: GET /modules/productcomments/views/js/jquery.rating.plugin.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49212 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49228 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49228 [200]: GET /modules/productcomments/views/js/productListingComments.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49228 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49238 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49238 [200]: GET /modules/blockwishlist/public/product.bundle.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49242 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49242 [200]: GET /modules/ps_shoppingcart/ps_shoppingcart.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49242 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49178 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49248 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49248 [200]: GET /modules/ps_searchbar/ps_searchbar.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49248 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49252 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49252 [200]: GET /modules/ps_imageslider/js/responsiveslides.min.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49252 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49264 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49264 [200]: GET /modules/ps_imageslider/js/homeslider.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49264 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49238 Closing
+[Wed May  7 09:49:18 2025] 100.125.80.1:49272 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49272 [200]: GET /modules/blockwishlist/public/graphql.js
+[Wed May  7 09:49:18 2025] 100.125.80.1:49274 Accepted
+[Wed May  7 09:49:18 2025] 100.125.80.1:49274 [200]: GET /modules/blockwishlist/public/vendors.js
+[Wed May  7 09:49:19 2025] 100.125.80.1:49274 Closing
+[Wed May  7 09:49:19 2025] 100.125.80.1:49272 Closing
+[Wed May  7 09:49:19 2025] 100.125.80.1:49276 Accepted
+[Wed May  7 09:49:20 2025] 100.125.80.1:49276 [200]: GET /index.php?action=getAllWishlist&fc=module&module=blockwishlist&controller=action&id_lang=1
+[Wed May  7 09:49:20 2025] 100.125.80.1:49276 Closing
+[Wed May  7 09:49:20 2025] 100.125.80.1:49292 Accepted
+[Wed May  7 09:49:20 2025] 100.125.80.1:49292 [200]: GET /img/favicon.ico?1324977642
+[Wed May  7 09:49:20 2025] 100.125.80.1:49292 Closing
+/home/divansh/prestashop/start.sh: line 4: 1155200 Killed                  php -S 100.94.150.11:4198

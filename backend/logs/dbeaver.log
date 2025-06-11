@@ -1,0 +1,669 @@
+Starting Cloudbeaver Server
+/home/divansh/dbeaver/run.sh: line 14: /usr/lib/jvm/java-21-openjdk-amd64/bin/java: No such file or directory
+Starting Cloudbeaver Server
+/home/divansh/dbeaver/run.sh: line 14: /usr/lib/jvm/java-21-openjdk-amd64/bin/java: No such file or directory
+Starting Cloudbeaver Server
+WARNING: Using incubator modules: jdk.incubator.vector
+2025-05-05 16:29:22.628 - Workspace path initialized: /home/divansh/dbeaver/workspace
+SLF4J(I): Logback configuration is used: conf/logback.xml
+05-05-2025 16:29:22.765 [main] DEBUG i.c.model.app.BaseServletApplication - Loading configuration from /home/divansh/dbeaver/conf/cloudbeaver.conf
+05-05-2025 16:29:22.766 [main] DEBUG i.c.s.CBServerConfigurationController - Using configuration [/home/divansh/dbeaver/conf/cloudbeaver.conf]
+05-05-2025 16:29:22.766 [main] DEBUG i.c.s.CBServerConfigurationController - Read configuration [/home/divansh/dbeaver/conf/cloudbeaver.conf]
+05-05-2025 16:29:22.837 [main] DEBUG i.c.s.CBServerConfigurationController - Runtime configuration [/home/divansh/dbeaver/workspace/.data/.cloudbeaver.runtime.conf]
+05-05-2025 16:29:22.837 [main] DEBUG i.c.s.CBServerConfigurationController - Read configuration [/home/divansh/dbeaver/workspace/.data/.cloudbeaver.runtime.conf]
+05-05-2025 16:29:22.850 [main] INFO  io.cloudbeaver.server.CBPlatform - Initialize web platform...: 
+05-05-2025 16:29:23.036 [main] DEBUG o.j.d.runtime.SecurityProviderUtils - BounceCastle bundle found. Use JCE provider BC
+05-05-2025 16:29:23.083 [main] DEBUG o.j.d.registry.BasePlatformImpl - Initialize base platform...
+05-05-2025 16:29:23.098 [main] INFO  io.cloudbeaver.server.CBPlatform - Web platform initialized (248ms)
+05-05-2025 16:29:23.349 [main] DEBUG o.j.d.r.DataSourceProviderRegistry - Total database drivers: 121 (121)
+05-05-2025 16:29:23.356 [main] ERROR i.c.registry.WebDriverRegistry - 	Driver 'yandex_clickhouse' is missing library 'ru.yandex.clickhouse:clickhouse-jdbc:RELEASE'
+05-05-2025 16:29:23.359 [main] INFO  i.c.registry.WebDriverRegistry - Available drivers: ClickHouse,Db2 for LUW,Db2 for IBM i,Firebird,DuckDB,Hadoop / Apache Kyuubi,Trino,H2 Embedded,H2 Embedded V.2,MS SQL Server / SQL Server,MySQL,MariaDB,Oracle,PostgreSQL,SQLite,LibSQL
+05-05-2025 16:29:23.363 [main] DEBUG io.cloudbeaver.server.CBApplication - CloudBeaver CE Server 25.0.2.202503231310 is starting
+05-05-2025 16:29:23.363 [main] DEBUG io.cloudbeaver.server.CBApplication - 	OS: Linux 6.1.0-32-amd64 (amd64)
+05-05-2025 16:29:23.363 [main] DEBUG io.cloudbeaver.server.CBApplication - 	Java version: 21 by Oracle Corporation (64bit)
+05-05-2025 16:29:23.363 [main] DEBUG io.cloudbeaver.server.CBApplication - 	Install path: '/home/divansh/dbeaver/server'
+05-05-2025 16:29:23.364 [main] DEBUG io.cloudbeaver.server.CBApplication - 	Global workspace: 'file:/home/divansh/dbeaver/workspace/'
+05-05-2025 16:29:23.364 [main] DEBUG io.cloudbeaver.server.CBApplication - 	Memory available 90Mb/1470Mb
+05-05-2025 16:29:23.364 [main] DEBUG io.cloudbeaver.server.CBApplication - 	Content root: /home/divansh/dbeaver/web
+05-05-2025 16:29:23.364 [main] DEBUG io.cloudbeaver.server.CBApplication - 	Drivers storage: /home/divansh/dbeaver/drivers
+05-05-2025 16:29:23.366 [main] DEBUG io.cloudbeaver.server.CBApplication - 	Listen port: 8978 on all interfaces
+05-05-2025 16:29:23.366 [main] DEBUG io.cloudbeaver.server.CBApplication - 	Base URI: /api/
+05-05-2025 16:29:23.367 [main] DEBUG io.cloudbeaver.server.CBApplication - 	Global access server URL: http://:8978
+05-05-2025 16:29:23.367 [main] DEBUG io.cloudbeaver.server.CBApplication - 	Production mode
+05-05-2025 16:29:23.375 [main] DEBUG io.cloudbeaver.server.CBApplication - 	Local host addresses:
+05-05-2025 16:29:23.381 [main] DEBUG io.cloudbeaver.server.CBApplication - 		192.168.254.1 (192.168.254.1)
+05-05-2025 16:29:23.389 [main] DEBUG io.cloudbeaver.server.CBApplication - 		172.18.0.1 (172.18.0.1)
+05-05-2025 16:29:23.398 [main] DEBUG io.cloudbeaver.server.CBApplication - 		fd7a:115c:a1e0:0:0:0:1501:960b%tailscale0 (fd7a:115c:a1e0:0:0:0:1501:960b%tailscale0)
+05-05-2025 16:29:23.405 [main] DEBUG io.cloudbeaver.server.CBApplication - 		100.94.150.11 (100.94.150.11)
+05-05-2025 16:29:23.414 [main] DEBUG io.cloudbeaver.server.CBApplication - 		172.17.0.1 (172.17.0.1)
+05-05-2025 16:29:23.734 [main] DEBUG io.cloudbeaver.server.CBApplication - 		2401:4900:1c64:a7d8:5852:6d01:caf6:221%wlp1s0 (2401:4900:1c64:a7d8:5852:6d01:caf6:221%wlp1s0)
+05-05-2025 16:29:23.741 [main] DEBUG io.cloudbeaver.server.CBApplication - 		192.168.1.30 (192.168.1.30)
+05-05-2025 16:29:23.750 [main] DEBUG io.cloudbeaver.server.CBApplication - 		0:0:0:0:0:0:0:1%lo (0:0:0:0:0:0:0:1%lo)
+05-05-2025 16:29:23.849 [main] DEBUG i.c.s.auth.ReverseProxyConfigurator - Reverse proxy provider disabled, migration not needed
+05-05-2025 16:29:23.868 [main] DEBUG i.c.service.security.db.CBDatabase - Initiate management database
+05-05-2025 16:29:23.884 [main] DEBUG i.c.service.security.db.CBDatabase - 	Initiate connection pool with management database (H2 Embedded V.2; jdbc:h2:/home/divansh/projects/dbeaver/workspace/.data/cb.h2v2.dat)
+05-05-2025 16:29:24.356 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Create new schema CB
+05-05-2025 16:29:24.683 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_SCHEMA_INFO
+(
+    VERSION     INTEGER   NOT NULL,
+    UPDATE_TIME TIMESTAMP NOT NULL
+)
+05-05-2025 16:29:24.689 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_INSTANCE
+(
+    INSTANCE_ID     CHAR(36)     NOT NULL, -- Unique instance ID
+
+    MAC_ADDRESS     CHAR(12)     NOT NULL,
+    HOST_NAME       VARCHAR(128) NOT NULL,
+
+    PRODUCT_NAME    VARCHAR(100) NOT NULL, -- Server product name
+    PRODUCT_VERSION VARCHAR(32)  NOT NULL, -- Server product version
+
+    UPDATE_TIME     TIMESTAMP    NOT NULL,
+
+    PRIMARY KEY (INSTANCE_ID)
+)
+05-05-2025 16:29:24.696 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_INSTANCE_DETAILS
+(
+    INSTANCE_ID CHAR(36)    NOT NULL, -- Unique instance ID
+    FIELD_NAME  VARCHAR(32) NOT NULL,
+    FIELD_VALUE VARCHAR(255),
+
+    PRIMARY KEY (INSTANCE_ID, FIELD_NAME),
+    FOREIGN KEY (INSTANCE_ID) REFERENCES CB_INSTANCE (INSTANCE_ID)
+)
+05-05-2025 16:29:24.709 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_AUTH_SUBJECT
+(
+    SUBJECT_ID        VARCHAR(128) NOT NULL,
+    SUBJECT_TYPE      VARCHAR(8)   NOT NULL,
+    IS_SECRET_STORAGE CHAR(1)      DEFAULT 'Y' NOT NULL,
+
+    PRIMARY KEY (SUBJECT_ID)
+)
+05-05-2025 16:29:24.710 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_SUBJECT_META
+(
+    SUBJECT_ID  VARCHAR(128) NOT NULL,
+    META_ID     VARCHAR(32)  NOT NULL,
+    META_VALUE  VARCHAR(1024),
+
+    UPDATE_TIME TIMESTAMP     DEFAULT CURRENT_TIMESTAMP NOT NULL,
+
+    PRIMARY KEY (SUBJECT_ID, META_ID),
+    FOREIGN KEY (SUBJECT_ID) REFERENCES CB_AUTH_SUBJECT(SUBJECT_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.713 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_AUTH_PERMISSIONS
+(
+    SUBJECT_ID    VARCHAR(128) NOT NULL,
+    PERMISSION_ID VARCHAR(64)  NOT NULL,
+
+    GRANT_TIME    TIMESTAMP    NOT NULL,
+    GRANTED_BY    VARCHAR(128) NOT NULL,
+
+    PRIMARY KEY (SUBJECT_ID, PERMISSION_ID),
+    FOREIGN KEY (SUBJECT_ID) REFERENCES CB_AUTH_SUBJECT (SUBJECT_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.715 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_OBJECT_PERMISSIONS
+(
+    OBJECT_ID   VARCHAR(128) NOT NULL,
+    OBJECT_TYPE VARCHAR(128) NOT NULL,
+    SUBJECT_ID  VARCHAR(128) NOT NULL,
+
+    PERMISSION  VARCHAR(32)  NOT NULL,
+
+    GRANT_TIME  TIMESTAMP    NOT NULL,
+    GRANTED_BY  VARCHAR(128) NOT NULL,
+
+    PRIMARY KEY (SUBJECT_ID, OBJECT_TYPE, OBJECT_ID, PERMISSION),
+    FOREIGN KEY (SUBJECT_ID) REFERENCES CB_AUTH_SUBJECT (SUBJECT_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.719 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_CREDENTIALS_PROFILE
+(
+    PROFILE_ID          VARCHAR(128) NOT NULL,
+    PROFILE_NAME        VARCHAR(100) NOT NULL,
+    PROFILE_DESCRIPTION VARCHAR(255),
+    PARENT_PROFILE_ID   VARCHAR(128),
+    CREATE_TIME         TIMESTAMP    DEFAULT CURRENT_TIMESTAMP NOT NULL,
+
+    PRIMARY KEY (PROFILE_ID),
+    FOREIGN KEY (PROFILE_ID) REFERENCES CB_AUTH_SUBJECT (SUBJECT_ID) ON DELETE CASCADE,
+    FOREIGN KEY (PARENT_PROFILE_ID) REFERENCES CB_CREDENTIALS_PROFILE(PROFILE_ID) ON DELETE NO ACTION
+)
+05-05-2025 16:29:24.723 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_USER
+(
+    USER_ID     VARCHAR(128) NOT NULL,
+    IS_ACTIVE   CHAR(1)      NOT NULL,
+    CREATE_TIME TIMESTAMP    NOT NULL,
+    DEFAULT_AUTH_ROLE VARCHAR(32) NULL,
+    CREDENTIALS_PROFILE_ID VARCHAR(128) NULL,
+
+    PRIMARY KEY (USER_ID),
+    FOREIGN KEY (USER_ID) REFERENCES CB_AUTH_SUBJECT (SUBJECT_ID) ON DELETE CASCADE,
+    FOREIGN KEY (CREDENTIALS_PROFILE_ID) REFERENCES CB_CREDENTIALS_PROFILE(PROFILE_ID) ON DELETE NO ACTION
+)
+05-05-2025 16:29:24.726 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: -- Additional user properties (profile)
+CREATE TABLE CB_USER_PREFERENCES
+(
+    USER_ID     VARCHAR(128) NOT NULL,
+    PREFERENCE_ID    VARCHAR(128)  NOT NULL,
+    PREFERENCE_VALUE VARCHAR(1024),
+
+    PRIMARY KEY (USER_ID, PREFERENCE_ID),
+    FOREIGN KEY (USER_ID) REFERENCES CB_USER (USER_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.728 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_TEAM
+(
+    TEAM_ID                 VARCHAR(128) NOT NULL,
+    TEAM_NAME               VARCHAR(100) NOT NULL,
+    TEAM_DESCRIPTION        VARCHAR(255),
+    CREATE_TIME             TIMESTAMP    NOT NULL,
+
+    PRIMARY KEY (TEAM_ID),
+    FOREIGN KEY (TEAM_ID) REFERENCES CB_AUTH_SUBJECT (SUBJECT_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.730 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_USER_TEAM
+(
+    USER_ID    VARCHAR(128) NOT NULL,
+    TEAM_ID    VARCHAR(128) NOT NULL,
+    TEAM_ROLE  VARCHAR(128),
+
+    GRANT_TIME TIMESTAMP    NOT NULL,
+    GRANTED_BY VARCHAR(128) NOT NULL,
+
+    PRIMARY KEY (USER_ID, TEAM_ID),
+    FOREIGN KEY (USER_ID) REFERENCES CB_USER (USER_ID) ON DELETE CASCADE,
+    FOREIGN KEY (TEAM_ID) REFERENCES CB_TEAM (TEAM_ID) ON DELETE NO ACTION
+)
+05-05-2025 16:29:24.734 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_USER_CREDENTIALS
+(
+    USER_ID     VARCHAR(128)  NOT NULL,
+    PROVIDER_ID VARCHAR(32)   NOT NULL,
+    CRED_ID     VARCHAR(32)   NOT NULL,
+    CRED_VALUE  VARCHAR(1024) NOT NULL,
+
+    UPDATE_TIME TIMESTAMP     DEFAULT CURRENT_TIMESTAMP NOT NULL,
+
+    PRIMARY KEY (USER_ID, PROVIDER_ID, CRED_ID),
+    FOREIGN KEY (USER_ID) REFERENCES CB_USER (USER_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.736 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE INDEX CB_USER_CREDENTIALS_SEARCH_IDX ON CB_USER_CREDENTIALS (PROVIDER_ID, CRED_ID)
+05-05-2025 16:29:24.737 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_USER_STATE
+(
+    USER_ID            VARCHAR(128) NOT NULL,
+
+    USER_CONFIGURATION TEXT NULL,
+
+    UPDATE_TIME        TIMESTAMP    DEFAULT CURRENT_TIMESTAMP NOT NULL,
+
+    PRIMARY KEY (USER_ID),
+    FOREIGN KEY (USER_ID) REFERENCES CB_USER (USER_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.740 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_SESSION
+(
+    SESSION_ID                 VARCHAR(64) NOT NULL,
+    APP_SESSION_ID             VARCHAR(64) NULL,
+    USER_ID                    VARCHAR(128) NULL,
+
+    CREATE_TIME                TIMESTAMP   NOT NULL,
+    LAST_ACCESS_REMOTE_ADDRESS VARCHAR(128) NULL,
+    LAST_ACCESS_USER_AGENT     VARCHAR(255) NULL,
+    LAST_ACCESS_TIME           TIMESTAMP   NOT NULL,
+
+    LAST_ACCESS_INSTANCE_ID    CHAR(36),
+    SESSION_TYPE               VARCHAR(64),
+
+    PRIMARY KEY (SESSION_ID),
+    FOREIGN KEY (USER_ID) REFERENCES CB_USER (USER_ID) ON DELETE CASCADE,
+    FOREIGN KEY (LAST_ACCESS_INSTANCE_ID) REFERENCES CB_INSTANCE (INSTANCE_ID)
+)
+05-05-2025 16:29:24.744 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_AUTH_TOKEN
+(
+    TOKEN_ID                      VARCHAR(128) NOT NULL,
+    REFRESH_TOKEN_ID              VARCHAR(128),
+    SESSION_ID                    VARCHAR(64)  NOT NULL,
+    USER_ID                       VARCHAR(128),
+    AUTH_ROLE                     VARCHAR(32),
+
+    EXPIRATION_TIME               TIMESTAMP    NOT NULL,
+    REFRESH_TOKEN_EXPIRATION_TIME TIMESTAMP    DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    CREATE_TIME                   TIMESTAMP    DEFAULT CURRENT_TIMESTAMP NOT NULL,
+
+    PRIMARY KEY (TOKEN_ID),
+    FOREIGN KEY (SESSION_ID) REFERENCES CB_SESSION (SESSION_ID) ON DELETE CASCADE,
+    FOREIGN KEY (USER_ID) REFERENCES CB_USER (USER_ID) ON DELETE NO ACTION
+)
+05-05-2025 16:29:24.749 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_AUTH_ATTEMPT
+(
+    AUTH_ID           VARCHAR(128) NOT NULL,
+    AUTH_STATUS       VARCHAR(32)  NOT NULL,
+    AUTH_ERROR        TEXT,
+    APP_SESSION_ID    VARCHAR(64)  NOT NULL,
+    SESSION_ID        VARCHAR(64),
+    SESSION_TYPE      VARCHAR(64)  NOT NULL,
+    APP_SESSION_STATE TEXT         NOT NULL,
+    IS_MAIN_AUTH      CHAR(1)      DEFAULT 'Y' NOT NULL,
+    AUTH_USERNAME     VARCHAR(128) NULL,
+    ERROR_CODE        VARCHAR(128) NULL,
+    FORCE_SESSION_LOGOUT CHAR(1)   DEFAULT 'N' NOT NULL,
+    CREATE_TIME       TIMESTAMP    DEFAULT CURRENT_TIMESTAMP NOT NULL,
+
+    PRIMARY KEY (AUTH_ID),
+    FOREIGN KEY (SESSION_ID) REFERENCES CB_SESSION (SESSION_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.751 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_AUTH_ATTEMPT_INFO
+(
+    AUTH_ID                        VARCHAR(128) NOT NULL,
+    AUTH_PROVIDER_ID               VARCHAR(128) NOT NULL,
+    AUTH_PROVIDER_CONFIGURATION_ID VARCHAR(128),
+    AUTH_STATE                     TEXT         NOT NULL,
+
+    CREATE_TIME                    TIMESTAMP    DEFAULT CURRENT_TIMESTAMP NOT NULL,
+
+    PRIMARY KEY (AUTH_ID, AUTH_PROVIDER_ID),
+    FOREIGN KEY (AUTH_ID) REFERENCES CB_AUTH_ATTEMPT (AUTH_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.753 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: -- Secrets
+
+CREATE TABLE CB_USER_SECRETS
+(
+    USER_ID                        VARCHAR(128) NOT NULL,
+    SECRET_ID                      VARCHAR(512) NOT NULL,
+    SECRET_VALUE                   TEXT NOT NULL,
+
+    SECRET_LABEL                   VARCHAR(128),
+    SECRET_DESCRIPTION             VARCHAR(1024),
+    ENCODING_TYPE                  VARCHAR(32) DEFAULT 'PLAINTEXT' NOT NULL,
+    UPDATE_TIME                    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+
+    PRIMARY KEY (USER_ID, SECRET_ID),
+    FOREIGN KEY (USER_ID) REFERENCES CB_USER (USER_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.756 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_SUBJECT_SECRETS
+(
+    SUBJECT_ID                     VARCHAR(128) NOT NULL,
+    SECRET_ID                      VARCHAR(255) NOT NULL,
+
+    PROJECT_ID                     VARCHAR(128),
+    OBJECT_TYPE                    VARCHAR(32),
+    OBJECT_ID                      VARCHAR(128),
+
+    SECRET_VALUE                   TEXT NOT NULL,
+
+    ENCODING_TYPE                  VARCHAR(32) DEFAULT 'PLAINTEXT' NOT NULL,
+    CREATE_TIME                    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    UPDATE_TIME                    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+
+    PRIMARY KEY (SUBJECT_ID, SECRET_ID),
+    FOREIGN KEY (SUBJECT_ID) REFERENCES CB_AUTH_SUBJECT (SUBJECT_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.758 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE INDEX IDX_SUBJECT_SECRETS_PROJECT ON CB_SUBJECT_SECRETS (PROJECT_ID,SUBJECT_ID)
+05-05-2025 16:29:24.758 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE INDEX IDX_SUBJECT_SECRETS_OBJECT ON CB_SUBJECT_SECRETS (PROJECT_ID,OBJECT_TYPE,OBJECT_ID)
+05-05-2025 16:29:24.759 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: -- Tasks
+CREATE TABLE CB_TASKS
+(
+    TASK_ID                        VARCHAR(128) NOT NULL,
+    CREATE_TIME                    TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    TIMEOUT                        INTEGER NOT NULL,
+
+    PRIMARY KEY (TASK_ID)
+)
+05-05-2025 16:29:24.760 [main] DEBUG o.j.d.m.sql.schema.SQLSchemaManager - Execute migration query: CREATE TABLE CB_ACCESS_TOKEN
+(
+    TOKEN_ID        VARCHAR(128) NOT NULL,
+    USER_ID         VARCHAR(128) NOT NULL,
+    TOKEN_NAME      VARCHAR(128) NOT NULL,
+    CREATE_TIME     TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    EXPIRATION_TIME TIMESTAMP NULL,
+
+    PRIMARY KEY (USER_ID, TOKEN_ID),
+    UNIQUE (USER_ID, TOKEN_NAME),
+    FOREIGN KEY (USER_ID) REFERENCES CB_USER(USER_ID) ON DELETE CASCADE
+)
+05-05-2025 16:29:24.835 [main] DEBUG o.j.dbeaver.model.sql.db.InternalDB - 	Security Manager DB server started (H2 2.1.214 (2022-06-13))
+05-05-2025 16:29:24.836 [main] DEBUG i.c.service.security.db.CBDatabase - 	Management database connection established
+05-05-2025 16:29:24.867 [main] DEBUG io.cloudbeaver.server.CBApplication - Starting Jetty server (8978 on all interfaces) 
+05-05-2025 16:29:24.869 [DBeaver: CloudBeaver events job] DEBUG i.c.s.events.WSDefaultEventHandler - cb_subject_permissions event handled
+05-05-2025 16:29:24.869 [DBeaver: CloudBeaver events job] DEBUG i.c.s.events.WSDefaultEventHandler - cb_subject_permissions event handled
+05-05-2025 16:29:25.350 [main] DEBUG i.c.server.graphql.GraphQLEndpoint - Schema extensions loaded: WebServiceBindingCore,WebServiceBindingNavigator,WebServiceBindingSQL,CECoreModelExtender,WebServiceBindingAdmin,WebServiceBindingAuth,WebServiceBindingDataTransfer,WebServiceBindingFS,WebServiceBindingMetadata,WebServiceBindingRM
+05-05-2025 16:29:25.763 [main] DEBUG i.c.server.jetty.JettyUtils - Max http session idle time: 900s
+05-05-2025 16:29:25.769 [main] DEBUG i.c.server.jetty.CBJettyServer - Active servlets:
+05-05-2025 16:29:25.770 [main] DEBUG i.c.server.jetty.CBJettyServer - 	static: [/]
+05-05-2025 16:29:25.770 [main] DEBUG i.c.server.jetty.CBJettyServer - 	images: [/api/images/*]
+05-05-2025 16:29:25.770 [main] DEBUG i.c.server.jetty.CBJettyServer - 	status: [/status]
+05-05-2025 16:29:25.770 [main] DEBUG i.c.server.jetty.CBJettyServer - 	graphql: [/api/gql/*]
+05-05-2025 16:29:25.770 [main] DEBUG i.c.server.jetty.CBJettyServer - 	sqlResultValueViewer: [/api/sql-result-value/*]
+05-05-2025 16:29:25.770 [main] DEBUG i.c.server.jetty.CBJettyServer - 	sqlUploadFile: [/api/resultset/blob/*]
+05-05-2025 16:29:25.770 [main] DEBUG i.c.server.jetty.CBJettyServer - 	adminLogs: [/api/logs/*]
+05-05-2025 16:29:25.770 [main] DEBUG i.c.server.jetty.CBJettyServer - 	dataTransfer: [/api/data/*]
+05-05-2025 16:29:25.770 [main] DEBUG i.c.server.jetty.CBJettyServer - 	dataTransferImport: [/api/data/import/*]
+05-05-2025 16:29:25.770 [main] DEBUG i.c.server.jetty.CBJettyServer - 	fileSystems: [/api/fs-data/*]
+05-05-2025 16:29:25.770 [main] DEBUG i.c.server.jetty.CBJettyServer - Active websocket mappings:
+05-05-2025 16:29:25.770 [main] INFO  i.c.server.jetty.CBJettyServer - Refreshing Jetty configuration
+05-05-2025 16:29:25.773 [main] INFO  org.eclipse.jetty.server.Server - jetty-12.0.15; built: 2024-11-05T19:44:57.623Z; git: 8281ae9740d4b4225e8166cc476bad237c70213a; jvm 21+35-2513
+05-05-2025 16:29:25.792 [main] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=
+05-05-2025 16:29:25.845 [main] INFO  o.e.j.server.handler.ContextHandler - Started oeje10s.ServletContextHandler@764db16c{ROOT,/,b=file:///home/divansh/dbeaver/web/,a=AVAILABLE,h=icsj.CBSessionHandler@45cb5307{STARTED}}
+05-05-2025 16:29:25.858 [main] INFO  o.e.j.e.s.ServletContextHandler - Started oeje10s.ServletContextHandler@764db16c{ROOT,/,b=file:///home/divansh/dbeaver/web/,a=AVAILABLE,h=icsj.CBSessionHandler@45cb5307{STARTED}}
+05-05-2025 16:29:25.866 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@73bf28e1{HTTP/1.1, (http/1.1)}{0.0.0.0:8978}
+05-05-2025 16:29:25.870 [main] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@3ad2883a{STARTING}[12.0.15,sto=0] @5318ms
+05-05-2025 16:29:42.962 [qtp1381702512-50] DEBUG i.c.server.graphql.GraphQLEndpoint - API > serverConfig [user: null, sessionId: null]
+05-05-2025 16:29:43.362 [qtp1381702512-49] DEBUG i.c.server.graphql.GraphQLEndpoint - API > openSession [user: null, sessionId: null]
+05-05-2025 16:29:43.421 [qtp1381702512-49] DEBUG i.c.model.session.WebUserContext - refresh permissions null 4745fbe6-83da-40b2-b483-4819e80f5bfb
+05-05-2025 16:29:43.435 [qtp1381702512-49] DEBUG i.c.service.session.CBSessionManager - New web session '1ogprlq8fvoat40tegyix54ho0'
+05-05-2025 16:29:43.727 [qtp1381702512-49] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getActiveUser [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:29:44.004 [qtp1381702512-45] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getServerLicenseStatus [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:29:44.063 [qtp1381702512-50] DEBUG i.c.s.websockets.CBEventsWebSocket - EventWebSocket connected to the 1ogprlq8fvoat40tegyix54ho0 session
+05-05-2025 16:29:44.369 [qtp1381702512-49] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getProjectList [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:29:44.686 [qtp1381702512-49] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getUserConnections [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:29:45.149 [qtp1381702512-45] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getProductInfo [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:29:45.399 [qtp1381702512-46] DEBUG i.c.server.graphql.GraphQLEndpoint - API > sessionPermissions [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:29:45.771 [qtp1381702512-49] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getTemplateConnections [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:29:45.783 [qtp1381702512-46] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getUserConnections [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:29:45.786 [qtp1381702512-50] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:29:46.160 [qtp1381702512-50] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:29:46.520 [qtp1381702512-48] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:29:46.521 [qtp1381702512-46] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:30:10.686 [qtp1381702512-50] DEBUG i.c.model.session.WebSession - Update session lifetime 1ogprlq8fvoat40tegyix54ho0 for user null
+05-05-2025 16:30:13.113 [qtp1381702512-50] DEBUG i.c.server.graphql.GraphQLEndpoint - API > driverList [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:30:16.192 [qtp1381702512-45] DEBUG i.c.server.graphql.GraphQLEndpoint - API > driverList [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:30:16.486 [qtp1381702512-57] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getNetworkHandlers [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:30:16.792 [qtp1381702512-57] DEBUG i.c.server.graphql.GraphQLEndpoint - API > driverList [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:30:17.087 [qtp1381702512-45] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getUserConnections [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:30:17.368 [qtp1381702512-45] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getAuthModels [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:30:49.298 [qtp1381702512-58] DEBUG i.c.server.graphql.GraphQLEndpoint - API > testConnection [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:30:49.328 [Test datasource connection] DEBUG o.j.d.registry.DataSourceDescriptor - Connect with 'PostgreSQL@100.97.215.85:5434' (postgres-jdbc-196a01b0c28-6754ad864af549e3)
+05-05-2025 16:30:49.428 [Test datasource connection] DEBUG o.j.d.m.i.AbstractExecutionContext - Execution context opened (PostgreSQL@100.97.215.85:5434; Main <fiore>; 0)
+05-05-2025 16:30:49.434 [Test datasource connection] DEBUG o.j.d.e.p.model.PostgreDataSource - Initiate connection to PostgreSQL database [fiore@100.97.215.85] for Main <fiore>
+05-05-2025 16:30:49.735 [Test datasource connection] ERROR i.c.service.WebServiceBindingBase - Unexpected error during gql request
+io.cloudbeaver.DBWebException: Error connecting to database:
+Connection failed:
+Connection to 100.97.215.85:5434 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at io.cloudbeaver.service.ConnectionControllerCE.testConnection(ConnectionControllerCE.java:341)
+	at io.cloudbeaver.service.core.impl.WebServiceCore.testConnection(WebServiceCore.java:504)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cloudbeaver.service.WebServiceBindingBase$ServiceInvocationHandler.invoke(WebServiceBindingBase.java:171)
+	at jdk.proxy6/jdk.proxy6.$Proxy11.testConnection(Unknown Source)
+	at io.cloudbeaver.service.core.WebServiceBindingCore.lambda$28(WebServiceBindingCore.java:144)
+	at graphql.execution.ExecutionStrategy.invokeDataFetcher(ExecutionStrategy.java:533)
+	at graphql.execution.ExecutionStrategy.fetchField(ExecutionStrategy.java:497)
+	at graphql.execution.ExecutionStrategy.fetchField(ExecutionStrategy.java:438)
+	at graphql.execution.ExecutionStrategy.resolveFieldWithInfo(ExecutionStrategy.java:397)
+	at graphql.execution.ExecutionStrategy.getAsyncFieldValueInfo(ExecutionStrategy.java:335)
+	at graphql.execution.AsyncExecutionStrategy.execute(AsyncExecutionStrategy.java:57)
+	at graphql.execution.Execution.executeOperation(Execution.java:180)
+	at graphql.execution.Execution.execute(Execution.java:116)
+	at graphql.GraphQL.execute(GraphQL.java:546)
+	at graphql.GraphQL.lambda$parseValidateAndExecute$13(GraphQL.java:476)
+	at java.base/java.util.concurrent.CompletableFuture.uniComposeStage(CompletableFuture.java:1187)
+	at java.base/java.util.concurrent.CompletableFuture.thenCompose(CompletableFuture.java:2341)
+	at graphql.GraphQL.parseValidateAndExecute(GraphQL.java:471)
+	at graphql.GraphQL.lambda$executeAsync$9(GraphQL.java:429)
+	at java.base/java.util.concurrent.CompletableFuture.uniComposeStage(CompletableFuture.java:1187)
+	at java.base/java.util.concurrent.CompletableFuture.thenCompose(CompletableFuture.java:2341)
+	at graphql.GraphQL.executeAsync(GraphQL.java:418)
+	at graphql.GraphQL.execute(GraphQL.java:359)
+	at io.cloudbeaver.server.graphql.GraphQLEndpoint.executeQuery(GraphQLEndpoint.java:265)
+	at io.cloudbeaver.server.graphql.GraphQLEndpoint.executeSingleQuery(GraphQLEndpoint.java:206)
+	at io.cloudbeaver.server.graphql.GraphQLEndpoint.doPost(GraphQLEndpoint.java:189)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:653)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:736)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1614)
+	at org.eclipse.jetty.ee10.websocket.servlet.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:195)
+	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1586)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1547)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:819)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:436)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:464)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:717)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1060)
+	at org.eclipse.jetty.server.Server.handle(Server.java:182)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:662)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:418)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:478)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:441)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:293)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:201)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:979)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1209)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1164)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: io.cloudbeaver.DBWebException: Connection failed:
+Connection to 100.97.215.85:5434 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at io.cloudbeaver.service.ConnectionControllerCE.testConnection(ConnectionControllerCE.java:332)
+	... 55 common frames omitted
+Caused by: org.jkiss.dbeaver.model.exec.DBCConnectException: Connection to 100.97.215.85:5434 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:258)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:133)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDataSource.openConnection(PostgreDataSource.java:560)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCExecutionContext.connect(JDBCExecutionContext.java:124)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.initializeMainContext(JDBCRemoteInstance.java:106)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase.checkInstanceConnection(PostgreDatabase.java:235)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase.<init>(PostgreDatabase.java:122)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDataSource.createDatabaseImpl(PostgreDataSource.java:271)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDataSource.initializeRemoteInstance(PostgreDataSource.java:165)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.<init>(JDBCDataSource.java:109)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.<init>(JDBCDataSource.java:100)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDataSource.<init>(PostgreDataSource.java:107)
+	at org.jkiss.dbeaver.ext.postgresql.PostgreDataSourceProvider.openDataSource(PostgreDataSourceProvider.java:115)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.openDataSource(DataSourceDescriptor.java:1417)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect0(DataSourceDescriptor.java:1280)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect(DataSourceDescriptor.java:1070)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectJob.run(ConnectJob.java:78)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectionTestJob.run(ConnectionTestJob.java:102)
+	at io.cloudbeaver.service.ConnectionControllerCE.testConnection(ConnectionControllerCE.java:324)
+	... 55 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to 100.97.215.85:5434 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:397)
+	at org.postgresql.Driver.connect(Driver.java:305)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:109)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:83)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:214)
+	... 73 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:136)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:262)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.access$100(Driver.java:63)
+	at org.postgresql.Driver$ConnectThread.run(Driver.java:355)
+	... 1 common frames omitted
+05-05-2025 16:30:49.741 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - GraphQL call failed at '/connection'
+io.cloudbeaver.DBWebException: Error connecting to database:
+Connection failed:
+Connection to 100.97.215.85:5434 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at io.cloudbeaver.service.ConnectionControllerCE.testConnection(ConnectionControllerCE.java:341)
+	at io.cloudbeaver.service.core.impl.WebServiceCore.testConnection(WebServiceCore.java:504)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cloudbeaver.service.WebServiceBindingBase$ServiceInvocationHandler.invoke(WebServiceBindingBase.java:171)
+	at jdk.proxy6/jdk.proxy6.$Proxy11.testConnection(Unknown Source)
+	at io.cloudbeaver.service.core.WebServiceBindingCore.lambda$28(WebServiceBindingCore.java:144)
+	at graphql.execution.ExecutionStrategy.invokeDataFetcher(ExecutionStrategy.java:533)
+	at graphql.execution.ExecutionStrategy.fetchField(ExecutionStrategy.java:497)
+	at graphql.execution.ExecutionStrategy.fetchField(ExecutionStrategy.java:438)
+	at graphql.execution.ExecutionStrategy.resolveFieldWithInfo(ExecutionStrategy.java:397)
+	at graphql.execution.ExecutionStrategy.getAsyncFieldValueInfo(ExecutionStrategy.java:335)
+	at graphql.execution.AsyncExecutionStrategy.execute(AsyncExecutionStrategy.java:57)
+	at graphql.execution.Execution.executeOperation(Execution.java:180)
+	at graphql.execution.Execution.execute(Execution.java:116)
+	at graphql.GraphQL.execute(GraphQL.java:546)
+	at graphql.GraphQL.lambda$parseValidateAndExecute$13(GraphQL.java:476)
+	at java.base/java.util.concurrent.CompletableFuture.uniComposeStage(CompletableFuture.java:1187)
+	at java.base/java.util.concurrent.CompletableFuture.thenCompose(CompletableFuture.java:2341)
+	at graphql.GraphQL.parseValidateAndExecute(GraphQL.java:471)
+	at graphql.GraphQL.lambda$executeAsync$9(GraphQL.java:429)
+	at java.base/java.util.concurrent.CompletableFuture.uniComposeStage(CompletableFuture.java:1187)
+	at java.base/java.util.concurrent.CompletableFuture.thenCompose(CompletableFuture.java:2341)
+	at graphql.GraphQL.executeAsync(GraphQL.java:418)
+	at graphql.GraphQL.execute(GraphQL.java:359)
+	at io.cloudbeaver.server.graphql.GraphQLEndpoint.executeQuery(GraphQLEndpoint.java:265)
+	at io.cloudbeaver.server.graphql.GraphQLEndpoint.executeSingleQuery(GraphQLEndpoint.java:206)
+	at io.cloudbeaver.server.graphql.GraphQLEndpoint.doPost(GraphQLEndpoint.java:189)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:653)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.eclipse.jetty.ee10.servlet.ServletHolder.handle(ServletHolder.java:736)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1614)
+	at org.eclipse.jetty.ee10.websocket.servlet.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:195)
+	at org.eclipse.jetty.ee10.servlet.FilterHolder.doFilter(FilterHolder.java:205)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1586)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler$MappedServlet.handle(ServletHandler.java:1547)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.dispatch(ServletChannel.java:819)
+	at org.eclipse.jetty.ee10.servlet.ServletChannel.handle(ServletChannel.java:436)
+	at org.eclipse.jetty.ee10.servlet.ServletHandler.handle(ServletHandler.java:464)
+	at org.eclipse.jetty.ee10.servlet.SessionHandler.handle(SessionHandler.java:717)
+	at org.eclipse.jetty.server.handler.ContextHandler.handle(ContextHandler.java:1060)
+	at org.eclipse.jetty.server.Server.handle(Server.java:182)
+	at org.eclipse.jetty.server.internal.HttpChannelState$HandlerInvoker.run(HttpChannelState.java:662)
+	at org.eclipse.jetty.server.internal.HttpConnection.onFillable(HttpConnection.java:418)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:322)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:99)
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:478)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:441)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:293)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:201)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:311)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:979)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1209)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1164)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: io.cloudbeaver.DBWebException: Connection failed:
+Connection to 100.97.215.85:5434 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at io.cloudbeaver.service.ConnectionControllerCE.testConnection(ConnectionControllerCE.java:332)
+	... 55 common frames omitted
+Caused by: org.jkiss.dbeaver.model.exec.DBCConnectException: Connection to 100.97.215.85:5434 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:258)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:133)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDataSource.openConnection(PostgreDataSource.java:560)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCExecutionContext.connect(JDBCExecutionContext.java:124)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.initializeMainContext(JDBCRemoteInstance.java:106)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase.checkInstanceConnection(PostgreDatabase.java:235)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDatabase.<init>(PostgreDatabase.java:122)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDataSource.createDatabaseImpl(PostgreDataSource.java:271)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDataSource.initializeRemoteInstance(PostgreDataSource.java:165)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.<init>(JDBCDataSource.java:109)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.<init>(JDBCDataSource.java:100)
+	at org.jkiss.dbeaver.ext.postgresql.model.PostgreDataSource.<init>(PostgreDataSource.java:107)
+	at org.jkiss.dbeaver.ext.postgresql.PostgreDataSourceProvider.openDataSource(PostgreDataSourceProvider.java:115)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.openDataSource(DataSourceDescriptor.java:1417)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect0(DataSourceDescriptor.java:1280)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect(DataSourceDescriptor.java:1070)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectJob.run(ConnectJob.java:78)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectionTestJob.run(ConnectionTestJob.java:102)
+	at io.cloudbeaver.service.ConnectionControllerCE.testConnection(ConnectionControllerCE.java:324)
+	... 55 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to 100.97.215.85:5434 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.Driver$ConnectThread.getResult(Driver.java:397)
+	at org.postgresql.Driver.connect(Driver.java:305)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:109)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:83)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:214)
+	... 73 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:136)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:262)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.access$100(Driver.java:63)
+	at org.postgresql.Driver$ConnectThread.run(Driver.java:355)
+	... 1 common frames omitted
+05-05-2025 16:31:17.463 [qtp1381702512-52] DEBUG i.c.model.session.WebSession - Update session lifetime 1ogprlq8fvoat40tegyix54ho0 for user null
+05-05-2025 16:32:32.918 [qtp1381702512-50] DEBUG i.c.model.session.WebSession - Update session lifetime 1ogprlq8fvoat40tegyix54ho0 for user null
+05-05-2025 16:34:13.623 [qtp1381702512-62] DEBUG i.c.model.session.WebSession - Update session lifetime 1ogprlq8fvoat40tegyix54ho0 for user null
+05-05-2025 16:34:33.482 [qtp1381702512-54] DEBUG i.c.server.graphql.GraphQLEndpoint - API > testConnection [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:33.486 [Test datasource connection] DEBUG o.j.d.registry.DataSourceDescriptor - Connect with 'PostgreSQL@localhost' (postgres-jdbc-196a01e77cd-63841a2744e86538)
+05-05-2025 16:34:33.488 [Test datasource connection] DEBUG o.j.d.m.i.AbstractExecutionContext - Execution context opened (PostgreSQL@localhost; Main <fiore>; 1)
+05-05-2025 16:34:33.489 [Test datasource connection] DEBUG o.j.d.e.p.model.PostgreDataSource - Initiate connection to PostgreSQL database [fiore@localhost] for Main <fiore>
+05-05-2025 16:34:33.900 [Test datasource connection] DEBUG o.j.d.m.i.AbstractExecutionContext - Execution context opened (PostgreSQL@localhost; Metadata <fiore>; 2)
+05-05-2025 16:34:33.900 [Test datasource connection] DEBUG o.j.d.e.p.model.PostgreDataSource - Initiate connection to PostgreSQL database [fiore@localhost] for Metadata <fiore>
+05-05-2025 16:34:33.995 [Test datasource connection] DEBUG o.j.d.registry.DataSourceDescriptor - Connected (postgres-jdbc-196a01e77cd-63841a2744e86538, PostgreSQL JDBC Driver [42.7.2])
+05-05-2025 16:34:34.010 [DBeaver: Disconnect from 'PostgreSQL@localhost'] DEBUG o.j.d.m.i.AbstractExecutionContext - Execution context closed (PostgreSQL@localhost, 1)
+05-05-2025 16:34:34.021 [DBeaver: Disconnect from 'PostgreSQL@localhost'] DEBUG o.j.d.m.i.AbstractExecutionContext - Execution context closed (PostgreSQL@localhost, 2)
+05-05-2025 16:34:34.021 [DBeaver: Disconnect from 'PostgreSQL@localhost'] DEBUG o.j.d.registry.DataSourceDescriptor - Disconnected (postgres-jdbc-196a01e77cd-63841a2744e86538)
+05-05-2025 16:34:37.361 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > createConnection [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:37.746 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getNodeParents [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:38.266 [DBeaver: CloudBeaver events job] DEBUG i.c.s.events.WSDefaultEventHandler - cb_datasource event handled
+05-05-2025 16:34:38.268 [DBeaver: CloudBeaver events job] DEBUG i.c.s.events.WSDefaultEventHandler - Cannot handle cb_datasource event 'cb_datasource_created' in session 1ogprlq8fvoat40tegyix54ho0
+05-05-2025 16:34:40.562 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getUserConnections [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:40.916 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:40.918 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getPublicConnectionSecrets [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:41.213 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getUserConnections [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:41.535 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:43.070 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getTemplateConnections [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:47.766 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > initConnection [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:47.786 [qtp1381702512-62] DEBUG o.j.d.registry.DataSourceDescriptor - Connect with 'PostgreSQL@localhost' (postgres-jdbc-196a01e8709-6e8186cfd120610f)
+05-05-2025 16:34:47.791 [qtp1381702512-62] DEBUG o.j.d.m.i.AbstractExecutionContext - Execution context opened (PostgreSQL@localhost; Main <fiore>; 3)
+05-05-2025 16:34:47.792 [qtp1381702512-62] DEBUG o.j.d.e.p.model.PostgreDataSource - Initiate connection to PostgreSQL database [fiore@localhost] for Main <fiore>
+05-05-2025 16:34:47.855 [qtp1381702512-62] DEBUG o.j.d.m.i.AbstractExecutionContext - Execution context opened (PostgreSQL@localhost; Metadata <fiore>; 4)
+05-05-2025 16:34:47.856 [qtp1381702512-62] DEBUG o.j.d.e.p.model.PostgreDataSource - Initiate connection to PostgreSQL database [fiore@localhost] for Metadata <fiore>
+05-05-2025 16:34:47.915 [qtp1381702512-62] DEBUG o.j.d.registry.DataSourceDescriptor - Connected (postgres-jdbc-196a01e8709-6e8186cfd120610f, PostgreSQL JDBC Driver [42.7.2])
+05-05-2025 16:34:48.315 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:48.805 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:50.392 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:51.961 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:54.313 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:56.598 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navGetStructContainers [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:56.651 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:34:57.050 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getDBObjectInfo [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:35:18.908 [Test datasource connection] DEBUG i.c.model.session.WebSession - Update session lifetime 1ogprlq8fvoat40tegyix54ho0 for user null
+05-05-2025 16:35:36.391 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > executionContextCreate [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:36:09.008 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:36:10.635 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:36:10.915 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getChildrenDBObjectInfo [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:36:15.605 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > sqlEntityQueryGenerators [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:36:19.019 [Test datasource connection] DEBUG i.c.model.session.WebSession - Update session lifetime 1ogprlq8fvoat40tegyix54ho0 for user null
+05-05-2025 16:36:19.978 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:36:52.962 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:36:53.595 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:36:53.904 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getChildrenDBObjectInfo [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:36:59.132 [qtp1381702512-51] DEBUG i.c.server.graphql.GraphQLEndpoint - API > executionContextCreate [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:36:59.468 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > asyncReadDataFromContainer [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:00.085 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getAsyncTaskInfo [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:00.491 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getSqlExecuteTaskResults [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:00.799 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getAsyncTaskInfo [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:01.091 [qtp1381702512-49] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getServerResourceQuotas [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:05.614 [qtp1381702512-51] DEBUG i.c.server.graphql.GraphQLEndpoint - API > executionContextDestroy [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:19.022 [qtp1381702512-62] DEBUG i.c.model.session.WebSession - Update session lifetime 1ogprlq8fvoat40tegyix54ho0 for user null
+05-05-2025 16:37:22.957 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > sqlEntityQueryGenerators [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:34.261 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:34.596 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:34.996 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getChildrenDBObjectInfo [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:35.435 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:35.760 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:37:36.034 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getChildrenDBObjectInfo [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:38:48.229 [Test datasource connection] DEBUG i.c.model.session.WebSession - Update session lifetime 1ogprlq8fvoat40tegyix54ho0 for user null
+05-05-2025 16:39:02.987 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > sqlEntityQueryGenerators [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:39:43.998 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getServerResourceQuotas [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:39:44.001 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getTemplateConnections [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:39:48.262 [qtp1381702512-62] DEBUG i.c.model.session.WebSession - Update session lifetime 1ogprlq8fvoat40tegyix54ho0 for user null
+05-05-2025 16:39:56.517 [qtp1381702512-48] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:39:56.841 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:39:57.131 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getChildrenDBObjectInfo [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:39:59.840 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:40:01.632 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:40:02.232 [qtp1381702512-62] DEBUG i.c.server.graphql.GraphQLEndpoint - API > navNodeChildren [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:40:02.519 [Test datasource connection] DEBUG i.c.server.graphql.GraphQLEndpoint - API > getChildrenDBObjectInfo [user: anonymous, sessionId: 4745fbe6-83da-40b2-b483-4819e80f5bfb]
+05-05-2025 16:42:43.503 [Test datasource connection] DEBUG i.c.s.websockets.CBEventsWebSocket - Socket Closed: [GOING_AWAY] 
+/home/divansh/dbeaver/run.sh: line 42: 838797 Killed                  /home/divansh/.asdf/installs/java/openjdk-21/bin/java ${JAVA_OPTS} -Dfile.encoding=UTF-8 --add-modules=ALL-SYSTEM --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.text=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/jdk.internal.vm=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/sun.security.ssl=ALL-UNNAMED --add-opens=java.base/sun.security.action=ALL-UNNAMED --add-opens=java.base/sun.security.util=ALL-UNNAMED --add-opens=java.security.jgss/sun.security.jgss=ALL-UNNAMED --add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.sql/java.sql=ALL-UNNAMED -jar ${launcherJar} -product io.cloudbeaver.product.ce.product -web-config conf/cloudbeaver.conf -nl en -registryMultiLanguage

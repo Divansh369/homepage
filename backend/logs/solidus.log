@@ -1,0 +1,642 @@
+=> Booting Puma
+=> Rails 8.0.2 application starting in development 
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 6.6.0 ("Return to Forever")
+* Ruby version: ruby 3.3.0 (2023-12-25 revision 5124f9ac75) +YJIT [x86_64-linux]
+*  Min threads: 3
+*  Max threads: 3
+*  Environment: development
+*          PID: 1167358
+* Listening on http://0.0.0.0:4918
+Use Ctrl-C to stop
+Started GET "/" for 100.86.36.97 at 2025-05-07 09:52:38 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Solidus'*/[0m
+Processing by HomeController#index as HTML
+  [1m[36mSpree::Store Load (1.4ms)[0m  [1m[34mSELECT "spree_stores".* FROM "spree_stores" WHERE ("spree_stores"."url" = '100.94.150.11' OR "spree_stores"."default" = 1) ORDER BY "spree_stores"."default" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mSpree::Product Load (2.7ms)[0m  [1m[34mSELECT DISTINCT "spree_products".* FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."is_master" = 1 AND "spree_variants"."product_id" = "spree_products"."id" INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."deleted_at" IS NULL AND "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2025-05-07 04:22:39.199317') AND ("spree_products".discontinue_on IS NULL OR"spree_products".discontinue_on >= '2025-05-07 04:22:39.199457') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = 'USD' AND "spree_prices"."country_iso" IS NULL LIMIT 12 OFFSET 0 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mSpree::Variant Load (0.3ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."is_master" = 1 AND "spree_variants"."product_id" IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mSpree::Price Load (30.2ms)[0m  [1m[34mSELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."variant_id" IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mSpree::Image Load (1.3ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."viewable_type" = 'Spree::Variant' AND "spree_assets"."type" = 'Spree::Image' AND "spree_assets"."viewable_id" IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) ORDER BY "spree_assets"."position" ASC /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  Rendering layout layouts/storefront.html.erb
+  Rendering home/index.html.erb within layouts/storefront
+  [1m[36mSpree::Image Load (0.3ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 1 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 OFFSET 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/products/_featured_product_card.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 47 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 47 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 47 AND "active_storage_variant_records"."variation_digest" = 'fErIWYBxtRIaU4lwAbKkQnKjpO0=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (1.0ms) [0m[34mDownloaded file from key: e7obo06cdvzoh8bks1ujdlrlieog[0m
+Image render failed: either width or height must be specified
+  Rendered shared/_call_to_action.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered products/_featured_product_card.html.erb (Duration: 252.8ms | GC: 0.7ms)
+  [1m[36mSpree::Image Load (0.3ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 2 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 OFFSET 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/products/_featured_product_card.html.erb:2
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 2 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/products/_featured_product_card.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 48 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 48 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (5.4ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 48 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 59 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (2.2ms) [0m[34mGenerated URL for file at key: jpq06ehclfi970wq1xq0vxm4el4w (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJqcHEwNmVoY2xmaTk3MHdxMXhxMHZ4bTRlbDR3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c190b3RlLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfdG90ZS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDA0OjI3OjM5LjY4NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1a80c2d557fc2dce0cf312fcba2a9dcde00467d8/solidus_tote.png)[0m
+  Rendered shared/_call_to_action.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered products/_featured_product_card.html.erb (Duration: 45.1ms | GC: 0.0ms)
+  [1m[36mSpree::Image Load (0.3ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 3 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 OFFSET 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/products/_featured_product_card.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 1 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 60 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: w5j3s6lmjc5i8zv3j3tkdie732ae (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3NWozczZsbWpjNWk4enYzajN0a2RpZTczMmFlIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19ob29kaWVfYmxhY2tfMS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2hvb2RpZV9ibGFja18xLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMDQ6Mjc6MzkuNzE4WiIsInB1ciI6ImJsb2Jfa2V5In19--d8dd3c2a961df27140baa77b9ae5f69602361d19/solidus_hoodie_black_1.png)[0m
+  Rendered shared/_call_to_action.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered products/_featured_product_card.html.erb (Duration: 27.9ms | GC: 0.0ms)
+  Rendered home/_featured_products.html.erb (Duration: 327.3ms | GC: 0.7ms)
+  Rendered shared/_call_to_action.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 4 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 52 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 52 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 52 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 61 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 8x7mpp2g9f75nn4lx6fm45bwety6 (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4eDdtcHAyZzlmNzVubjRseDZmbTQ1YndldHk2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19tdWdfc2V0LnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfbXVnX3NldC5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDA0OjI3OjM5Ljc3NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--36ef55681765df8849a8748e49f3b86c4837a2a4/solidus_mug_set.png)[0m
+  [1m[36mSpree::Image Load (0.5ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 5 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 50 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 50 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.2ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 50 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 62 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: nu7mwwqo9ikb5b0q6a60km413iip (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJudTdtd3dxbzlpa2I1YjBxNmE2MGttNDEzaWlwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19oYXQucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnc29saWR1c19oYXQucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNS0wN1QwNDoyNzozOS44MTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--0a3b6006b5165076758c18630c5e72ce05d882e9/solidus_hat.png)[0m
+  [1m[36mSpree::Image Load (0.3ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 6 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 51 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 51 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 51 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 63 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: ju44lmsv4zkygs5ujqrcnhg7d9l7 (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJqdTQ0bG1zdjR6a3lnczV1anFyY25oZzdkOWw3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19zdGlja2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfc3RpY2tlci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDA0OjI3OjM5Ljg0N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--53e09bc26eaa77ec31a7091155b91c043f4f27df/solidus_sticker.png)[0m
+  Rendered home/_collection.erb (Duration: 127.0ms | GC: 0.0ms)
+  Rendered shared/_call_to_action.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 7 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 OFFSET 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/home/_collections_with_call_to_action.html.erb:9
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 7 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/home/_collections_with_call_to_action.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 53 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 53 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 53 AND "active_storage_variant_records"."variation_digest" = 'fErIWYBxtRIaU4lwAbKkQnKjpO0=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (1.0ms) [0m[34mDownloaded file from key: mq87vud4743mv5znjl80bu3lmg8a[0m
+Image render failed: either width or height must be specified
+  [1m[36mSpree::Image Load (0.3ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 8 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 OFFSET 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/home/_collections_with_call_to_action.html.erb:9
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 8 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/home/_collections_with_call_to_action.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 54 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 54 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.2ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 54 AND "active_storage_variant_records"."variation_digest" = 'fErIWYBxtRIaU4lwAbKkQnKjpO0=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (1.7ms) [0m[34mDownloaded file from key: r1iigo791npsgejoahsp5ytt05vy[0m
+Image render failed: either width or height must be specified
+  Rendered home/_collections_with_call_to_action.html.erb (Duration: 96.3ms | GC: 24.9ms)
+  [1m[36mSpree::Image Load (0.3ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 9 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" DESC, "spree_variants"."position" DESC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/home/_featured_product_banner.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 55 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 55 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 55 AND "active_storage_variant_records"."variation_digest" = 'fErIWYBxtRIaU4lwAbKkQnKjpO0=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (1.3ms) [0m[34mDownloaded file from key: zbys2t39khk5xchyhjw4ew82ejjk[0m
+Image render failed: either width or height must be specified
+  Rendered shared/_call_to_action.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered home/_featured_product_banner.html.erb (Duration: 35.4ms | GC: 0.8ms)
+  Rendered shared/_call_to_action.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mSpree::Image Load (0.3ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 10 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 56 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 56 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 56 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 64 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: qq2z0mlgo2y4zp0qrl5ps6l82wzv (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxcTJ6MG1sZ28yeTR6cDBxcmw1cHM2bDgyd3p2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19kYXJrX3RlZS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2RhcmtfdGVlLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMDQ6Mjc6MzkuOTk2WiIsInB1ciI6ImJsb2Jfa2V5In19--b8a1d5fc7c27e2be9fdc19328c3e2f33c76ad92f/solidus_dark_tee.png)[0m
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 11 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 57 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 57 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 57 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 7 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 65 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: gzpe7g6n6oru3bog58kxzmlhmw3r (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnenBlN2c2bjZvcnUzYm9nNThreHptbGhtdzNyIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19jYW52YXNfdG90ZS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2NhbnZhc190b3RlLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMDQ6Mjc6NDAuMDExWiIsInB1ciI6ImJsb2Jfa2V5In19--10a885ff9d22d35eb41dfa00b9969503d077efdb/solidus_canvas_tote.png)[0m
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 12 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 58 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 58 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 58 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 66 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: 9mzgb2jjd4tp5cw968pwg0j6uy3s (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI5bXpnYjJqamQ0dHA1Y3c5Njhwd2cwajZ1eTNzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19jYXBfYmxhY2tfMS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2NhcF9ibGFja18xLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMDQ6Mjc6NDAuMDQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--52990d546bf12431bd2a9f0b62d5e263dfd5dc1e/solidus_cap_black_1.png)[0m
+  Rendered home/_collection.erb (Duration: 67.3ms | GC: 3.3ms)
+  Rendered home/index.html.erb within layouts/storefront (Duration: 657.6ms | GC: 29.9ms)
+  [1m[36mSpree::Store Load (0.4ms)[0m  [1m[34mSELECT "spree_stores".* FROM "spree_stores" WHERE "spree_stores"."default" = 1 ORDER BY "spree_stores"."id" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/layouts/_header.html.erb:17
+  [1m[36mSpree::Taxonomy Load (0.1ms)[0m  [1m[34mSELECT "spree_taxonomies".* FROM "spree_taxonomies" ORDER BY "spree_taxonomies"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/layouts/_header.html.erb:20
+  [1m[36mSpree::Taxon Load (0.9ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IS NULL AND "spree_taxons"."taxonomy_id" = 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/layouts/_header.html.erb:20
+  [1m[36mSpree::Taxon Load (0.2ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" = 1 ORDER BY lft /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/layouts/_header.html.erb:20
+  Rendered shared/search/_search_bar.html.erb (Duration: 6.3ms | GC: 0.0ms)
+  Rendered shared/navigation/_theme_switcher.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/search/_search_bar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/navigation/_theme_switcher.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_top_bar.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 111.1ms | GC: 0.0ms)
+  Rendered shared/_call_to_action.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_social_icons.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_footer.html.erb (Duration: 6.6ms | GC: 0.0ms)
+  Rendered layout layouts/storefront.html.erb (Duration: 1730.7ms | GC: 355.9ms)
+Completed 200 OK in 2076ms (Views: 1712.8ms | ActiveRecord: 67.7ms (76 queries, 0 cached) | GC: 389.6ms)
+
+
+Started GET "/assets/tailwind-8a97fab43236bea99f7e9b195c3777bef3bd4a1ba28fb8ffc172010ec602d073.css" for 100.86.36.97 at 2025-05-07 09:52:41 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/solidus_starter_frontend-50467122072a9896f1f941e5f937b42271c6483110c42cd165ed3054abcfe449.css" for 100.86.36.97 at 2025-05-07 09:52:41 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/solidus_starter_frontend-cb80df0ff5ca6b8428bd99fea6a57f8216ef3249fc86db85174b6984d1d4c57e.js" for 100.86.36.97 at 2025-05-07 09:52:41 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/es-module-shims.min-4ca9b3dd5e434131e3bb4b0c1d7dff3bfd4035672a5086deec6f73979a49be73.js" for 100.86.36.97 at 2025-05-07 09:52:42 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/logo_small_no_label-d8a1b6b50d2fe102705b565fd289458759f88718f30e517dcc35aab40b462871.svg" for 100.86.36.97 at 2025-05-07 09:52:42 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJqcHEwNmVoY2xmaTk3MHdxMXhxMHZ4bTRlbDR3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c190b3RlLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfdG90ZS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDA0OjI3OjM5LjY4NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1a80c2d557fc2dce0cf312fcba2a9dcde00467d8/solidus_tote.png" for 100.86.36.97 at 2025-05-07 09:52:42 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_tote"}
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3NWozczZsbWpjNWk4enYzajN0a2RpZTczMmFlIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19ob29kaWVfYmxhY2tfMS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2hvb2RpZV9ibGFja18xLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMDQ6Mjc6MzkuNzE4WiIsInB1ciI6ImJsb2Jfa2V5In19--d8dd3c2a961df27140baa77b9ae5f69602361d19/solidus_hoodie_black_1.png" for 100.86.36.97 at 2025-05-07 09:52:42 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_hoodie_black_1"}
+Completed 200 OK in 14ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4eDdtcHAyZzlmNzVubjRseDZmbTQ1YndldHk2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19tdWdfc2V0LnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfbXVnX3NldC5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDA0OjI3OjM5Ljc3NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--36ef55681765df8849a8748e49f3b86c4837a2a4/solidus_mug_set.png" for 100.86.36.97 at 2025-05-07 09:52:42 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJudTdtd3dxbzlpa2I1YjBxNmE2MGttNDEzaWlwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19oYXQucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnc29saWR1c19oYXQucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNS0wN1QwNDoyNzozOS44MTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--0a3b6006b5165076758c18630c5e72ce05d882e9/solidus_hat.png" for 100.86.36.97 at 2025-05-07 09:52:42 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_hat"}
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_mug_set"}
+Completed 200 OK in 15ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Completed 200 OK in 25ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJqdTQ0bG1zdjR6a3lnczV1anFyY25oZzdkOWw3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19zdGlja2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfc3RpY2tlci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDA0OjI3OjM5Ljg0N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--53e09bc26eaa77ec31a7091155b91c043f4f27df/solidus_sticker.png" for 100.86.36.97 at 2025-05-07 09:52:42 +0530
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxcTJ6MG1sZ28yeTR6cDBxcmw1cHM2bDgyd3p2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19kYXJrX3RlZS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2RhcmtfdGVlLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMDQ6Mjc6MzkuOTk2WiIsInB1ciI6ImJsb2Jfa2V5In19--b8a1d5fc7c27e2be9fdc19328c3e2f33c76ad92f/solidus_dark_tee.png" for 100.86.36.97 at 2025-05-07 09:52:42 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_dark_tee"}
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_sticker"}
+Completed 200 OK in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/fonts/inter/inter-v18-latin-regular-4257feae4ab4d639ab5c04aa4e3be1e51a632cc3189abf481212a464607cba55.woff2" for 100.86.36.97 at 2025-05-07 09:52:43 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/fonts/inter/inter-v18-latin-500-4e948e63c678c58bab6bb0dc9fa0af063a33028841e5fd018908530494c6eb71.woff2" for 100.86.36.97 at 2025-05-07 09:52:43 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/fonts/source-serif/source-serif-4-v8-latin-regular-cd8f56d0633e0c07bdfa779dbd7324e56848e327f845156dbd7a9e5921ec2053.woff2" for 100.86.36.97 at 2025-05-07 09:52:43 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/fonts/source-serif/source-serif-4-v8-latin-500-24b592e26d85c7e4440f370ec846b156b0fc8c98ae62d31a0957b8d7a0c0caa2.woff2" for 100.86.36.97 at 2025-05-07 09:52:43 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js" for 100.86.36.97 at 2025-05-07 09:52:43 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnenBlN2c2bjZvcnUzYm9nNThreHptbGhtdzNyIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19jYW52YXNfdG90ZS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2NhbnZhc190b3RlLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMDQ6Mjc6NDAuMDExWiIsInB1ciI6ImJsb2Jfa2V5In19--10a885ff9d22d35eb41dfa00b9969503d077efdb/solidus_canvas_tote.png" for 100.86.36.97 at 2025-05-07 09:52:43 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI5bXpnYjJqamQ0dHA1Y3c5Njhwd2cwajZ1eTNzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19jYXBfYmxhY2tfMS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2NhcF9ibGFja18xLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMDQ6Mjc6NDAuMDQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--52990d546bf12431bd2a9f0b62d5e263dfd5dc1e/solidus_cap_black_1.png" for 100.86.36.97 at 2025-05-07 09:52:43 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/logo_full_with_label-f4e771b8a2aa42e82be8fd1c439cf7839a8923e22001372ddc8a59efadb186a9.svg" for 100.86.36.97 at 2025-05-07 09:52:44 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_canvas_tote"}
+Completed 200 OK in 22ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_cap_black_1"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/logo_full_with_label_white-5cb1806c7c436a46951a4d8ff655620f41297ab8313d517cff8ddd1995aaaecf.svg" for 100.86.36.97 at 2025-05-07 09:52:44 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js" for 100.86.36.97 at 2025-05-07 09:52:44 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js" for 100.86.36.97 at 2025-05-07 09:52:44 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/remixicon.symbol-1c50a1fd101bf63164beca97d6bbe40edf5636ac66926d989e902c2faaa6ca4a.svg" for 100.86.36.97 at 2025-05-07 09:52:44 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js" for 100.86.36.97 at 2025-05-07 09:52:44 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js" for 100.86.36.97 at 2025-05-07 09:52:44 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js" for 100.86.36.97 at 2025-05-07 09:52:45 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/cart_page_controller-e6c514790ac10be27a9ff49b61052acfc1ff6395ba7b3e1717c862a1a9868540.js" for 100.86.36.97 at 2025-05-07 09:52:45 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/checkout_payment_controller-eba23be953cc574420b12d43df755e534ebfb9bfa41911796f6429c6495635ea.js" for 100.86.36.97 at 2025-05-07 09:52:45 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/drawer_controller-9618f9fff583abc0713c062711bf343cb459691f946afede69a1d993f9facb55.js" for 100.86.36.97 at 2025-05-07 09:52:46 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js" for 100.86.36.97 at 2025-05-07 09:52:46 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/" for 100.86.36.97 at 2025-05-07 16:12:08 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  [1m[36mSpree::Store Load (22.9ms)[0m  [1m[34mSELECT "spree_stores".* FROM "spree_stores" WHERE ("spree_stores"."url" = '100.94.150.11' OR "spree_stores"."default" = 1) ORDER BY "spree_stores"."default" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  [1m[36mSpree::Product Load (2.7ms)[0m  [1m[34mSELECT DISTINCT "spree_products".* FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."is_master" = 1 AND "spree_variants"."product_id" = "spree_products"."id" INNER JOIN "spree_variants" "variants_including_masters_spree_products_join" ON "variants_including_masters_spree_products_join"."deleted_at" IS NULL AND "variants_including_masters_spree_products_join"."product_id" = "spree_products"."id" INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "variants_including_masters_spree_products_join"."id" WHERE "spree_products"."deleted_at" IS NULL AND EXISTS (SELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_variants"."id" = "spree_prices"."variant_id") AND ("spree_products".available_on <= '2025-05-07 10:42:08.964366') AND ("spree_products".discontinue_on IS NULL OR"spree_products".discontinue_on >= '2025-05-07 10:42:08.967864') AND "spree_prices"."deleted_at" IS NULL AND "spree_prices"."currency" = 'USD' AND "spree_prices"."country_iso" IS NULL LIMIT 12 OFFSET 0 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mSpree::Variant Load (0.3ms)[0m  [1m[34mSELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."is_master" = 1 AND "spree_variants"."product_id" IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mSpree::Price Load (0.2ms)[0m  [1m[34mSELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."variant_id" IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  [1m[36mSpree::Image Load (1.1ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."viewable_type" = 'Spree::Variant' AND "spree_assets"."type" = 'Spree::Image' AND "spree_assets"."viewable_id" IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) ORDER BY "spree_assets"."position" ASC /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:13:in `index'
+  Rendering layout layouts/storefront.html.erb
+  Rendering home/index.html.erb within layouts/storefront
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 1 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 OFFSET 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/products/_featured_product_card.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 47 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 47 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 47 AND "active_storage_variant_records"."variation_digest" = 'fErIWYBxtRIaU4lwAbKkQnKjpO0=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.8ms) [0m[34mDownloaded file from key: e7obo06cdvzoh8bks1ujdlrlieog[0m
+Image render failed: either width or height must be specified
+  Rendered shared/_call_to_action.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered products/_featured_product_card.html.erb (Duration: 42.2ms | GC: 0.3ms)
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 2 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 OFFSET 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/products/_featured_product_card.html.erb:2
+  [1m[36mSpree::Image Load (0.1ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 2 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/products/_featured_product_card.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 48 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 48 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 48 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 59 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (1.9ms) [0m[34mGenerated URL for file at key: jpq06ehclfi970wq1xq0vxm4el4w (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJqcHEwNmVoY2xmaTk3MHdxMXhxMHZ4bTRlbDR3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c190b3RlLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfdG90ZS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDEwOjQ3OjA5LjA4MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8b944a149a43e7e0101e6a6660ece04cc468a8ad/solidus_tote.png)[0m
+  Rendered shared/_call_to_action.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered products/_featured_product_card.html.erb (Duration: 11.6ms | GC: 0.0ms)
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 3 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 OFFSET 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/products/_featured_product_card.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 1 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 60 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: w5j3s6lmjc5i8zv3j3tkdie732ae (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3NWozczZsbWpjNWk4enYzajN0a2RpZTczMmFlIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19ob29kaWVfYmxhY2tfMS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2hvb2RpZV9ibGFja18xLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMTA6NDc6MDkuMDkzWiIsInB1ciI6ImJsb2Jfa2V5In19--0761dae395d5c98c8b09d95883643f94747b4773/solidus_hoodie_black_1.png)[0m
+  Rendered shared/_call_to_action.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered products/_featured_product_card.html.erb (Duration: 11.2ms | GC: 0.0ms)
+  Rendered home/_featured_products.html.erb (Duration: 65.8ms | GC: 0.3ms)
+  Rendered shared/_call_to_action.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 4 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 52 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 52 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 52 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 61 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 8x7mpp2g9f75nn4lx6fm45bwety6 (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4eDdtcHAyZzlmNzVubjRseDZmbTQ1YndldHk2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19tdWdfc2V0LnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfbXVnX3NldC5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDEwOjQ3OjA5LjEwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--cba668b7f160a81d4ae560adfde3bec970e1cc7c/solidus_mug_set.png)[0m
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 5 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 50 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 50 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 50 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 62 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: nu7mwwqo9ikb5b0q6a60km413iip (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJudTdtd3dxbzlpa2I1YjBxNmE2MGttNDEzaWlwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19oYXQucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnc29saWR1c19oYXQucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNS0wN1QxMDo0NzowOS4xMjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--bd93a46c33a88e93e4489284cd198155e82ec724/solidus_hat.png)[0m
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 6 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 51 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 51 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 51 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 63 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (2.2ms) [0m[34mGenerated URL for file at key: ju44lmsv4zkygs5ujqrcnhg7d9l7 (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJqdTQ0bG1zdjR6a3lnczV1anFyY25oZzdkOWw3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19zdGlja2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfc3RpY2tlci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDEwOjQ3OjA5LjE0MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--164d16db69fc7b27a97974e40410bf258380bb1a/solidus_sticker.png)[0m
+  Rendered home/_collection.erb (Duration: 49.3ms | GC: 5.5ms)
+  Rendered shared/_call_to_action.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 7 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 OFFSET 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/home/_collections_with_call_to_action.html.erb:9
+  [1m[36mSpree::Image Load (0.1ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 7 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/home/_collections_with_call_to_action.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 53 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 53 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 53 AND "active_storage_variant_records"."variation_digest" = 'fErIWYBxtRIaU4lwAbKkQnKjpO0=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.9ms) [0m[34mDownloaded file from key: mq87vud4743mv5znjl80bu3lmg8a[0m
+Image render failed: either width or height must be specified
+  [1m[36mSpree::Image Load (0.3ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 8 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 OFFSET 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/home/_collections_with_call_to_action.html.erb:9
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 8 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/home/_collections_with_call_to_action.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 54 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 54 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 54 AND "active_storage_variant_records"."variation_digest" = 'fErIWYBxtRIaU4lwAbKkQnKjpO0=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (1.4ms) [0m[34mDownloaded file from key: r1iigo791npsgejoahsp5ytt05vy[0m
+Image render failed: either width or height must be specified
+  Rendered home/_collections_with_call_to_action.html.erb (Duration: 49.3ms | GC: 1.8ms)
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 9 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" DESC, "spree_variants"."position" DESC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/home/_featured_product_banner.html.erb:4
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 55 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 55 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 55 AND "active_storage_variant_records"."variation_digest" = 'fErIWYBxtRIaU4lwAbKkQnKjpO0=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (1.4ms) [0m[34mDownloaded file from key: zbys2t39khk5xchyhjw4ew82ejjk[0m
+Image render failed: either width or height must be specified
+  Rendered shared/_call_to_action.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered home/_featured_product_banner.html.erb (Duration: 15.0ms | GC: 0.4ms)
+  Rendered shared/_call_to_action.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 10 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 56 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 56 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 56 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 64 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: qq2z0mlgo2y4zp0qrl5ps6l82wzv (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxcTJ6MG1sZ28yeTR6cDBxcmw1cHM2bDgyd3p2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19kYXJrX3RlZS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2RhcmtfdGVlLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMTA6NDc6MDkuMjE5WiIsInB1ciI6ImJsb2Jfa2V5In19--f159b26d8914d6d4ff058508353bdb91d20858c5/solidus_dark_tee.png)[0m
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 11 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 57 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 57 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 57 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 7 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 65 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: gzpe7g6n6oru3bog58kxzmlhmw3r (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnenBlN2c2bjZvcnUzYm9nNThreHptbGhtdzNyIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19jYW52YXNfdG90ZS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2NhbnZhc190b3RlLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMTA6NDc6MDkuMjQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--e9cdfe6e9864872d4a3eeb2287363583feff8bd8/solidus_canvas_tote.png)[0m
+  [1m[36mSpree::Image Load (0.2ms)[0m  [1m[34mSELECT "spree_assets".* FROM "spree_assets" INNER JOIN "spree_variants" ON "spree_assets"."viewable_id" = "spree_variants"."id" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_assets"."type" = 'Spree::Image' AND "spree_variants"."product_id" = 12 AND "spree_assets"."viewable_type" = 'Spree::Variant' ORDER BY "spree_assets"."position" ASC, "spree_variants"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/product_card_component.rb:21:in `main_image'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 58 AND "active_storage_attachments"."record_type" = 'Spree::Asset' AND "active_storage_attachments"."name" = 'attachment' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 58 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = 58 AND "active_storage_variant_records"."variation_digest" = 'usOTKXT2Qsf+dT56pxyMnX0pEdY=' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'ActiveStorage::VariantRecord' AND "active_storage_attachments"."name" = 'image' LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 66 LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/components/image_component.rb:16:in `call'
+[36m  Disk Storage (1.4ms) [0m[34mGenerated URL for file at key: 9mzgb2jjd4tp5cw968pwg0j6uy3s (http://100.94.150.11:4918/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI5bXpnYjJqamQ0dHA1Y3c5Njhwd2cwajZ1eTNzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19jYXBfYmxhY2tfMS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2NhcF9ibGFja18xLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMTA6NDc6MDkuMjYxWiIsInB1ciI6ImJsb2Jfa2V5In19--65a3890731f442a5ce2a74ac25b3b99f6fbaa77b/solidus_cap_black_1.png)[0m
+  Rendered home/_collection.erb (Duration: 54.6ms | GC: 1.1ms)
+  Rendered home/index.html.erb within layouts/storefront (Duration: 235.3ms | GC: 9.1ms)
+  [1m[36mSpree::Store Load (0.2ms)[0m  [1m[34mSELECT "spree_stores".* FROM "spree_stores" WHERE "spree_stores"."default" = 1 ORDER BY "spree_stores"."id" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/layouts/_header.html.erb:17
+  [1m[36mSpree::Taxonomy Load (0.2ms)[0m  [1m[34mSELECT "spree_taxonomies".* FROM "spree_taxonomies" ORDER BY "spree_taxonomies"."position" ASC LIMIT 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/layouts/_header.html.erb:20
+  [1m[36mSpree::Taxon Load (0.2ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IS NULL AND "spree_taxons"."taxonomy_id" = 1 /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/layouts/_header.html.erb:20
+  [1m[36mSpree::Taxon Load (0.2ms)[0m  [1m[34mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" = 1 ORDER BY lft /*action='index',application='Solidus',controller='home'*/[0m
+  ↳ app/views/layouts/_header.html.erb:20
+  Rendered shared/search/_search_bar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/navigation/_theme_switcher.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/search/_search_bar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/navigation/_theme_switcher.html.erb (Duration: 0.5ms | GC: 0.1ms)
+  Rendered layouts/_top_bar.html.erb (Duration: 2.0ms | GC: 0.1ms)
+  Rendered layouts/_header.html.erb (Duration: 37.4ms | GC: 0.3ms)
+  Rendered shared/_call_to_action.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_social_icons.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_footer.html.erb (Duration: 8.4ms | GC: 0.0ms)
+  Rendered layout layouts/storefront.html.erb (Duration: 315.8ms | GC: 10.0ms)
+Completed 200 OK in 433ms (Views: 307.7ms | ActiveRecord: 36.3ms (76 queries, 0 cached) | GC: 10.3ms)
+
+
+Started GET "/assets/tailwind-8a97fab43236bea99f7e9b195c3777bef3bd4a1ba28fb8ffc172010ec602d073.css" for 100.86.36.97 at 2025-05-07 16:12:09 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/solidus_starter_frontend-50467122072a9896f1f941e5f937b42271c6483110c42cd165ed3054abcfe449.css" for 100.86.36.97 at 2025-05-07 16:12:09 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/solidus_starter_frontend-cb80df0ff5ca6b8428bd99fea6a57f8216ef3249fc86db85174b6984d1d4c57e.js" for 100.86.36.97 at 2025-05-07 16:12:09 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/es-module-shims.min-4ca9b3dd5e434131e3bb4b0c1d7dff3bfd4035672a5086deec6f73979a49be73.js" for 100.86.36.97 at 2025-05-07 16:12:10 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/logo_small_no_label-d8a1b6b50d2fe102705b565fd289458759f88718f30e517dcc35aab40b462871.svg" for 100.86.36.97 at 2025-05-07 16:12:10 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJqcHEwNmVoY2xmaTk3MHdxMXhxMHZ4bTRlbDR3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c190b3RlLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfdG90ZS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDEwOjQ3OjA5LjA4MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8b944a149a43e7e0101e6a6660ece04cc468a8ad/solidus_tote.png" for 100.86.36.97 at 2025-05-07 16:12:10 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_tote"}
+Completed 200 OK in 16ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3NWozczZsbWpjNWk4enYzajN0a2RpZTczMmFlIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19ob29kaWVfYmxhY2tfMS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2hvb2RpZV9ibGFja18xLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMTA6NDc6MDkuMDkzWiIsInB1ciI6ImJsb2Jfa2V5In19--0761dae395d5c98c8b09d95883643f94747b4773/solidus_hoodie_black_1.png" for 100.86.36.97 at 2025-05-07 16:12:10 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4eDdtcHAyZzlmNzVubjRseDZmbTQ1YndldHk2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19tdWdfc2V0LnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfbXVnX3NldC5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDEwOjQ3OjA5LjEwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--cba668b7f160a81d4ae560adfde3bec970e1cc7c/solidus_mug_set.png" for 100.86.36.97 at 2025-05-07 16:12:10 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_hoodie_black_1"}
+Completed 200 OK in 12ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 5.1ms)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_mug_set"}
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJqdTQ0bG1zdjR6a3lnczV1anFyY25oZzdkOWw3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19zdGlja2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3NvbGlkdXNfc3RpY2tlci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTA3VDEwOjQ3OjA5LjE0MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--164d16db69fc7b27a97974e40410bf258380bb1a/solidus_sticker.png" for 100.86.36.97 at 2025-05-07 16:12:10 +0530
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJudTdtd3dxbzlpa2I1YjBxNmE2MGttNDEzaWlwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19oYXQucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnc29saWR1c19oYXQucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNS0wN1QxMDo0NzowOS4xMjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--bd93a46c33a88e93e4489284cd198155e82ec724/solidus_hat.png" for 100.86.36.97 at 2025-05-07 16:12:10 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_hat"}
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_sticker"}
+Completed 200 OK in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/fonts/inter/inter-v18-latin-regular-4257feae4ab4d639ab5c04aa4e3be1e51a632cc3189abf481212a464607cba55.woff2" for 100.86.36.97 at 2025-05-07 16:12:11 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/fonts/inter/inter-v18-latin-500-4e948e63c678c58bab6bb0dc9fa0af063a33028841e5fd018908530494c6eb71.woff2" for 100.86.36.97 at 2025-05-07 16:12:11 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/fonts/source-serif/source-serif-4-v8-latin-regular-cd8f56d0633e0c07bdfa779dbd7324e56848e327f845156dbd7a9e5921ec2053.woff2" for 100.86.36.97 at 2025-05-07 16:12:11 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/fonts/source-serif/source-serif-4-v8-latin-500-24b592e26d85c7e4440f370ec846b156b0fc8c98ae62d31a0957b8d7a0c0caa2.woff2" for 100.86.36.97 at 2025-05-07 16:12:11 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js" for 100.86.36.97 at 2025-05-07 16:12:11 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxcTJ6MG1sZ28yeTR6cDBxcmw1cHM2bDgyd3p2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19kYXJrX3RlZS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2RhcmtfdGVlLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMTA6NDc6MDkuMjE5WiIsInB1ciI6ImJsb2Jfa2V5In19--f159b26d8914d6d4ff058508353bdb91d20858c5/solidus_dark_tee.png" for 100.86.36.97 at 2025-05-07 16:12:11 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnenBlN2c2bjZvcnUzYm9nNThreHptbGhtdzNyIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19jYW52YXNfdG90ZS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2NhbnZhc190b3RlLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMTA6NDc6MDkuMjQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--e9cdfe6e9864872d4a3eeb2287363583feff8bd8/solidus_canvas_tote.png" for 100.86.36.97 at 2025-05-07 16:12:11 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_dark_tee"}
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_canvas_tote"}
+Completed 200 OK in 7ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Completed 200 OK in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI5bXpnYjJqamQ0dHA1Y3c5Njhwd2cwajZ1eTNzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwic29saWR1c19jYXBfYmxhY2tfMS5wbmdcIjsgZmlsZW5hbWUqPVVURi04Jydzb2xpZHVzX2NhcF9ibGFja18xLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMDdUMTA6NDc6MDkuMjYxWiIsInB1ciI6ImJsb2Jfa2V5In19--65a3890731f442a5ce2a74ac25b3b99f6fbaa77b/solidus_cap_black_1.png" for 100.86.36.97 at 2025-05-07 16:12:12 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"solidus_cap_black_1"}
+Started GET "/assets/logo_full_with_label-f4e771b8a2aa42e82be8fd1c439cf7839a8923e22001372ddc8a59efadb186a9.svg" for 100.86.36.97 at 2025-05-07 16:12:12 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/logo_full_with_label_white-5cb1806c7c436a46951a4d8ff655620f41297ab8313d517cff8ddd1995aaaecf.svg" for 100.86.36.97 at 2025-05-07 16:12:12 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Completed 200 OK in 19ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.3ms)
+
+
+Started GET "/assets/remixicon.symbol-1c50a1fd101bf63164beca97d6bbe40edf5636ac66926d989e902c2faaa6ca4a.svg" for 100.86.36.97 at 2025-05-07 16:12:12 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/turbo.min-c85b4c5406dd49df1f63e03a5b07120d39cc3e33bc2448f5e926b80514f9dfc8.js" for 100.86.36.97 at 2025-05-07 16:12:12 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js" for 100.86.36.97 at 2025-05-07 16:12:12 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js" for 100.86.36.97 at 2025-05-07 16:12:12 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js" for 100.86.36.97 at 2025-05-07 16:12:12 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js" for 100.86.36.97 at 2025-05-07 16:12:13 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/cart_page_controller-e6c514790ac10be27a9ff49b61052acfc1ff6395ba7b3e1717c862a1a9868540.js" for 100.86.36.97 at 2025-05-07 16:12:13 +0530
+Started GET "/assets/controllers/locale_selector_controller-210a999b9e7180aaf30f267981b4215d154e0efeae17f961a08883ebb226c66b.js" for 100.86.36.97 at 2025-05-07 16:12:13 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js" for 100.86.36.97 at 2025-05-07 16:12:13 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/drawer_controller-9618f9fff583abc0713c062711bf343cb459691f946afede69a1d993f9facb55.js" for 100.86.36.97 at 2025-05-07 16:12:13 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/checkout_payment_controller-eba23be953cc574420b12d43df755e534ebfb9bfa41911796f6429c6495635ea.js" for 100.86.36.97 at 2025-05-07 16:12:14 +0530
+Started GET "/assets/controllers/search_controller-c211e445f1b59fb1d778125565dc948f8531dd085692164708cce5f5b0543d08.js" for 100.86.36.97 at 2025-05-07 16:12:14 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/theme_switcher_controller-8b91df2f125ac1c9a27507c2652c1adbd2c93ce0ee61135dd63d2493b2b5a6db.js" for 100.86.36.97 at 2025-05-07 16:12:14 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/top_bar_controller-081e713c4ad4db23d9f720fff4d20c5e4974156e0d76868acd39624935d4f452.js" for 100.86.36.97 at 2025-05-07 16:12:14 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/cart_link" for 100.86.36.97 at 2025-05-07 16:12:14 +0530
+Cannot render console from 100.86.36.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StoreController#cart_link as */*
+  [1m[36mSpree::Store Load (0.2ms)[0m  [1m[34mSELECT "spree_stores".* FROM "spree_stores" WHERE ("spree_stores"."url" = '100.94.150.11' OR "spree_stores"."default" = 1) ORDER BY "spree_stores"."default" ASC LIMIT 1 /*action='cart_link',application='Solidus',controller='store'*/[0m
+  ↳ app/components/link_to_cart_component.rb:4:in `current_order'
+  [1m[36mSpree::Order Load (0.9ms)[0m  [1m[34mSELECT "spree_orders".* FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NULL AND "spree_orders"."currency" = 'USD' AND "spree_orders"."guest_token" = 'vK9iYC9JIPJ5G-VwSDRpQg' AND "spree_orders"."store_id" = 1 AND "spree_orders"."user_id" IS NULL LIMIT 1 /*action='cart_link',application='Solidus',controller='store'*/[0m
+  ↳ app/components/link_to_cart_component.rb:4:in `current_order'
+  [1m[36mCACHE Spree::Order Load (0.9ms)[0m  [1m[34mSELECT "spree_orders".* FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NULL AND "spree_orders"."currency" = 'USD' AND "spree_orders"."guest_token" = 'vK9iYC9JIPJ5G-VwSDRpQg' AND "spree_orders"."store_id" = 1 AND "spree_orders"."user_id" IS NULL LIMIT 1[0m
+  ↳ app/components/link_to_cart_component.rb:4:in `current_order'
+  Rendered shared/cart/_link_to_cart.html.erb (Duration: 129.8ms | GC: 0.6ms)
+  [1m[36mCACHE Spree::Order Load (0.2ms)[0m  [1m[34mSELECT "spree_orders".* FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NULL AND "spree_orders"."currency" = 'USD' AND "spree_orders"."guest_token" = 'vK9iYC9JIPJ5G-VwSDRpQg' AND "spree_orders"."store_id" = 1 AND "spree_orders"."user_id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/store_controller.rb:18:in `cart_link'
+  Couldn't find template for digesting: news/new
+Completed 200 OK in 165ms (Views: 133.4ms | ActiveRecord: 2.4ms (4 queries, 2 cached) | GC: 0.9ms)
+
+
+/home/divansh/solidus/start.sh: line 2: 1167358 Killed                  bin/rails s -b 0.0.0.0 -p 4918

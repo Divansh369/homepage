@@ -1,0 +1,37 @@
+
+   INFO  Server running on [http://100.94.150.11:6819].  
+
+  Press Ctrl+C to stop the server
+
+  2025-05-07 09:49:35 / ................................................ ~ 1s
+  2025-05-07 09:49:37 /_debugbar/assets/stylesheets .............. ~ 500.40ms
+  2025-05-07 09:49:37 /themes/shop/default/build/assets/app-DylXwZj5.css  ~ 500.80ms
+  2025-05-07 09:49:37 /themes/shop/default/build/assets/app-DsP8OK1c.css  ~ 500.86ms
+  2025-05-07 09:49:38 /_debugbar/assets/javascript ............... ~ 500.59ms
+  2025-05-07 09:49:39 /themes/shop/default/build/assets/logo-CZWQQgOF.svg  ~ 0.12ms
+  2025-05-07 09:49:37 /themes/shop/default/build/assets/app-Dk7aa5mf.js  ~ 2s
+  2025-05-07 09:49:39 /themes/shop/default/build/assets/bagisto-shop-BHAKyv0r.woff  ~ 0.05ms
+  2025-05-07 09:49:40 /api/categories/tree ....................... ~ 500.37ms
+  2025-05-07 09:49:40 /api/checkout/cart ......................... ~ 500.81ms
+  2025-05-07 09:49:40 /api/categories ............................ ~ 501.21ms
+  2025-05-07 09:49:40 /api/products ................................ ~ 0.95ms
+  2025-05-07 09:49:40 /api/products .............................. ~ 500.95ms
+  2025-05-07 09:49:40 /api/products .................................... ~ 1s
+  2025-05-07 09:49:41 /api/categories/tree ....................... ~ 500.98ms
+  2025-05-07 09:49:41 /_debugbar/open ............................ ~ 500.69ms
+  2025-05-07 09:49:41 /api/checkout/cart ......................... ~ 500.91ms
+  2025-05-07 09:49:41 /_debugbar/open .............................. ~ 2.34ms
+  2025-05-07 09:49:41 /_debugbar/open .............................. ~ 2.26ms
+  2025-05-07 09:49:42 /_debugbar/open .............................. ~ 0.48ms
+  2025-05-07 09:49:42 /_debugbar/open ............................ ~ 500.77ms
+  2025-05-07 09:49:42 /_debugbar/open ............................ ~ 500.78ms
+  2025-05-07 09:49:42 /_debugbar/open ............................ ~ 500.73ms
+  2025-05-07 09:49:42 /_debugbar/open ............................ ~ 500.77ms
+  2025-05-07 09:49:42 /themes/shop/default/build/assets/default-language-BxH8WlkY.svg  ~ 0.45ms
+  2025-05-07 09:49:43 /themes/shop/default/build/assets/thank-you-mhMpuEVL.png  ~ 0.17ms
+  2025-05-07 09:49:43 /themes/shop/default/build/assets/user-placeholder-C_FiyGd9.png  ~ 0.04ms
+  2025-05-07 09:49:43 /themes/shop/default/build/assets/favicon-Df9chQdB.ico  ~ 0.05ms
+  2025-05-07 09:49:43 /storage/theme/1/W4wkGsDOvz83oYEa43N5DCcsnS2e1C8HDfZcacEj.webp  ~ 500.44ms
+  2025-05-07 09:49:43 /storage/theme/1/n9VNOh4gPWpQd4V9FxOKOUoMdeJ9CXdALzeYSJ4T.webp  ~ 500.51ms
+  2025-05-07 09:49:44 /storage/theme/1/v9FhSJOOzetyA7afw8ewlcUCqqhTEOOqQicJrWS5.webp  ~ 500.63ms
+  2025-05-07 09:49:43 /storage/theme/1/0E7axlUQHvBeFDT5hGk5uPyPWR7oQa94O94OWDVq.webp  ~ 2s

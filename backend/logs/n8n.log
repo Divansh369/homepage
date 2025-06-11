@@ -640,3 +640,66 @@ Error: socket hang up
 
 NodeApiError The connection to the server was closed unexpectedly, perhaps it is offline. You can retry the request immediately or wait and retry later.
 /home/divansh/n8n/start.sh: line 3: 1425691 Killed                  /home/divansh/.asdf/installs/nodejs/20.0.0/bin/node /home/divansh/n8n/node_modules/n8n/bin/n8n
+User settings loaded from: /home/divansh/.n8n/config
+Initializing n8n process
+n8n ready on 0.0.0.0, port 5678
+Version: 1.64.3
+
+Editor is now accessible via:
+http://localhost:5678/
+401 Wrong username or password. Do you have caps lock on?
+Error while fetching bases!
+NodeOperationError: Error while fetching bases!
+    at Object.getBases (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/NocoDB/NocoDB.node.ts:237:12)
+    at DynamicNodeParametersController.getOptions (/home/divansh/n8n/node_modules/n8n/src/controllers/dynamic-node-parameters.controller.ts:27:11)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+Error while fetching bases!
+Error: Error while fetching bases!
+    at Object.getBases (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/NocoDB/NocoDB.node.ts:239:7)
+    at DynamicNodeParametersController.getOptions (/home/divansh/n8n/node_modules/n8n/src/controllers/dynamic-node-parameters.controller.ts:27:11)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+Node does not have any credentials set
+NodeOperationError: Node does not have any credentials set
+    at getCredentials (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:2136:11)
+    at Object.getCredentials (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:4238:11)
+    at Object.apiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/NocoDB/GenericFunctions.ts:37:33)
+    at Object.getBases (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/NocoDB/NocoDB.node.ts:233:45)
+    at DynamicNodeParametersService.getOptionsViaMethodName (/home/divansh/n8n/node_modules/n8n/src/services/dynamic-node-parameters.service.ts:44:17)
+    at DynamicNodeParametersController.getOptions (/home/divansh/n8n/node_modules/n8n/src/controllers/dynamic-node-parameters.controller.ts:27:30)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+Node does not have any credentials set
+Error: Node does not have any credentials set
+    at new NodeOperationError (/home/divansh/n8n/node_modules/n8n-workflow/src/errors/node-operation.error.ts:22:12)
+    at getCredentials (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:2136:11)
+    at Object.getCredentials (/home/divansh/n8n/node_modules/n8n-core/src/NodeExecuteFunctions.ts:4238:11)
+    at Object.apiRequest (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/NocoDB/GenericFunctions.ts:37:33)
+    at Object.getBases (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/NocoDB/NocoDB.node.ts:233:45)
+    at DynamicNodeParametersService.getOptionsViaMethodName (/home/divansh/n8n/node_modules/n8n/src/services/dynamic-node-parameters.service.ts:44:17)
+    at DynamicNodeParametersController.getOptions (/home/divansh/n8n/node_modules/n8n/src/controllers/dynamic-node-parameters.controller.ts:27:30)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+No  base selected!
+NodeOperationError: No  base selected!
+    at Object.getTables (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/NocoDB/NocoDB.node.ts:271:12)
+    at DynamicNodeParametersService.getOptionsViaMethodName (/home/divansh/n8n/node_modules/n8n/src/services/dynamic-node-parameters.service.ts:44:17)
+    at DynamicNodeParametersController.getOptions (/home/divansh/n8n/node_modules/n8n/src/controllers/dynamic-node-parameters.controller.ts:27:30)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+No  base selected!
+Error: No  base selected!
+    at new NodeOperationError (/home/divansh/n8n/node_modules/n8n-workflow/src/errors/node-operation.error.ts:22:12)
+    at Object.getTables (/home/divansh/n8n/node_modules/n8n-nodes-base/nodes/NocoDB/NocoDB.node.ts:271:12)
+    at DynamicNodeParametersService.getOptionsViaMethodName (/home/divansh/n8n/node_modules/n8n/src/services/dynamic-node-parameters.service.ts:44:17)
+    at DynamicNodeParametersController.getOptions (/home/divansh/n8n/node_modules/n8n/src/controllers/dynamic-node-parameters.controller.ts:27:30)
+    at handler (/home/divansh/n8n/node_modules/n8n/src/decorators/controller.registry.ts:105:12)
+    at /home/divansh/n8n/node_modules/n8n/src/response-helper.ts:154:17
+
+/home/divansh/n8n/start.sh: line 3: 546248 Killed                  /home/divansh/.asdf/installs/nodejs/20.0.0/bin/node /home/divansh/n8n/node_modules/n8n/bin/n8n

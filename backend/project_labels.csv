@@ -101,7 +101,7 @@ jellyfin,C
 jellyfin,Cloud Storage
 jellyfin,Web Server
 docmost,Javascript
-docmost,Collaboration
+docmost,Documentation
 n8n,Javascript
 n8n,Automation
 directus,Javascript
@@ -116,3 +116,48 @@ focalboard,Collaboration
 mattermost,Javascript
 mattermost,Go
 mattermost,Collaboration
+age-viewer,C
+age-viewer,Database
+pyload,Python
+pyload,Web Server
+pyload,Dashboard
+vikunja,Go
+vikunja,Collaboration
+vikunja,Monitoring
+docpress,Javascript
+docpress,Documentation
+
+docfx,Dotnet
+docfx,Documentation
+docsify,Javascript
+docsify,Documentation
+documize,Javascript
+documize,Go
+documize,Documentation
+docus,Javascript
+docus,Documentation
+docusaurus,Javascript
+docusaurus,Documentation
+fumadocs,Javascript
+fumadocs,Documentation
+mkdocs,Python
+mkdocs,Documentation
+vocs,Javascript
+vocs,Documentation
+garagehq,Rust
+garagehq,Media
+garagehq,Cloud Storage
+gogs,Go
+gogs,Collaboration
+bytebase,Go
+bytebase,Database
+chartdb,Javascript
+chartdb,Database
+dremio,Java
+dremio,Data Science
+dremio,Database
+beszel,Go
+beszel,Dashboard
+ghost,Javascript
+ghost,Web Framework
+ghost,Web Server

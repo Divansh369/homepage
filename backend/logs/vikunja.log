@@ -1,0 +1,22 @@
+2025-05-13T18:10:27+05:30: INFO	▶ 001[0m No config file found, using default or config from environment variables.
+2025-05-13T18:10:27+05:30: INFO	▶ 002[0m Running migrations…
+2025-05-13T18:10:27+05:30: INFO	▶ 06f[0m Ran all migrations successfully.
+2025-05-13T18:10:27+05:30: INFO	▶ 070[0m Mailer is disabled, not sending reminders per mail
+2025-05-13T18:10:27+05:30: INFO	▶ 071[0m Mailer is disabled, not sending overdue per mail
+2025-05-13T18:10:27+05:30: INFO	▶ 072[0m Vikunja version 854cbfbfd8
+⇨ http server started on [::]:3456
+2025-05-13T18:10:47+05:30: WEB 	▶ 100.86.36.97  GET 200 / 2.644885ms - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:47+05:30: WEB 	▶ 100.86.36.97  GET 304 /assets/index-Dhicj5CA.js 4.780571ms - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:47+05:30: WEB 	▶ 100.86.36.97  GET 304 /assets/index-B71gG0Qg.css 2.152548ms - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:48+05:30: WEB 	▶ 100.86.36.97  GET 304 /assets/Home-BuoTioex.js 231.386µs - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:48+05:30: WEB 	▶ 100.86.36.97  GET 200 /api/v1/info 629.176µs - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:48+05:30: WEB 	▶ 100.86.36.97  GET 304 /assets/ProjectCardGrid-CShDZMvz.css 254.109µs - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:48+05:30: WEB 	▶ 100.86.36.97  GET 304 /assets/useAutoHeightTextarea-DnFfRKik.css 185.189µs - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:48+05:30: WEB 	▶ 100.86.36.97  GET 304 /assets/AddTask-Cbhk_Atu.css 189.637µs - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:48+05:30: WEB 	▶ 100.86.36.97  GET 304 /assets/Home-DiJq6rHk.css 218.071µs - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:49+05:30: WEB 	▶ 100.86.36.97  GET 304 /assets/ProjectCardGrid-CqnNsVhv.js 222.419µs - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:49+05:30: WEB 	▶ 100.86.36.97  GET 304 /assets/AddTask-C_8VL4Rw.js 223.081µs - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:49+05:30: WEB 	▶ 100.86.36.97  GET 304 /assets/taskRelation-CqbMu7VN.js 158.459µs - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:49+05:30: WEB 	▶ 100.86.36.97  GET 304 /assets/useAutoHeightTextarea-C4U9rdyH.js 100.48µs - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+2025-05-13T18:10:49+05:30: WEB 	▶ 100.86.36.97  GET 401 /api/v1/user 148.059µs - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Killed
