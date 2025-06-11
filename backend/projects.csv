@@ -1,68 +1,68 @@
 project_name,description,icon_filename,startup_script,scheme,port,host
-beszel,"Lightweight server monitoring hub with historical data, docker stats, and alerts.",logo.png,start.sh,http,8090,100.94.150.11
-coder,VS Code in the browser,logo.png,start_coder.sh,http,1133,100.94.150.11
-planka,The realtime kanban board for workgroups built with React and Redux.,planka.png,start_planka.sh,http,3363,100.94.150.11
-age-viewer,Graph database optimized for fast analysis and real-time data processing. It is provided as an extension to PostgreSQL,frontend/public/resources/images/agedb-favicon.ico.png,start.sh,http,3312,100.94.150.11
-mattermost,Mattermost is an open source platform for secure collaboration across the entire software development lifecycle..,client/icon_192x192.png,start.sh,http,1065,100.94.150.11
-portainer,Making Docker and Kubernetes management easy.,logo.png,start.sh,http,2772,100.94.150.11
-syncthing,Open Source Continuous File Synchronization,logo.png,start.sh,http,8384,100.94.150.11
-n8n,"Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",logo.png,start.sh,http,5678,100.94.150.11
-directus,"The flexible backend for all your projects 🐰 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth & more.",logo.png,start.sh,http,8055,100.94.150.11
-novnc,VNC client web application,logo.png,start.sh,http,6081,100.94.150.11
-nocobase,"NocoBase is an extensibility-first, open-source no-code development platform.",packages/core/app/dist/client/favicon/favicon.ico,start.sh,http,13000,100.94.150.11
-nocodb,🔥 🔥 🔥 Open Source Airtable Alternative,logo.png,start.sh,http,6220,100.94.150.11
-cockpit,Cockpit is a web-based graphical interface for servers.,logo.png,start.sh,http,9090,100.94.150.11
-pyload,The free and open-source Download Manager written in pure Python,icon.png,start.sh,http,8749,100.94.150.11
-jitsi,"Jitsi Meet - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application.",static/pwa/icons/icon512.png,start.sh,https,6724,100.94.150.11
-koel,🐦 A personal music streaming server that works.,logo.png,start.sh,http,3883,100.94.150.11
-jupyter,Jupyter Interactive Notebook,jupyter.svg,start_jupyter.sh,http,9742,100.94.150.11
-neo4j,Graphs for Everyone,logo.png,start.sh,http,7474,100.94.150.11
-focalboard,"Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.",webapp/static/favicon.svg,start.sh,http,2219,100.94.150.11
-jellyfin,The Free Software Media System - Server Backend & API,jellyfin-web/assets/img/icon-transparent.png,start.sh,http,8095,100.94.150.11
-nextcloud,"☁️ Nextcloud server, a safe home for all your data",core/img/logo/logo.svg,start.sh,http,8228,100.94.150.11
-gitea,Git with a cup of tea! Painless self-hosted all-in-one software development service.,logo.svg,gitea,http,8956,100.94.150.11
-gogs,Gogs is a painless self-hosted Git service,favicon.png,start.sh,http,8962,100.94.150.11
-pocketbase,Open Source realtime backend in 1 file,logo.png,start.sh,http,6935,100.94.150.11
-minIO,"MinIO is a high-performance, S3 compatible object store, open sourced under GNU AGPLv3 license.",minio-1.svg,start_minio.sh,http,9099,100.94.150.11
-superset,Apache Superset is a Data Visualization and Data Exploration Platform,superset.ico,start_superset.sh,http,6996,100.94.150.11
-metabase,"The simplest, fastest way to get business intelligence and analytics to everyone in your company",metabase.svg,start_metabase.sh,http,9870,100.94.150.11
-grafana,"The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources",public/img/grafana_icon.svg,start_grafana.sh,http,3603,100.94.150.11
-hoppscotch,"Open source API development ecosystem - https://hoppscotch.io (open-source alternative to Postman, Insomnia)",logo.png,start.sh,http,6219,100.94.150.11
-restfox,Offline-First Minimalistic HTTP & Socket Testing Client for the Web & Desktop,packages/ui/public/favicon.svg,start.sh,http,6192,100.94.150.11
-docmost,Docmost is an open-source collaborative wiki and documentation software. It is an open-source alternative to Confluence and Notion.,apps/client/dist/favicon-32x32.png,start.sh,http,6283,100.94.150.11
-dbeaver,Free universal database tool and SQL client,web/icons/logo_sm.svg,run.sh,http,8978,100.94.150.11
-uptime-kuma,A fancy self-hosted monitoring tool,public/icon.svg,start.sh,http,5072,100.94.150.11
-tomcat,"Apache Tomcat is a web server that is an open source software implementation of the Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket technologies.",tomcat.png,start_tomcat.sh,http,8020,100.94.150.11
-hadoop,The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers.,hadoop.svg,sbin/start-all.sh,http,6006,100.94.150.11
-react-app,Set up a modern web app by running one command.,public/favicon.ico,start.sh,http,5098,100.94.150.11
-next,🦍 A configurable component library for web built on React.,app/favicon.ico,start.sh,http,5099,100.94.150.11
-aimeos,"Laravel ecommerce package for ultra fast online shops, scalable marketplaces, complex B2B applications and #gigacommerce",public/vendor/shop/themes/default/assets/icon.png,start_aimeos.sh,http,4199,100.94.150.11
-prestashop,PrestaShop is the universal open-source software platform to build your e-commerce solution,img/favicon.ico,start.sh,http,4198,100.94.150.11
-drawdb,"Free, simple, and intuitive online database diagram editor and SQL generator.",public/favicon.ico,start.sh,http,7821,100.94.150.11
-zookeeper,Apache ZooKeeper is an effort to develop and maintain an open-source server which enables highly reliable distributed coordination.,zookeeper.png,bin/zkServer.sh start,http,2081,100.94.150.11
-evershop,🛍️ NodeJS E-commerce Platform,logo.png,start.sh,http,6107,100.94.150.11
-medusa,The world's most flexible commerce platform.,logo.svg,start.sh,http,6893,100.94.150.11
-bagisto,Free and open source laravel eCommerce platform,logo.png,start.sh,http,6819,100.94.150.11
-lunar,An open-source package that brings the power of modern headless e-commerce functionality to Laravel.,public/favicon.svg,start.sh,http,5281,100.94.150.11
-ofbiz,,ofbiz_logo.svg,start.sh,https,8443,100.94.150.11
-microweber,Drag and Drop Website Builder and CMS with E-commerce,public/favicon.ico,start.sh,http,4192,100.94.150.11
-opencart,A free shopping cart system. OpenCart is an open source PHP-based online e-commerce solution.,logo.png,start.sh,http,4193,100.94.150.11
-pimcore,"Core Framework for the Open Source Data & Experience Management Platform (PIM, MDM, CDP, DAM, DXP/CMS & Digital Commerce)",logo.png,start.sh,http,4194,100.94.150.11
-shopware,Shopware 6 is an open commerce platform based on Symfony Framework and Vue and supported by a worldwide community and more than 1.500 community extension,public/media/09/d1/c1/1744992116/favicon.png,start.sh,https,4195,100.94.150.11
-sylius,Open Source eCommerce Framework on Symfony,public/favicon.ico,start.sh,http,4196,100.94.150.11
-solidus,"🛒 Solidus, the open-source eCommerce framework for industry trailblazers.",public/storefront_favicon.svg,start.sh,http,4918,100.94.150.11
-vikunja,The to-do app to organize your life.,frontend/dist/favicon.ico,./vikunja,http,3456,100.94.150.11
-docpress,Documentation website generator,logo.png,start.sh,http,6629,100.94.150.11
-docfx,Static site generator for .NET API documentation.,_site/favicon.ico,start.sh,http,6628,100.94.150.11
-docsify,🃏 A magical documentation site generator.,logo.png,start.sh,http,6627,100.94.150.11
-documize,"Modern Confluence alternative designed for internal & external docs, built with Go + EmberJS",logo.png,start.sh,http,6626,100.94.150.11
-docus,Write beautiful documentations with Nuxt and Markdown.,logo.png,start.sh,http,6625,100.94.150.11
-docusaurus,Easy to maintain open source documentation websites.,static/img/docusaurus.png,start.sh,http,6624,100.94.150.11
-fumadocs,The beautiful docs framework with Next.js.,logo.png,start.sh,http,6623,100.94.150.11
-mkdocs,Project documentation with Markdown.,logo.png,start.sh,http,6621,100.94.150.11
-vocs,"Minimal Documentation Framework, powered by React + Vite.",logo.png,start.sh,http,6620,100.94.150.11
-garagehq,S3-compatible object store for small self-hosted geo-distributed deployments https://garagehq.deuxfleurs.fr/,logo.svg,start.sh,http,3909,100.94.150.11
-bytebase,"World's most advanced database DevSecOps solution for Developer, Security, DBA and Platform Engineering teams. The GitHub/GitLab for database DevSecOps.",logo.png,start.sh,http,5885,100.94.150.11
-chartdb,Database diagrams editor that allows you to visualize and design your DB with a single query.,public/favicon.ico,start.sh,http,8759,100.94.150.11
-dremio,Dremio - the missing link in modern data,logo.png,start.sh,http,9047,100.94.150.11
-ghost,"Independent technology for modern publishing, memberships, subscriptions and newsletters.",logo.png,start.sh,http,2368,100.94.150.11
+beszel,"""Lightweight server monitoring hub with historical data, docker stats, and alerts.""",logo.png,start.sh,http,8090,100.94.150.11
+coder,"""VS Code in the browser""",logo.png,start_coder.sh,http,1133,100.94.150.11
+planka,"""The realtime kanban board for workgroups built with React and Redux.""",planka.png,start_planka.sh,http,3363,100.94.150.11
+age-viewer,"""Graph database optimized for fast analysis and real-time data processing. It is provided as an extension to PostgreSQL""",frontend/public/resources/images/agedb-favicon.ico.png,start.sh,http,3312,100.94.150.11
+mattermost,"""Mattermost is an open source platform for secure collaboration across the entire software development lifecycle..""",client/icon_192x192.png,start.sh,http,1065,100.94.150.11
+portainer,"""Making Docker and Kubernetes management easy.""",logo.png,start.sh,http,2772,100.94.150.11
+syncthing,"""Open Source Continuous File Synchronization""",logo.png,start.sh,http,8384,100.94.150.11
+n8n,"""Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.""",logo.png,start.sh,http,5678,100.94.150.11
+directus,"""The flexible backend for all your projects 🐰 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth & more.""",logo.png,start.sh,http,8055,100.94.150.11
+novnc,"""VNC client web application""",logo.png,start.sh,http,6081,100.94.150.11
+nocobase,"""NocoBase is an extensibility-first, open-source no-code development platform.""",packages/core/app/dist/client/favicon/favicon.ico,start.sh,http,13000,100.94.150.11
+nocodb,"""🔥 🔥 🔥 Open Source Airtable Alternative""",logo.png,start.sh,http,6220,100.94.150.11
+cockpit,"""Cockpit is a web-based graphical interface for servers.""",logo.png,start.sh,http,9090,100.94.150.11
+pyload,"""The free and open-source Download Manager written in pure Python""",icon.png,start.sh,http,8749,100.94.150.11
+jitsi,"""Jitsi Meet - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application.""",static/pwa/icons/icon512.png,start.sh,https,6724,100.94.150.11
+koel,"""🐦 A personal music streaming server that works.""",logo.png,start.sh,http,3883,100.94.150.11
+jupyter,"""Jupyter Interactive Notebook""",jupyter.svg,start_jupyter.sh,http,9742,100.94.150.11
+neo4j,"""Graphs for Everyone""",logo.png,start.sh,http,7474,100.94.150.11
+focalboard,"""Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.""",webapp/static/favicon.svg,start.sh,http,2219,100.94.150.11
+jellyfin,"""The Free Software Media System - Server Backend & API""",jellyfin-web/assets/img/icon-transparent.png,start.sh,http,8095,100.94.150.11
+nextcloud,"""☁️ Nextcloud server, a safe home for all your data""",core/img/logo/logo.svg,start.sh,http,8228,100.94.150.11
+gitea,"""Git with a cup of tea! Painless self-hosted all-in-one software development service.""",logo.svg,gitea,http,8956,100.94.150.11
+gogs,"""Gogs is a painless self-hosted Git service""",favicon.png,start.sh,http,8962,100.94.150.11
+pocketbase,"""Open Source realtime backend in 1 file""",logo.png,start.sh,http,6935,100.94.150.11
+minIO,"""MinIO is a high-performance, S3 compatible object store, open sourced under GNU AGPLv3 license.""",minio-1.svg,start_minio.sh,http,9099,100.94.150.11
+superset,"""Apache Superset is a Data Visualization and Data Exploration Platform""",superset.ico,start_superset.sh,http,6996,100.94.150.11
+metabase,"""The simplest, fastest way to get business intelligence and analytics to everyone in your company""",metabase.svg,start_metabase.sh,http,9870,100.94.150.11
+grafana,"""The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources""",public/img/grafana_icon.svg,start_grafana.sh,http,3603,100.94.150.11
+hoppscotch,"""Open source API development ecosystem - https://hoppscotch.io (open-source alternative to Postman, Insomnia)""",logo.png,start.sh,http,6219,100.94.150.11
+restfox,"""Offline-First Minimalistic HTTP & Socket Testing Client for the Web & Desktop""",packages/ui/public/favicon.svg,start.sh,http,6192,100.94.150.11
+docmost,"""Docmost is an open-source collaborative wiki and documentation software. It is an open-source alternative to Confluence and Notion.""",apps/client/dist/favicon-32x32.png,start.sh,http,6283,100.94.150.11
+dbeaver,"""Free universal database tool and SQL client""",web/icons/logo_sm.svg,run.sh,http,8978,100.94.150.11
+uptime-kuma,"""A fancy self-hosted monitoring tool""",public/icon.svg,start.sh,http,5072,100.94.150.11
+tomcat,"""Apache Tomcat is a web server that is an open source software implementation of the Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket technologies.""",tomcat.png,start_tomcat.sh,http,8020,100.94.150.11
+hadoop,"""The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers.""",hadoop.svg,sbin/start-all.sh,http,6006,100.94.150.11
+react-app,"""Set up a modern web app by running one command.""",public/favicon.ico,start.sh,http,5098,100.94.150.11
+next,"""🦍 A configurable component library for web built on React.""",app/favicon.ico,start.sh,http,5099,100.94.150.11
+aimeos,"""Laravel ecommerce package for ultra fast online shops, scalable marketplaces, complex B2B applications and #gigacommerce""",public/vendor/shop/themes/default/assets/icon.png,start_aimeos.sh,http,4199,100.94.150.11
+prestashop,"""PrestaShop is the universal open-source software platform to build your e-commerce solution""",img/favicon.ico,start.sh,http,4198,100.94.150.11
+drawdb,"""Free, simple, and intuitive online database diagram editor and SQL generator.""",public/favicon.ico,start.sh,http,7821,100.94.150.11
+zookeeper,"""Apache ZooKeeper is an effort to develop and maintain an open-source server which enables highly reliable distributed coordination.""",zookeeper.png,bin/zkServer.sh start,http,2081,100.94.150.11
+evershop,"""🛍️ NodeJS E-commerce Platform""",logo.png,start.sh,http,6107,100.94.150.11
+medusa,"""The world's most flexible commerce platform.""",logo.svg,start.sh,http,6893,100.94.150.11
+bagisto,"""Free and open source laravel eCommerce platform""",logo.png,start.sh,http,6819,100.94.150.11
+lunar,"""An open-source package that brings the power of modern headless e-commerce functionality to Laravel.""",public/favicon.svg,start.sh,http,5281,100.94.150.11
+ofbiz,"""Apache OFBiz is an open source product for the automation of enterprise processes. It includes framework components and business applications for ERP, CRM, E-Business/E-Commerce, Supply Chain Management and Manufacturing Resource Planning. OFBiz provides a foundation and starting point for reliable, secure and scalable enterprise solutions.""",ofbiz_logo.svg,start.sh,https,8443,100.94.150.11
+microweber,"""Drag and Drop Website Builder and CMS with E-commerce""",public/favicon.ico,start.sh,http,4192,100.94.150.11
+opencart,"""A free shopping cart system. OpenCart is an open source PHP-based online e-commerce solution.""",logo.png,start.sh,http,4193,100.94.150.11
+pimcore,"""Core Framework for the Open Source Data & Experience Management Platform (PIM, MDM, CDP, DAM, DXP/CMS & Digital Commerce)""",logo.png,start.sh,http,4194,100.94.150.11
+shopware,"""Shopware 6 is an open commerce platform based on Symfony Framework and Vue and supported by a worldwide community and more than 1.500 community extension""",public/media/09/d1/c1/1744992116/favicon.png,start.sh,https,4195,100.94.150.11
+sylius,"""Open Source eCommerce Framework on Symfony""",public/favicon.ico,start.sh,http,4196,100.94.150.11
+solidus,"""🛒 Solidus, the open-source eCommerce framework for industry trailblazers.""",public/storefront_favicon.svg,start.sh,http,4918,100.94.150.11
+vikunja,"""The to-do app to organize your life.""",frontend/dist/favicon.ico,./vikunja,http,3456,100.94.150.11
+docpress,"""Documentation website generator""",logo.png,start.sh,http,6629,100.94.150.11
+docfx,"""Static site generator for .NET API documentation.""",_site/favicon.ico,start.sh,http,6628,100.94.150.11
+docsify,"""🃏 A magical documentation site generator.""",logo.png,start.sh,http,6627,100.94.150.11
+documize,"""Modern Confluence alternative designed for internal & external docs, built with Go + EmberJS""",logo.png,start.sh,http,6626,100.94.150.11
+docus,"""Write beautiful documentations with Nuxt and Markdown.""",logo.png,start.sh,http,6625,100.94.150.11
+docusaurus,"""Easy to maintain open source documentation websites.""",static/img/docusaurus.png,start.sh,http,6624,100.94.150.11
+fumadocs,"""The beautiful docs framework with Next.js.""",logo.png,start.sh,http,6623,100.94.150.11
+mkdocs,"""Project documentation with Markdown.""",logo.png,start.sh,http,6621,100.94.150.11
+vocs,"""Minimal Documentation Framework, powered by React + Vite.""",logo.png,start.sh,http,6620,100.94.150.11
+garagehq,"""S3-compatible object store for small self-hosted geo-distributed deployments https://garagehq.deuxfleurs.fr/""",logo.svg,start.sh,http,3909,100.94.150.11
+bytebase,"""World's most advanced database DevSecOps solution for Developer, Security, DBA and Platform Engineering teams. The GitHub/GitLab for database DevSecOps.""",logo.png,start.sh,http,5885,100.94.150.11
+chartdb,"""Database diagrams editor that allows you to visualize and design your DB with a single query.""",public/favicon.ico,start.sh,http,8759,100.94.150.11
+dremio,"""Dremio - the missing link in modern data""",logo.png,start.sh,http,9047,100.94.150.11
+ghost,"""Independent technology for modern publishing, memberships, subscriptions and newsletters.""",logo.png,start.sh,http,2368,100.94.150.11
