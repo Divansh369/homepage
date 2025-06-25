@@ -161,3 +161,13 @@ beszel,Dashboard
 ghost,Javascript
 ghost,Web Framework
 ghost,Web Server
+matomo,PHP
+matomo,Analytics
+umami,Javascript
+umami,Analytics
+strapi,Javascript
+strapi,CMS
+payload,Javascript
+payload,CMS
+keystone,Javascript
+keystone,CMS

@@ -13,3 +13,17 @@ Please update your go.mod and manually set modernc.org/libc to v1.62.1, otherwis
 2025/06/10 22:28:01 Server started at http://0.0.0.0:8090
 ├─ REST API:  http://0.0.0.0:8090/api/
 └─ Dashboard: http://0.0.0.0:8090/_/
+
+WARN You are using modernc.org/libc v1.64.0 which differs from the expected and tested v1.62.1.
+Please update your go.mod and manually set modernc.org/libc to v1.62.1, otherwise it could result in unexpected build or runtime errors (you may have to also run 'go clean -modcache' to clear the cache if the warning persists).
+
+2025/06/18 10:11:55 Server started at http://0.0.0.0:8090
+├─ REST API:  http://0.0.0.0:8090/api/
+└─ Dashboard: http://0.0.0.0:8090/_/
+
+WARN You are using modernc.org/libc v1.64.0 which differs from the expected and tested v1.62.1.
+Please update your go.mod and manually set modernc.org/libc to v1.62.1, otherwise it could result in unexpected build or runtime errors (you may have to also run 'go clean -modcache' to clear the cache if the warning persists).
+
+2025/06/24 10:13:18 Server started at http://0.0.0.0:8090
+├─ REST API:  http://0.0.0.0:8090/api/
+└─ Dashboard: http://0.0.0.0:8090/_/

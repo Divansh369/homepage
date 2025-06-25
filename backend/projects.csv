@@ -66,3 +66,9 @@ bytebase,"World's most advanced database DevSecOps solution for Developer, Secur
 chartdb,Database diagrams editor that allows you to visualize and design your DB with a single query.,public/favicon.ico,start.sh,http,8759,100.94.150.11
 dremio,Dremio - the missing link in modern data,logo.png,start.sh,http,9047,100.94.150.11
 ghost,"Independent technology for modern publishing, memberships, subscriptions and newsletters.",logo.png,start.sh,http,2368,100.94.150.11
+matomo,"Empowering People Ethically 🚀 — Matomo is hiring! Join us → https://matomo.org/jobs Matomo is the leading open-source alternative to Google Analytics, giving you complete control and built-in privacy. Easily collect, visualise, and analyse data from websites & apps. Star us on GitHub ⭐️ – Pull Requests welcome!",favicon.ico,start.sh,http,6647,100.94.150.11
+umami,"Umami is a modern, privacy-focused alternative to Google Analytics.",public/favicon.ico,start.sh,http,6648,100.94.150.11
+strapi,"🚀 Strapi is the leading open-source headless CMS. It’s 100% JavaScript/TypeScript, fully customizable, and developer-first.",favicon.png,start.sh,http,8241,100.94.150.11
+payload,"Payload is the open-source, fullstack Next.js framework, giving you instant backend superpowers. Get a full TypeScript backend and admin panel instantly. Use Payload as a headless CMS or for building powerful applications.",public/favicon.svg,start.sh,http,8242,100.94.150.11
+
+keystone,The superpowered headless CMS for Node.js — built with GraphQL and React,logo.png,start.sh,http,8243,100.94.150.11
